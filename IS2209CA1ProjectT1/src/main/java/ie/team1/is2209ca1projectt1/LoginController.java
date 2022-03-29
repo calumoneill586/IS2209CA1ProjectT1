@@ -18,7 +18,7 @@ public class LoginController implements Initializable {
 
 //Login Methods Section
     @FXML
-    private Button btnLogIn;
+    private Button btnLogIn, btnCreateAccount;
     private Hyperlink hypCreateAccount;    
     
     //Log In Button       
@@ -35,7 +35,7 @@ public class LoginController implements Initializable {
     private void handleClickHere() throws IOException { 
     Parent root = FXMLLoader.load(getClass().getResource("RegisterDetails.fxml"));
     
-    Stage clickHere = (Stage) hypCreateAccount.getScene().getWindow();
+    Stage clickHere = (Stage) btnCreateAccount.getScene().getWindow();
     clickHere.setScene(new Scene(root, 681,597));
     }
     

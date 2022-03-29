@@ -35,5 +35,6 @@
          </font>
       </Hyperlink>
       <Separator layoutX="243.0" orientation="VERTICAL" prefHeight="320.0" prefWidth="0.0" />
+      <Button fx:id="btnCreateAccount" layoutX="477.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleClickHere" opacity="0.01" prefHeight="25.0" prefWidth="49.0" />
    </children>
 </AnchorPane>
