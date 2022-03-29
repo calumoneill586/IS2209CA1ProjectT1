@@ -42,3 +42,24 @@ ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
 PRIMARY KEY (ID)
 );
 
+--Insert 19 rows of data into PIZZAINGREDIENTLOOKUP, relating pizzas to the ingredients they have
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(1, 1);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(1, 2);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(1, 3);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(2, 1);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(2, 2);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(2, 4);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(2, 5);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(3, 1);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(3, 2);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(4, 1);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(4, 2);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(4, 8);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(4, 9);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(4, 10);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(4, 1);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(5, 1);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(5, 2);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(5, 6);
+insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(5, 7);
+
