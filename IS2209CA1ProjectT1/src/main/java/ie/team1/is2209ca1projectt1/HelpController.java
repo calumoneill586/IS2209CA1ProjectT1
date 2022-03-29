@@ -19,7 +19,7 @@ public class HelpController implements Initializable {
 private Button btnHomeHelp, btnViewOrderHelp, btnLogOutHelp;  
     
 
-        //Menu Bar  
+        //Tool Bar  
          @FXML
          private void handleHomeHelp() throws IOException {
          Parent root = FXMLLoader.load(getClass().getResource("FXMLOrder.fxml"));   //Order Page acting as Homepage  
@@ -29,7 +29,7 @@ private Button btnHomeHelp, btnViewOrderHelp, btnLogOutHelp;
         }
       
          @FXML
-         private void handleViewOrderHelp() throws IOException {
+         private void handleViewOrderHelp () throws IOException {
          Parent root = FXMLLoader.load(getClass().getResource("FXMLOrder.fxml"));   // Change to Past Order Page   
     
          Stage viewOrdersHelp = (Stage) btnViewOrderHelp.getScene().getWindow();

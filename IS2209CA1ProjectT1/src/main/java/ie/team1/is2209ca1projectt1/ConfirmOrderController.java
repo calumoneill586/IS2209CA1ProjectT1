@@ -24,20 +24,8 @@ public class ConfirmOrderController implements Initializable {
     //Confirmation Page Methods Section
     @FXML
     private Button btnViewOrders, btnHelpConfirmation, btnHomeConfirmation;
-    @FXML
-    private Label lblOrderPlaced;
-    @FXML
-    private Label lblUniqueCode;
-    @FXML
-    private Label lblNumber;
-    @FXML
-    private Label lblThankYou;
-    @FXML
-    private MenuBar mnuConfirmation;
-    @FXML
-    private Menu btnViewOrderConfirmation;
     
-    //Menu Bar
+    //Tool Bar
     
     @FXML
     private void handleHomeConfirmation() throws IOException {
@@ -63,46 +51,12 @@ public class ConfirmOrderController implements Initializable {
     
     
     Stage viewHelp = (Stage) btnHelpConfirmation.getScene().getWindow();
-    viewHelp.setScene(new Scene(root, 713,400)); //Change dimensions to fit 
+    viewHelp.setScene(new Scene(root, 306, 328)); //Change dimensions to fit 
     }
-    
-   
-    
-//Help Page Methods Section
-     private Button btnHomeHelp, btnViewOrderHelp, btnLogOutHelp;  
-    
-
-        //Menu Bar  
-         private void handleHomeHelp() throws IOException {
-         Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml"));   //Order Page acting as Homepage  
-    
-         Stage homeConfirmation = (Stage) btnHomeHelp.getScene().getWindow();
-         homeConfirmation.setScene(new Scene(root, 713,400));
-        }
-      
-         private void handleViewOrderHelp() throws IOException {
-         Parent root = FXMLLoader.load(getClass().getResource(".fxml"));   // Change to Past Order Page   
-    
-         Stage viewOrdersHelp = (Stage) btnViewOrderHelp.getScene().getWindow();
-         viewOrdersHelp.setScene(new Scene(root, 713,400)); //Change dimensions to fit
-         }
-     
-         private void handleLogOutHelp() throws IOException {
-         TilePane tpLogout = new TilePane(); 
-         Label lblLogout = new Label("You have logged out");
-         Popup Logout = new Popup();
-          
-         tpLogout.getChildren().add(btnLogOutHelp); 
-        
-         Parent root = FXMLLoader.load(getClass().getResource(".fxml"));   
-    
-         Stage logoutHelp = (Stage) btnLogOutHelp.getScene().getWindow();
-         logoutHelp.setScene(new Scene(root, 713,400)); //Change dimensions to fit
-         }
-
+       
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
  
 }
