@@ -24,19 +24,15 @@ public class OrderSummaryController implements Initializable {
 
     
      @FXML
-    private Button btnAddToBasket;
+    private Button btnPlaceOrder;
 
     //Add to Basket button
     @FXML
-    private void handleAddToBasket() throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("FXMLBasket.fxml"));
+    private void handlePlaceOrder() throws IOException {
+    Parent root = FXMLLoader.load(getClass().getResource("ConfirmOrder.fxml"));
     
-    Stage addBasket = (Stage) btnAddToBasket.getScene().getWindow();
-    addBasket.setScene(new Scene(root, 562,508));
-    }
-    
-    public void onClick() {
-        //System.out.println("onclick");
+    Stage addBasket = (Stage) btnPlaceOrder.getScene().getWindow();
+    addBasket.setScene(new Scene(root, 464,284));
     }
 
     @Override
