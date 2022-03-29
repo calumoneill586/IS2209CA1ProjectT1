@@ -20,7 +20,7 @@ public class RegisterDetailsController implements Initializable {
     //Back button 
     @FXML
     private void handleDetailsBack() throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
     
     Stage back = (Stage) btnDetailsBack.getScene().getWindow();
     back.setScene(new Scene(root, 600,316));
@@ -30,7 +30,7 @@ public class RegisterDetailsController implements Initializable {
     @FXML 
     public void handleCreateAccount() throws IOException{   
         
-    Parent root = FXMLLoader.load(getClass().getResource("FXMLOrder.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml"));
     
     Stage order = (Stage) btnCreateAccount.getScene().getWindow();
     order.setScene(new Scene(root, 713,400));
