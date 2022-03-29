@@ -25,6 +25,11 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextArea;
 
 import ie.team1.is2209ca1projectt1.dao.*;
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  *
@@ -33,7 +38,7 @@ import ie.team1.is2209ca1projectt1.dao.*;
 public class BrowseMenuController implements Initializable {
     
     @FXML
-    private Button btnAdd;
+    private Button btnAddtoBasket, btnNext;
     @FXML
     private TextArea txtBasket;
         
@@ -46,9 +51,7 @@ public class BrowseMenuController implements Initializable {
     //private static final Logger logger = LoggerFactory.getLogger(BrowseMenuController.class);
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        
-        
+    public void initialize(URL url, ResourceBundle rb) {     
         List<Pizza> pizzas = dao.getPizzas();
         
         listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -71,12 +74,12 @@ public class BrowseMenuController implements Initializable {
         this.txtBasket.setText(txtBasketString);
     }
 
-    public void onTestClick() {
-        System.out.println("onTestClick called");
-        
-        Pizza newPizza = new Pizza(99, "NEW PIZZA", 14.99);
-        
-        dao.addPizza(newPizza);
+    public void onNextClick() throws IOException {
+    Parent root = FXMLLoader.load(getClass().getResource("OrderSummary.fxml"));
+    
+    Stage addBasket = (Stage) btnNext.getScene().getWindow();
+    addBasket.setScene(new Scene(root, 562,508));
+    }
         
     }
-}
+
