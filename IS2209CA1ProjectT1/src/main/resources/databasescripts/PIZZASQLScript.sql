@@ -63,3 +63,14 @@ insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(5, 2);
 insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(5, 6);
 insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(5, 7);
 
+--Insert 9 rows into CUSTOMER table
+insert into CUSTOMER (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) values('Marco Dalla', '1 Main Street', 'Douglas', '2628 7972 8917 7493', '086 098 7654', 'Dairy', 'username', 'password');
+insert into CUSTOMER (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) values('George Dunphy', '2 Main Street', 'Douglas', '2379 2898 2084 5793', '086 334 4455', 'Dairy', 'dunphy1', 'password');
+insert into CUSTOMER (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) values('Barry McCarthy', '3 Main Street', 'Carrigaline', '6987 8398 3984 3874', '086 111 9786', '', 'barmanbarry', 'password');
+insert into CUSTOMER (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) values('Isabelle McDonald', '8 Water Down Street', 'Ballincollig', '2379 1234 6347 9874', '086 667 2333', 'Shellfish', 'mcdonald21', 'password');
+insert into CUSTOMER (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) values('Michael Souft', '96 Grange Street', 'Douglas', '2379 1217 9548 8594', '086 556 9234', 'Dairy', 'michaelsouft', 'password');
+insert into CUSTOMER (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) values('Robert Cove-Williams-Wizard', '34 Magic Road', 'Mallow', '2346 2387 6509 2958', '089 123 4567', 'Shellfish', 'wizard99', 'password');
+insert into CUSTOMER (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) values('Joe Chickenball', '41 Nevergreen Terrace', 'Douglas', '2009 5482 5802 8435', '089 345 9823', '', 'chickenballjoe', 'password');
+insert into CUSTOMER (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) values('Rupert Beasley', '42 Nevergreen Terrace', 'Douglas', '2828 1485 4243 8993', '089 983 5124', 'Dairy', 'beasleystreet', 'password');
+insert into CUSTOMER (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) values('Evan Healy', '26 Weston Park', 'Mallow', '2023 5132 9850 5243', '086 196 8842', 'Shellfish', 'handsomehealy', 'password');
+
