@@ -19,22 +19,12 @@ public class LoginController implements Initializable {
 //Login Methods Section
     @FXML
     private Button btnLogIn;
-    private Hyperlink hypCreateAccount;
-    
-    /*
-    public void handleLogIn() {
-    }
-    
-    public void handleClickHere() {
-        
-    }
-    */
-    
+    private Hyperlink hypCreateAccount;    
     
     //Log In Button       
     @FXML
     private void handleLogIn() throws IOException { //CODE TO VERIFY INPUT AGAINST DATABASE HERE!!
-    Parent root = FXMLLoader.load(getClass().getResource("OrderSummary.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml"));
     
     Stage login = (Stage) btnLogIn.getScene().getWindow();
     login.setScene(new Scene(root, 713,400));
@@ -43,7 +33,7 @@ public class LoginController implements Initializable {
     //Click Here Hyperlink
     @FXML
     private void handleClickHere() throws IOException { 
-    Parent root = FXMLLoader.load(getClass().getResource("FXMLCreateAccount.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("RegisterDetails.fxml"));
     
     Stage clickHere = (Stage) hypCreateAccount.getScene().getWindow();
     clickHere.setScene(new Scene(root, 681,597));

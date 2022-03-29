@@ -51,7 +51,7 @@ public class ConfirmOrderController implements Initializable {
     
     
     Stage viewHelp = (Stage) btnHelpConfirmation.getScene().getWindow();
-    viewHelp.setScene(new Scene(root, 306, 328)); //Change dimensions to fit 
+    viewHelp.setScene(new Scene(root, 306, 328)); 
     }
        
     @Override
