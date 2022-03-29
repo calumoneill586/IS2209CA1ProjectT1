@@ -30,3 +30,4 @@ dist/
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 >>>>>>> b6f7ec331a1944e809b77939b1f1da9ad7aa7f26
+/IS2209CA1ProjectT1/target/
