@@ -1,32 +1,33 @@
 
 
-import ie.team1.is2209ca1projectt1.dao.Pizza;
+import ie.team1.is2209ca1projectt1.dao.Order;
+import ie.team1.is2209ca1projectt1.dao.OrderDao;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 
 
 public class PastOrdersController implements Initializable {
- @FXML
-    private Button btnAddtoBasket;
-    
  
+ @FXML 
+    private ListView listView;
  
+ OrderDao orderDao = new OrderDao();
  
           @Override
     public void initialize(URL url, ResourceBundle rb) {
-        List<Pizza> pizzas = dao.getPizzas();
+        List<Order> orders = orderDao.getOrders();
         
         listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         
-        for(Pizza pizza : pizzas) {
-            listView.getItems().add(pizza);
+        for(Order order : orders) {
+            listView.getItems().add(order);
      
     }    
     
+    }
 }
