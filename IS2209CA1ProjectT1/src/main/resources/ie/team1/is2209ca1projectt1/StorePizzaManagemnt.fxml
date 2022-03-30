@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller=".StorePizzaManagemntController">
+   <children>
+      <ListView layoutX="264.0" layoutY="82.0" prefHeight="200.0" prefWidth="135.0" />
+      <ListView layoutX="50.0" layoutY="82.0" prefHeight="200.0" prefWidth="135.0" />
+      <ListView layoutX="470.0" layoutY="82.0" prefHeight="200.0" prefWidth="135.0" />
+      <Button layoutX="29.0" layoutY="284.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Add Pizza" />
+      <Button layoutX="119.0" layoutY="284.0" mnemonicParsing="false" text="Remove Pizza" />
+      <Button layoutX="228.0" layoutY="284.0" mnemonicParsing="false" text="Add Ingredient" />
+      <Button layoutX="322.0" layoutY="284.0" mnemonicParsing="false" text="Remove Ingredient" />
+      <Button layoutX="469.0" layoutY="284.0" mnemonicParsing="false" text="Add Offer" />
+      <Button layoutX="538.0" layoutY="284.0" mnemonicParsing="false" text="Remove Offer" />
+      <Label layoutX="94.0" layoutY="56.0" text="Pizzas" />
+      <Label layoutX="292.0" layoutY="56.0" text="Ingredients" />
+      <Label layoutX="492.0" layoutY="56.0" text="Special Offers" />
+   </children>
+</AnchorPane>
