@@ -105,7 +105,13 @@ CREATE TABLE CUSTOMPIZZA (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
 PRIMARY KEY (ID));
 
 -- Create Shop Table
-CREATE TABLE SHOP (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY, "LOCATION" VARCHAR(100), PRIMARY KEY (ID));
+CREATE TABLE SHOP (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY, "LOCATION" VARCHAR(100), PRIMARY KEY (ID)); 
+
+--Populating Shop 
+insert into shop (location) values('Ballincollig'); 
+insert into shop (location) values('Mallow');
+insert into shop (location) values('Carrigaline'); 
+insert into shop (location) values('Douglas');
 
 
 -- Create Staff Table
