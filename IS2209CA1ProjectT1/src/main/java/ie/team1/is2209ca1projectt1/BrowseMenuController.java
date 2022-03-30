@@ -38,7 +38,7 @@ import javafx.stage.Stage;
 public class BrowseMenuController implements Initializable {
     
     @FXML
-    private Button btnAddtoBasket, btnNext;
+    private Button btnNext;
     @FXML
     private TextArea txtBasket;
         
@@ -73,6 +73,8 @@ public class BrowseMenuController implements Initializable {
         
         this.txtBasket.setText(txtBasketString);
     }
+    
+    
 
     public void onNextClick() throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("OrderSummary.fxml"));
