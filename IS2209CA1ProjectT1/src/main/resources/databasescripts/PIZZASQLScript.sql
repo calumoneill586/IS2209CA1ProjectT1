@@ -119,4 +119,19 @@ CREATE TABLE STAFF (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
 "SHOPID" INT,
     FOREIGN KEY ("SHOPID") REFERENCES SHOP (ID),
 "STAFFROLE" VARCHAR(100),
-PRIMARY KEY (ID));
+PRIMARY KEY (ID)); 
+
+
+--Populating Staff 
+insert into staff (shopid, STAFFROLE) values(1, 'Manager');
+insert into staff (shopid, STAFFROLE) values(2, 'Manager');
+insert into staff (shopid, STAFFROLE) values(3, 'Manager');
+insert into staff (shopid, STAFFROLE) values(1, 'Delivery Driver');
+insert into staff (shopid, STAFFROLE) values(2, 'Delivery Driver');
+insert into staff (shopid, STAFFROLE) values(3, 'Delivery Driver');
+insert into staff (shopid, STAFFROLE) values(1, 'Floor Staff');
+insert into staff (shopid, STAFFROLE) values(2, 'Floor Staff');
+insert into staff (shopid, STAFFROLE) values(3, 'Floor Staff');
+insert into staff (shopid, STAFFROLE) values(4, 'Manager');
+insert into staff (shopid, STAFFROLE) values(4, 'Delivery Driver');
+insert into staff (shopid, STAFFROLE) values(4, 'Floor Staff');
