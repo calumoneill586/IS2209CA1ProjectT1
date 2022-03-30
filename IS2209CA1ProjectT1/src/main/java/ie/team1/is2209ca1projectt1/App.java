@@ -12,7 +12,7 @@ import java.io.IOException;
  * JavaFX App
  */
 public class App extends Application { 
-    //sex gifs
+
 
     private static Scene scene;
 
