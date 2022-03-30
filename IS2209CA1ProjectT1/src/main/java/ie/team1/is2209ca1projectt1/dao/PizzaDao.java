@@ -43,14 +43,14 @@ public class PizzaDao {
 
             Statement stmt = conn.createStatement();
 
-            String sql = "SELECT * FROM pizza";
+            String sql = "SELECT * FROM PIZZA";
 
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
 
                 int id = rs.getInt("ID");
-                String name = rs.getString("TYPE");
+                String name = rs.getString("NAME");
                 double price = rs.getInt("PRICE");
 
                 Pizza pizza = new Pizza(id, name, price);
@@ -60,7 +60,7 @@ public class PizzaDao {
             rs.close();
             stmt.close();
         } catch(Exception ex) {
-            System.out.println("something went wrong...");
+            System.out.println("something went wrong with select from pizza");
         }
 
         return pizzas;
@@ -72,7 +72,7 @@ public class PizzaDao {
 
             Statement stmt = conn.createStatement();
 
-            String sql = "INSERT INTO pizza (TYPE, PRICE) VALUES('" + pizzaToAdd.getType() + "', " + pizzaToAdd.getPrice() + ")";
+            String sql = "INSERT INTO pizza (NAME, PRICE) VALUES('" + pizzaToAdd.getName() + "', " + pizzaToAdd.getPrice() + ")";
             
             System.out.println(sql);
             
