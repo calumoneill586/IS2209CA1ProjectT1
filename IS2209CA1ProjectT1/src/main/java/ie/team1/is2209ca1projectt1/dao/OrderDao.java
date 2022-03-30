@@ -46,52 +46,50 @@ public class OrderDao {
 
             Statement stmt = conn.createStatement();
 
-            String sql = "SELECT * FROM order";
+
+
+            String sql = "SELECT * FROM ORDERS";
+
 
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
 
                 int id = rs.getInt("ID");
-                String name = rs.getString("TYPE");
+ String name = rs.getString("TYPE");
                 double price = rs.getInt("PRICE");
               
+
+                int customerid = rs.getInt("CUSTOMERID");
+                
+                String paymethod = rs.getString("PAYMETHOD");
+                String getmethod = rs.getString("GETMETHOD");
+                String request = rs.getString("REQUEST");
+                
+                //double price = rs.getInt("PRICE");
+                
+                Order order = new Order(id, customerid, paymethod, getmethod, request);
+                orders.add(order);
+
                  }
             
        
             rs.close();
             stmt.close();
         } catch(Exception ex) {
-            System.out.println("something went wrong...");
+            System.out.println(ex);
         }
 
         return orders;
     }
            
-    public Order addOrder(Order orderToAdd) {
+    
         
-        try {
-
-            Statement stmt = conn.createStatement();
-
-            String sql = "INSERT INTO order (TYPE, PRICE) VALUES('" + orderToAdd.getType() + "', " + orderToAdd.getPrice() + ")";
-            
-            System.out.println(sql);
-            
-            stmt.executeUpdate(sql);
-            
-            stmt.close();
-            
-        } catch(Exception ex) {
-            System.out.println("something went wrong...");
-            System.out.println(ex.getMessage());
-        }
-        
-        return orderToAdd;
+     //   return orderToAdd;
     }
 
   
 
-}
+
   
 

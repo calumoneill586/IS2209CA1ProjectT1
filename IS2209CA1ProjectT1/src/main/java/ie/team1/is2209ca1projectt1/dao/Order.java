@@ -7,14 +7,18 @@ package ie.team1.is2209ca1projectt1.dao;
 
 public class Order {
     private int id;
-    private String type;
-    private double price;
+    private int customerid;
+    private String paymethod;
+    private String getmethod;
+    private String request;
     
 
-    public Order(int id, String type, double price) { //change data types to fit 
+    public Order(int id, int customerid, String paymethod, String getmethod, String request) { //change data types to fit 
         this.id = id;
-        this.type = type;
-        this.price = price;
+        this.customerid = customerid;
+        this.paymethod = paymethod;
+        this.getmethod = getmethod;
+        this.request = request;
     }
 
     public int getId() {
@@ -25,25 +29,60 @@ public class Order {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public int getCustomerId() {
+        return customerid;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setCustomerId(int customerid) {
+        this.customerid = customerid;
     }
 
-    public double getPrice() {
-        return price;
+    public String getPaymethod() {
+        return paymethod;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPaymethod(String paymethod) {
+        this.paymethod = paymethod;
     }
+    
+     public String getgetmethod() {
+        return getmethod;
+    }
+
+    public void setgetmethod(String getmethod) {
+        this.getmethod = getmethod;
+    }
+    
+    
+    public String getRequest() {
+        return request;
+    }
+
+    public void setRequest(String request) {
+        this.request = request;
+    }
+
+   
+        
+        
+    
+    
+   
   
-    @Override
+   @Override
     public String toString() {
-        return type;
+     return this.paymethod +" "+ this.getmethod +" "+ this.request;
+        
+        
+       
         }
-    }
+     
+ 
+        }
+        
+    
+   
+    
+
+    
 

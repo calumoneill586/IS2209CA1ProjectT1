@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="ie.team1.is2209ca1projectt1.PizzaManagementWindow2Controller">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.PizzaManagementWindow2Controller">
    <children>
       <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="497.0" prefWidth="791.0">
          <children>
@@ -20,11 +19,11 @@
                   </BorderPane>
                </left>
             </BorderPane>
-            <ListView layoutX="14.0" layoutY="79.0" prefHeight="200.0" prefWidth="145.0" />
+            <ListView fx:id="lstPersonnel" layoutX="14.0" layoutY="79.0" prefHeight="200.0" prefWidth="145.0" />
             <Label fx:id="lblPersonnel" layoutX="60.0" layoutY="61.0" text="Personnel" />
-            <ListView layoutX="167.0" layoutY="79.0" prefHeight="200.0" prefWidth="146.0" />
+            <ListView fx:id="lstLocations" layoutX="167.0" layoutY="79.0" prefHeight="200.0" prefWidth="146.0" />
             <Label fx:id="lblLocation" layoutX="215.0" layoutY="61.0" text="Locations" />
-            <ListView layoutX="319.0" layoutY="79.0" prefHeight="200.0" prefWidth="146.0" />
+            <ListView fx:id="lstUsers" layoutX="319.0" layoutY="79.0" prefHeight="200.0" prefWidth="146.0" />
             <Label fx:id="lblUser" layoutX="377.0" layoutY="61.0" text="Users" />
             <Button fx:id="btnCreatePersonnel" layoutX="32.0" layoutY="289.0" mnemonicParsing="false" text="Create Personnel" />
             <Button fx:id="btnCreateLocation" layoutX="190.0" layoutY="290.0" mnemonicParsing="false" text="Create Location" />
@@ -32,14 +31,14 @@
             <Button fx:id="btnDeletePersonnel" layoutX="33.0" layoutY="315.0" mnemonicParsing="false" text="Delete Personnel" />
             <Button fx:id="btnDeleteLocation" layoutX="190.0" layoutY="315.0" mnemonicParsing="false" text="Delete Location" />
             <Button fx:id="btnCreateUser" layoutX="335.0" layoutY="289.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" text="Create User" />
-            <ListView layoutX="473.0" layoutY="79.0" prefHeight="200.0" prefWidth="135.0" />
+            <ListView fx:id="lstIngredients" layoutX="473.0" layoutY="79.0" prefHeight="200.0" prefWidth="135.0" />
             <Label fx:id="lblIngredients" layoutX="511.0" layoutY="61.0" text="Ingredients" />
             <Button fx:id="btnCreateIngredient" layoutX="490.0" layoutY="289.0" mnemonicParsing="false" text="Create Ingredient" />
             <Button fx:id="btnDeleteIngredient" layoutX="490.0" layoutY="315.0" mnemonicParsing="false" text="Delete Ingredient" />
             <Button fx:id="btnExit" cancelButton="true" layoutX="35.0" layoutY="400.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="219.0" text="Exit" />
             <Button fx:id="btnNext" layoutX="547.0" layoutY="400.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="219.0" text="Next" />
             <Label fx:id="lblName" layoutX="233.0" layoutY="14.0" text="Pizza Management Manager's Tool to Manage Management" />
-            <ListView layoutX="618.0" layoutY="79.0" prefHeight="200.0" prefWidth="135.0" />
+            <ListView fx:id="lstOrders" layoutX="618.0" layoutY="79.0" prefHeight="200.0" prefWidth="135.0" />
             <Button fx:id="btnCreateOrder" layoutX="634.0" layoutY="288.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" text="Create Order" />
             <Button fx:id="btnDeleteOrder" layoutX="634.0" layoutY="315.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" text="Delete Order" />
             <Label fx:id="lblOrders" layoutX="668.0" layoutY="61.0" text="Orders" />

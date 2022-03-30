@@ -8,6 +8,18 @@
  * Created: 29 Mar 2022
  */
 --Create Pizza Table with autoid, name, and price
+--drop table customer;
+--drop table customorder;
+--drop table orderitem;
+--drop table orders;
+--drop table ingredient;
+--drop table pizza;
+--drop table customer;
+--drop table staff;
+--drop table shop;
+
+
+
 CREATE TABLE PIZZA (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY, "NAME" VARCHAR(100), PRICE DECIMAL(8, 2), PRIMARY KEY (ID));
 
 --Insert five rows of data into the pizza table
@@ -63,6 +75,17 @@ insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(5, 1);
 insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(5, 2);
 insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(5, 6);
 insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(5, 7);
+
+CREATE TABLE CUSTOMER (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+"NAME" VARCHAR(100),
+"ADDRESSLINE1" VARCHAR(100),
+"ADDRESSLINE2" VARCHAR(100),
+"CREDITCARDNO" VARCHAR(100),
+"PHONENO" VARCHAR(100),
+"ALLERGIES" VARCHAR(200),
+"USERNAME" VARCHAR(100),
+"PASSWORD" VARCHAR(100),
+PRIMARY KEY (ID));
 
 --Insert 9 rows into CUSTOMER table
 insert into CUSTOMER (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) values('Marco Dalla', '1 Main Street', 'Douglas', '2628 7972 8917 7493', '086 098 7654', 'Dairy', 'username', 'password');
@@ -147,3 +170,16 @@ insert into staff (shopid, STAFFROLE) values(3, 'Floor Staff');
 insert into staff (shopid, STAFFROLE) values(4, 'Manager');
 insert into staff (shopid, STAFFROLE) values(4, 'Delivery Driver');
 insert into staff (shopid, STAFFROLE) values(4, 'Floor Staff');
+
+
+--select pizza.*, pizzaingredientlookup.*, ingredient.* from 
+--pizza inner join pizzaingredientlookup on pizza.id = pizzaingredientlookup.pizzaid
+--inner join ingredient on pizzaingredientlookup.ingredientid = ingredient.id
+--where pizza.id = 3;
+
+
+--select * from pizzaingredientlookup where pizzaid = 1;
+
+
+
+

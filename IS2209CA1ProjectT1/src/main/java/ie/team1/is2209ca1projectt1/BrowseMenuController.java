@@ -26,6 +26,8 @@ import javafx.scene.control.TextArea;
 
 import ie.team1.is2209ca1projectt1.dao.*;
 import java.io.IOException;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -44,25 +46,64 @@ public class BrowseMenuController implements Initializable {
         
     //These items are fot listview and textarea
     @FXML 
-    private ListView listView;
+    private ListView lstPizza;
     
-    PizzaDao dao = new PizzaDao();
+    @FXML 
+    private ListView lstIngredient;
+    
+    PizzaDao pizzaDao = new PizzaDao();
+    IngredientDao ingredientDao = new IngredientDao();
+    
+    @FXML
+    private void handleClear() throws IOException {
+    
+    
+    
+    }
+    
+    //IngredientDao pizzaDao = new IngredientDao();
     
     //private static final Logger logger = LoggerFactory.getLogger(BrowseMenuController.class);
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {     
-        List<Pizza> pizzas = dao.getPizzas();
+        List<Pizza> pizzas = pizzaDao.getPizzas();
         
-        listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        lstPizza.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        lstPizza.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, selectedItem) -> {
+            Pizza selectedPizza = (Pizza)selectedItem;
+            lstIngredient.getItems().clear();
+            
+            List<Ingredient> ingredients = pizzaDao.getIngredientsForPizza(selectedPizza.getId());
+            
+            for (Ingredient i : ingredients) {
+                lstIngredient.getItems().add(i.getName());
+                //System.out.println(i.getName());
+            }
+        });
+                
         
         for(Pizza pizza : pizzas) {
-            listView.getItems().add(pizza);
+            lstPizza.getItems().add(pizza);
         }
-    } 
+        
+       /*List<Ingredient> ingredients = ingredientDao.getIngredients();
+        
+        lstIngredient.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        
+        for(Ingredient ingredient : ingredients) {
+            lstIngredient.getItems().add(ingredient);
+        }*/
+    }
+    
+    
     public void onClick() {
         System.out.println("This button is working");
-        String txtBasketString = "";
+        
+        
+        
+        
+        /*String txtBasketString = "";
         
         ObservableList listOfItems = listView.getSelectionModel().getSelectedItems();
         
@@ -71,7 +112,7 @@ public class BrowseMenuController implements Initializable {
             txtBasketString += String.format("%s%n", (String) item);
         }
         
-        this.txtBasket.setText(txtBasketString);
+        this.txtBasket.setText(txtBasketString)*/
     }
     
     
