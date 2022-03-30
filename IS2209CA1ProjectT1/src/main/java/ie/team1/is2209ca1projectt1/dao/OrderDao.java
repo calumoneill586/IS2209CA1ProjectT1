@@ -40,7 +40,7 @@ public class OrderDao {
     
     public List<Order> getOrders() {
 
-        List<Order>orders = new ArrayList<Order>();
+        List<Order> orders = new ArrayList<Order>();
         
         try {
 
@@ -56,8 +56,6 @@ public class OrderDao {
                 String name = rs.getString("TYPE");
                 double price = rs.getInt("PRICE");
               
-              //  Order order = new Order(X, Y, Z);     ADD IN DATA TYPES
-             //   orders.add(order);
                  }
             
        
