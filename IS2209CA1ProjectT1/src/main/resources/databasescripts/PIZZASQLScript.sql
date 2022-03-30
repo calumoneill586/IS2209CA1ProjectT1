@@ -41,6 +41,7 @@ ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
     FOREIGN KEY ("INGREDIENTID") REFERENCES INGREDIENT (ID),
 PRIMARY KEY (ID)
 );
+--https://www.javatpoint.com/foreign-key-in-dbms 
 
 --Insert 19 rows of data into PIZZAINGREDIENTLOOKUP, relating pizzas to the ingredients they have
 insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(1, 1);
