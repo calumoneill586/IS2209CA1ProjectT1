@@ -5,7 +5,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller=".StorePizzaManagemntController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.StorePizzaManagemntController">
    <children>
       <ListView fx:id="lstIngredients" layoutX="264.0" layoutY="82.0" prefHeight="200.0" prefWidth="135.0" />
       <ListView fx:id="lstPizza" layoutX="50.0" layoutY="82.0" prefHeight="200.0" prefWidth="135.0" />

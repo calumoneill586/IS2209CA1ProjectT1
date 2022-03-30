@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ie.team1.is2209ca1projectt1.dao;
 
 
@@ -87,5 +82,42 @@ public class PizzaDao {
         
         return pizzaToAdd;
     }
+
+    public List<Ingredient> getIngredientsForPizza(int pizzaId) {
+        
+        List<Ingredient> ingredients = new ArrayList<Ingredient>();
+        
+        
+        try {
+
+            Statement stmt = conn.createStatement();
+
+            String sql = "select pizza.*, pizzaingredientlookup.*, ingredient.id as ingredientId, ingredient.name as ingredientName from pizza " +
+            "inner join pizzaingredientlookup on pizza.id = pizzaingredientlookup.pizzaid inner join ingredient on pizzaingredientlookup.ingredientid = ingredient.id " +
+            "where pizza.id = " + pizzaId;
+ 
+            ResultSet rs = stmt.executeQuery(sql);
+
+            while (rs.next()) {
+
+                int id = rs.getInt("ingredientId");
+                String name = rs.getString("ingredientName");
+
+                Ingredient ingredient = new Ingredient(id, name);
+                ingredients.add(ingredient);
+            }
+
+            rs.close();
+            stmt.close();
+        } catch(Exception ex) {
+            System.out.println(ex);
+        }
+
+        return ingredients;
+        
+    }
+    
+
+   
 
 }
