@@ -46,11 +46,10 @@ public class OrderDao {
 
             Statement stmt = conn.createStatement();
 
-<<<<<<< HEAD
-            String sql = "SELECT * FROM orders";
-=======
+
+
             String sql = "SELECT * FROM ORDERS";
->>>>>>> bafee9384ee73afc0220a14fc91e7edf6bdd7362
+
 
             ResultSet rs = stmt.executeQuery(sql);
 
