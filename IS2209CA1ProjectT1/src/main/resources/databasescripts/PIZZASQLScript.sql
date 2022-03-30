@@ -108,7 +108,8 @@ CREATE TABLE CUSTOMORDER (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
 PRIMARY KEY (ID));
 
 
---Populate custompizza 
+
+--Populate customorder 
 --Hawaiian Pizza with no pineapple
 insert into CUSTOMORDER (ORDERITEMID, INGREDIENTID) values(1, 1);
 insert into CUSTOMORDER (ORDERITEMID, INGREDIENTID) values(1, 2);
