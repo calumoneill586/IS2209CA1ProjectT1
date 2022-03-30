@@ -33,7 +33,7 @@ public class LoginController implements Initializable {
     //Log In Button  
     //Validation code adapted from: https://www.javaguides.net/2019/07/login-form-using-javafx-with-mysql-database.html 
     @FXML
-    private void handleLogIn() throws IOException, SQLException { //CODE TO VERIFY INPUT AGAINST DATABASE HERE!!
+    private void handleLogIn() throws IOException, SQLException { //This section validates username/password entry
     Window owner = btnLogIn.getScene().getWindow();
     
         System.out.println(txtUsername.getText());
