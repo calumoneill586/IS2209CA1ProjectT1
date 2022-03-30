@@ -54,6 +54,12 @@ public class BrowseMenuController implements Initializable {
     PizzaDao pizzaDao = new PizzaDao();
     IngredientDao ingredientDao = new IngredientDao();
     
+    @FXML
+    private void handleClear() throws IOException {
+    
+    
+    
+    }
     
     //IngredientDao pizzaDao = new IngredientDao();
     
@@ -66,6 +72,7 @@ public class BrowseMenuController implements Initializable {
         lstPizza.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         lstPizza.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, selectedItem) -> {
             Pizza selectedPizza = (Pizza)selectedItem;
+            lstIngredient.getItems().clear();
             
             List<Ingredient> ingredients = pizzaDao.getIngredientsForPizza(selectedPizza.getId());
             
