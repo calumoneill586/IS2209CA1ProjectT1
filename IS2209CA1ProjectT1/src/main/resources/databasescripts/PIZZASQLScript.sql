@@ -41,6 +41,7 @@ ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
     FOREIGN KEY ("INGREDIENTID") REFERENCES INGREDIENT (ID),
 PRIMARY KEY (ID)
 );
+--https://www.javatpoint.com/foreign-key-in-dbms 
 
 --Insert 19 rows of data into PIZZAINGREDIENTLOOKUP, relating pizzas to the ingredients they have
 insert into pizzaingredientlookup (PIZZAID, INGREDIENTID) values(1, 1);
@@ -74,35 +75,46 @@ insert into CUSTOMER (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, A
 insert into CUSTOMER (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) values('Rupert Beasley', '42 Nevergreen Terrace', 'Douglas', '2828 1485 4243 8993', '089 983 5124', 'Dairy', 'beasleystreet', 'password');
 insert into CUSTOMER (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) values('Evan Healy', '26 Weston Park', 'Mallow', '2023 5132 9850 5243', '086 196 8842', 'Shellfish', 'handsomehealy', 'password');
 
---Create ORDERS table
+--Create Orders
 CREATE TABLE ORDERS (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
 "CUSTOMERID" INT,
     FOREIGN KEY ("CUSTOMERID") REFERENCES CUSTOMER (ID),
- "TOTALCOST" DOUBLE,
 "PAYMETHOD" VARCHAR(100),
 "GETMETHOD" VARCHAR(100),
 "REQUEST" VARCHAR(100),
 PRIMARY KEY (ID));
 
---Create ORDERITEM table
+--Populate Order Table
+insert into ORDERS (CUSTOMERID, PAYMETHOD, GETMETHOD, REQUEST) values(7, 'Card', 'Collect', 'Do not tell my wife, Mrs. Chickenball');
+
+--OrderItem
 CREATE TABLE ORDERITEM (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
 "ORDERID" INT,
     FOREIGN KEY ("ORDERID") REFERENCES ORDERS (ID),
 "PIZZAID" INT,
     FOREIGN KEY ("PIZZAID") REFERENCES PIZZA (ID),
- "TOTALCOST" DOUBLE,
-"PAYMETHOD" VARCHAR(100),
-"GETMETHOD" VARCHAR(100),
-"REQUEST" VARCHAR(100),
+"QUANTITY" DOUBLE,
 PRIMARY KEY (ID));
 
---Create custompizza
-CREATE TABLE CUSTOMPIZZA (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+--Populate OrderItem Table
+insert into ORDERITEM (ORDERID, PIZZAID, QUANTITY) values(1, 1, 2);
+insert into ORDERITEM (ORDERID, PIZZAID, QUANTITY) values(1, 2, 1);
+
+--Custom Orders 
+CREATE TABLE CUSTOMORDER (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
 "ORDERITEMID" INT,
     FOREIGN KEY ("ORDERITEMID") REFERENCES ORDERITEM (ID),
 "INGREDIENTID" INT,
     FOREIGN KEY ("INGREDIENTID") REFERENCES INGREDIENT (ID),
 PRIMARY KEY (ID));
+
+
+
+--Populate customorder 
+--Hawaiian Pizza with no pineapple
+insert into CUSTOMORDER (ORDERITEMID, INGREDIENTID) values(1, 1);
+insert into CUSTOMORDER (ORDERITEMID, INGREDIENTID) values(1, 2);
+insert into CUSTOMORDER (ORDERITEMID, INGREDIENTID) values(1, 4);
 
 -- Create Shop Table
 CREATE TABLE SHOP (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY, "LOCATION" VARCHAR(100), PRIMARY KEY (ID)); 
@@ -119,4 +131,19 @@ CREATE TABLE STAFF (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
 "SHOPID" INT,
     FOREIGN KEY ("SHOPID") REFERENCES SHOP (ID),
 "STAFFROLE" VARCHAR(100),
-PRIMARY KEY (ID));
+PRIMARY KEY (ID)); 
+
+
+--Populating Staff 
+insert into staff (shopid, STAFFROLE) values(1, 'Manager');
+insert into staff (shopid, STAFFROLE) values(2, 'Manager');
+insert into staff (shopid, STAFFROLE) values(3, 'Manager');
+insert into staff (shopid, STAFFROLE) values(1, 'Delivery Driver');
+insert into staff (shopid, STAFFROLE) values(2, 'Delivery Driver');
+insert into staff (shopid, STAFFROLE) values(3, 'Delivery Driver');
+insert into staff (shopid, STAFFROLE) values(1, 'Floor Staff');
+insert into staff (shopid, STAFFROLE) values(2, 'Floor Staff');
+insert into staff (shopid, STAFFROLE) values(3, 'Floor Staff');
+insert into staff (shopid, STAFFROLE) values(4, 'Manager');
+insert into staff (shopid, STAFFROLE) values(4, 'Delivery Driver');
+insert into staff (shopid, STAFFROLE) values(4, 'Floor Staff');

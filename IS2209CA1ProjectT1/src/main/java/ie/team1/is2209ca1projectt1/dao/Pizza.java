@@ -11,16 +11,16 @@ package ie.team1.is2209ca1projectt1.dao;
  */
 public class Pizza {
     private int id;
-    private String type;
+    private String name;
     private double price;
     
     public Pizza() {
         
     }
 
-    public Pizza(int id, String type, double price) {
+    public Pizza(int id, String name, double price) {
         this.id = id;
-        this.type = type;
+        this.name = name;
         this.price = price;
     }
 
@@ -32,12 +32,12 @@ public class Pizza {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setName(String type) {
+        this.name = type;
     }
 
     public double getPrice() {
@@ -50,6 +50,6 @@ public class Pizza {
   
     @Override
     public String toString() {
-        return type;
+        return name;
     }
 }
