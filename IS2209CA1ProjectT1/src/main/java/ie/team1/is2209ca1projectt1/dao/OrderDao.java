@@ -56,7 +56,7 @@ public class OrderDao {
             while (rs.next()) {
 
                 int id = rs.getInt("ID");
- String name = rs.getString("TYPE");
+                String name = rs.getString("TYPE");
                 double price = rs.getInt("PRICE");
               
 
