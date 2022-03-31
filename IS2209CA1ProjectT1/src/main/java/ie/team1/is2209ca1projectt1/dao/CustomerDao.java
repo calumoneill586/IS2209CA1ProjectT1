@@ -54,7 +54,7 @@ public class CustomerDao {
    
     //Insert new customer into database
    public Customer insertRecord(Customer customerToAdd) throws SQLException {  
-       
+       try { 
            Connection conn = DriverManager.getConnection(database_url, database_username, database_password)
                ;
                     
@@ -73,7 +73,11 @@ public class CustomerDao {
             System.out.println(preparedStatement);
                        
             preparedStatement.executeUpdate();
-       
+        
+     
+       } catch (SQLException ex) {
+           ex.printStackTrace();
+        } 
         return customerToAdd;
    }
     
