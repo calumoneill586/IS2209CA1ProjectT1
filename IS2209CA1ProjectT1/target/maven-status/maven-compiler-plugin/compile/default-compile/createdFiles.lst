@@ -1,27 +1,19 @@
-ie\team1\is2209ca1projectt1\dao\LoginDao.class
 ie\team1\is2209ca1projectt1\OrderSummaryController.class
-<<<<<<< HEAD
-ie\team1\is2209ca1projectt1\App.class
-ie\team1\is2209ca1projectt1\dao\Order.class
-ie\team1\is2209ca1projectt1\PrimaryController.class
-ie\team1\is2209ca1projectt1\dao\OrderDao.class
-ie\team1\is2209ca1projectt1\BrowseMenuController.class
-ie\team1\is2209ca1projectt1\dao\Login.class
-ie\team1\is2209ca1projectt1\PastOrdersController.class
-=======
 ie\team1\is2209ca1projectt1\PrimaryController.class
 ie\team1\is2209ca1projectt1\dao\OrderDao.class
 ie\team1\is2209ca1projectt1\PizzaManagementWindow2Controller.class
->>>>>>> d3fb7323c7ce6663b74e6b568e84fe166d691212
+ie\team1\is2209ca1projectt1\dao\Login.class
 ie\team1\is2209ca1projectt1\ConfirmOrderController.class
 ie\team1\is2209ca1projectt1\dao\PizzaDao.class
 ie\team1\is2209ca1projectt1\RegisterDetailsController.class
 ie\team1\is2209ca1projectt1\dao\Pizza.class
 ie\team1\is2209ca1projectt1\LoginController.class
 ie\team1\is2209ca1projectt1\StoreOrderManagementController.class
+ie\team1\is2209ca1projectt1\dao\LoginDao.class
 ie\team1\is2209ca1projectt1\App.class
 ie\team1\is2209ca1projectt1\StorePizzaManagemntController.class
 ie\team1\is2209ca1projectt1\dao\Order.class
 ie\team1\is2209ca1projectt1\BrowseMenuController.class
 ie\team1\is2209ca1projectt1\PastOrdersController.class
 ie\team1\is2209ca1projectt1\HelpController.class
+ie\team1\is2209ca1projectt1\dao\ObservableArrayList.class

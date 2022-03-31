@@ -18,6 +18,8 @@ import java.sql.*;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 public class OrderDao {
@@ -38,10 +40,12 @@ public class OrderDao {
         
     }
     
-    public List<Order> getOrders() {
+    public ObservableList<Order> getOrders() {
 
-        List<Order>orders = new ArrayList<Order>();
-        
+      // List<Order>orders = new ArrayList<Order>();
+            ObservableList<Order>orders =  FXCollections.observableArrayList();
+          //  orders.add(new Order(1,2, "sds", "uhg", "hghg"));
+            
         try {
 
             Statement stmt = conn.createStatement();
@@ -52,7 +56,7 @@ public class OrderDao {
 
             while (rs.next()) {
 
-                int id = rs.getInt("ID");
+                int orderid = rs.getInt("ID");
                 int customerid = rs.getInt("CUSTOMERID");
                 
                 String paymethod = rs.getString("PAYMETHOD");
@@ -61,7 +65,7 @@ public class OrderDao {
                 
                 //double price = rs.getInt("PRICE");
                 
-                Order order = new Order(id, customerid, paymethod, getmethod, request);
+                Order order = new Order( orderid, customerid, paymethod, getmethod, request);
                 orders.add(order);
                  }
             
