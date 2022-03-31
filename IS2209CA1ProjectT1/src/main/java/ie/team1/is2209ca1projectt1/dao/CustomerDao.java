@@ -1,6 +1,7 @@
 
 package ie.team1.is2209ca1projectt1.dao;
 import java.sql.*;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,7 +13,7 @@ public class CustomerDao {
     private static final String database_username = "username";
     private static final String database_password = "password";
     private static final String select_query = "SELECT * FROM customer WHERE username = ? and password = ?";
-    private static final String insert_query = "INSERT INTO customer (name, address1,address2,ccNumber,phoneNumber,allergies,username,password)";
+    private static final String insert_query = "INSERT INTO customer (name, addressline1,addressline2,creditcardno,phoneno,allergies,username,password)";
     
     private Connection conn;
     private String connectionString = "jdbc:derby://localhost:1527/pizzadatabase";
@@ -60,7 +61,7 @@ public class CustomerDao {
                     
             String sql = "INSERT INTO customer (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) VALUES('" + customerToAdd.getName() + "', " + customerToAdd.getAddressLine1() + "', " + customerToAdd.getAddressLine2() + "', " + customerToAdd.getCreditCardNo() + "', " + customerToAdd.getPhoneNo() + customerToAdd.getAllergies() + customerToAdd.getUsername() + "', " + customerToAdd.getPassword () + ")" ;   
                
-            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            PreparedStatement preparedStatement = conn.prepareStatement(insert_query);
             preparedStatement.setString(1, "name");
             preparedStatement.setString(2, "addressline1");
             preparedStatement.setString(3, "addressline2");
@@ -72,8 +73,12 @@ public class CustomerDao {
 
             System.out.println(preparedStatement);
                        
-            preparedStatement.executeUpdate();
-        
+            int x = preparedStatement.executeUpdate();
+            if (x > 0)           
+                System.out.println("Successfully Inserted");           
+            else           
+                System.out.println("Insert Failed");
+             
      
        } catch (SQLException ex) {
            ex.printStackTrace();
