@@ -3,8 +3,13 @@ ie\team1\is2209ca1projectt1\PrimaryController.class
 ie\team1\is2209ca1projectt1\dao\IngredientDao.class
 ie\team1\is2209ca1projectt1\dao\OrderDao.class
 ie\team1\is2209ca1projectt1\PizzaManagementWindow2Controller.class
+<<<<<<< HEAD
 ie\team1\is2209ca1projectt1\dao\Login.class
+=======
+ie\team1\is2209ca1projectt1\dao\Customer.class
+>>>>>>> 1aa8869bb02e3f7998613fd367139af494cd247c
 ie\team1\is2209ca1projectt1\ConfirmOrderController.class
+ie\team1\is2209ca1projectt1\dao\CustomerDao.class
 ie\team1\is2209ca1projectt1\dao\PizzaDao.class
 ie\team1\is2209ca1projectt1\RegisterDetailsController.class
 ie\team1\is2209ca1projectt1\dao\Pizza.class

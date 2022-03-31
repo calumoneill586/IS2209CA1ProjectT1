@@ -64,18 +64,7 @@ public class BrowseMenuController implements Initializable {
     
     PizzaDao pizzaDao = new PizzaDao();
     IngredientDao ingredientDao = new IngredientDao();
-    
-    @FXML
-    private void handleClear() throws IOException {
-    
-    
-    
-    }
-    
-    //IngredientDao pizzaDao = new IngredientDao();
-    
-    //private static final Logger logger = LoggerFactory.getLogger(BrowseMenuController.class);
-    
+       
     @Override
     public void initialize(URL url, ResourceBundle rb) {     
         List<Pizza> pizzas = pizzaDao.getPizzas();

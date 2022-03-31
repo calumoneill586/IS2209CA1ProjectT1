@@ -40,7 +40,7 @@ public class OrderDao {
     
     public List<Order> getOrders() {
 
-        List<Order>orders = new ArrayList<Order>();
+        List<Order> orders = new ArrayList<Order>();
         
         try {
 
@@ -56,6 +56,10 @@ public class OrderDao {
             while (rs.next()) {
 
                 int id = rs.getInt("ID");
+                String name = rs.getString("TYPE");
+                double price = rs.getInt("PRICE");
+              
+
                 int customerid = rs.getInt("CUSTOMERID");
                 
                 String paymethod = rs.getString("PAYMETHOD");
@@ -66,6 +70,7 @@ public class OrderDao {
                 
                 Order order = new Order(id, customerid, paymethod, getmethod, request);
                 orders.add(order);
+
                  }
             
        
