@@ -26,10 +26,15 @@ import javafx.scene.control.TextArea;
 
 import ie.team1.is2209ca1projectt1.dao.*;
 import java.io.IOException;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.stage.Stage;
+
 
 /**
  *
@@ -41,28 +46,77 @@ public class BrowseMenuController implements Initializable {
     private Button btnNext;
     @FXML
     private TextArea txtBasket;
-        
+    
+    @FXML
+    private Spinner spnQuantity;
+    
+    SpinnerValueFactory<Integer> quantityValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,10,1);
+    //this.spnQuantity.setValueFactory(quantityValueFactory);
+    
+    
+    
     //These items are fot listview and textarea
     @FXML 
-    private ListView listView;
+    private ListView lstPizza;
     
-    PizzaDao dao = new PizzaDao();
+    @FXML 
+    private ListView lstIngredient;
     
-    //private static final Logger logger = LoggerFactory.getLogger(BrowseMenuController.class);
-    
+    PizzaDao pizzaDao = new PizzaDao();
+    IngredientDao ingredientDao = new IngredientDao();
+       
     @Override
     public void initialize(URL url, ResourceBundle rb) {     
-        List<Pizza> pizzas = dao.getPizzas();
+        List<Pizza> pizzas = pizzaDao.getPizzas();
         
-        listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        lstPizza.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        lstPizza.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, selectedItem) -> {
+            Pizza selectedPizza = (Pizza)selectedItem;
+            lstIngredient.getItems().clear();
+            
+            List<Ingredient> ingredients = pizzaDao.getIngredientsForPizza(selectedPizza.getId());
+            
+            for (Ingredient i : ingredients) {
+                lstIngredient.getItems().add(i.getName());
+                
+                
+                
+            }
+        });
+                
         
         for(Pizza pizza : pizzas) {
-            listView.getItems().add(pizza);
+            lstPizza.getItems().add(pizza);
         }
-    } 
+        
+        
+       /*List<Ingredient> ingredients = ingredientDao.getIngredients();
+        
+        lstIngredient.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        
+        for(Ingredient ingredient : ingredients) {
+            lstIngredient.getItems().add(ingredient);
+        }*/
+    }
+    
+    public void onStateChanged() {
+        SpinnerValueFactory<Integer> quantityValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10);
+        this.spnQuantity.setValueFactory(quantityValueFactory);
+    }
+    
+    
+    
+    
+    
+    
+    
     public void onClick() {
         System.out.println("This button is working");
-        String txtBasketString = "";
+        
+        
+        
+        
+        /*String txtBasketString = "";
         
         ObservableList listOfItems = listView.getSelectionModel().getSelectedItems();
         
@@ -71,7 +125,7 @@ public class BrowseMenuController implements Initializable {
             txtBasketString += String.format("%s%n", (String) item);
         }
         
-        this.txtBasket.setText(txtBasketString);
+        this.txtBasket.setText(txtBasketString)*/
     }
     
     
@@ -82,6 +136,8 @@ public class BrowseMenuController implements Initializable {
     Stage addBasket = (Stage) btnNext.getScene().getWindow();
     addBasket.setScene(new Scene(root, 562,508));
     }
+
+    
         
     }
 

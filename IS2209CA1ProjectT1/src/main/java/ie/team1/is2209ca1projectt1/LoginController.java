@@ -1,7 +1,7 @@
 
 package ie.team1.is2209ca1projectt1;
 
-import ie.team1.is2209ca1projectt1.dao.LoginDao;
+import ie.team1.is2209ca1projectt1.dao.CustomerDao;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -54,7 +54,7 @@ public class LoginController implements Initializable {
         String username = txtUsername.getText();
         String password = txtPassword.getText();
         
-        LoginDao loginDao = new LoginDao();
+        CustomerDao loginDao = new CustomerDao();
         boolean flag = loginDao.validate(username, password); //validate will go into DAO
         
            if (!flag) {
