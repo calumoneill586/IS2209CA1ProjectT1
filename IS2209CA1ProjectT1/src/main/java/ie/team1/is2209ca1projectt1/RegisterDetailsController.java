@@ -32,6 +32,8 @@ public class RegisterDetailsController implements Initializable {
     
     @FXML
     public ComboBox cboAllergies; 
+         
+   CustomerDao customerDao = new CustomerDao();
     
    
     //Back button 
@@ -90,18 +92,6 @@ public class RegisterDetailsController implements Initializable {
             return;
         }
         
-        String name = txtName.getText();
-        String address1 = txtAddress1.getText();
-        String address2 = txtAddress2.getText();  
-        String ccNumber = txtCCNumber.getText();
-        String phoneNumber = txtPhoneNumber.getText();
-        String allergies = txtAllergies.getText();
-        String username = txtUsername.getText();
-        String password = txtPassword.getText();
-        
-        CustomerDao customerDao = new CustomerDao();
-        customerDao.insertRecord(name, address1,address2,ccNumber,phoneNumber,allergies,username,password);
-        
         showAlert(Alert.AlertType.CONFIRMATION,owner, "Account Created!", "Welcome " + txtName.getText());
            
        //Moving to next scene 
@@ -109,6 +99,18 @@ public class RegisterDetailsController implements Initializable {
 
         Stage order = (Stage) btnCreateAccount.getScene().getWindow();
         order.setScene(new Scene(root, 713,400));
+        
+        String name = txtName.getText();
+        String addressline1 = txtAddress1.getText();
+        String addressline2 = txtAddress2.getText();  
+        String creditcardno = txtCCNumber.getText();
+        String phoneno = txtPhoneNumber.getText();
+        String allergies = txtAllergies.getText();
+        String username = txtUsername.getText();
+        String password = txtPassword.getText();
+        
+        
+        
     
      }
     
