@@ -31,7 +31,10 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.stage.Stage;
+
 
 /**
  *
@@ -43,7 +46,15 @@ public class BrowseMenuController implements Initializable {
     private Button btnNext;
     @FXML
     private TextArea txtBasket;
-        
+    
+    @FXML
+    private Spinner spnQuantity;
+    
+    SpinnerValueFactory<Integer> quantityValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,10,1);
+    //this.spnQuantity.setValueFactory(quantityValueFactory);
+    
+    
+    
     //These items are fot listview and textarea
     @FXML 
     private ListView lstPizza;
@@ -78,7 +89,9 @@ public class BrowseMenuController implements Initializable {
             
             for (Ingredient i : ingredients) {
                 lstIngredient.getItems().add(i.getName());
-                //System.out.println(i.getName());
+                
+                
+                
             }
         });
                 
@@ -86,6 +99,7 @@ public class BrowseMenuController implements Initializable {
         for(Pizza pizza : pizzas) {
             lstPizza.getItems().add(pizza);
         }
+        
         
        /*List<Ingredient> ingredients = ingredientDao.getIngredients();
         
@@ -95,6 +109,16 @@ public class BrowseMenuController implements Initializable {
             lstIngredient.getItems().add(ingredient);
         }*/
     }
+    
+    public void onStateChanged() {
+        SpinnerValueFactory<Integer> quantityValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10);
+        this.spnQuantity.setValueFactory(quantityValueFactory);
+    }
+    
+    
+    
+    
+    
     
     
     public void onClick() {
@@ -123,6 +147,8 @@ public class BrowseMenuController implements Initializable {
     Stage addBasket = (Stage) btnNext.getScene().getWindow();
     addBasket.setScene(new Scene(root, 562,508));
     }
+
+    
         
     }
 
