@@ -16,7 +16,7 @@
             xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.test.BrowseMenuController">
 -->
 
-<AnchorPane id="AnchorPane" prefHeight="298.0" prefWidth="602.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="299.0" prefWidth="602.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.LoginController">
    <children>
       <Button fx:id="btnLogIn" layoutX="117.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#handleLogIn" prefHeight="25.0" prefWidth="58.0" text="Log In" />
       <TextField fx:id="txtUsername" layoutX="71.0" layoutY="131.0" promptText="Username" />
@@ -37,19 +37,19 @@
          </font>
       </Hyperlink>
       <Button fx:id="btnCreateAccount" layoutX="206.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleClickHere" opacity="0.01" prefHeight="25.0" prefWidth="27.0" />
-      <ImageView fitHeight="306.0" fitWidth="304.0" layoutX="298.0" pickOnBounds="true">
+      <ImageView fitHeight="307.0" fitWidth="304.0" layoutX="298.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../../../../../pizza1.jpg" />
+            <Image url="@../Photos/pizza1.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="82.0" fitWidth="149.0" layoutX="86.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../Logo.JPG" />
+            <Image url="@../Photos/Logo.JPG" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="311.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="304.0" layoutX="287.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="-2.0" layoutY="295.0" stroke="BLACK" strokeType="INSIDE" width="304.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="5.0" stroke="BLACK" strokeType="INSIDE" width="294.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="311.0" layoutX="592.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="-2.0" layoutY="298.0" stroke="BLACK" strokeType="INSIDE" width="603.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="5.0" stroke="BLACK" strokeType="INSIDE" width="594.0" />
    </children>
 </AnchorPane>
