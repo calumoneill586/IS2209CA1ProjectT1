@@ -1,7 +1,6 @@
 ie\team1\is2209ca1projectt1\ManagementMenuController.class
 ie\team1\is2209ca1projectt1\OrderSummaryController.class
 ie\team1\is2209ca1projectt1\StaffLoginController.class
-ie\team1\is2209ca1projectt1\PrimaryController.class
 ie\team1\is2209ca1projectt1\dao\IngredientDao.class
 ie\team1\is2209ca1projectt1\dao\OrderDao.class
 ie\team1\is2209ca1projectt1\PizzaManagementWindow2Controller.class

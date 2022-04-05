@@ -21,7 +21,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="btnStaffLogIn" layoutX="132.0" layoutY="203.0" mnemonicParsing="false" onMouseClicked="#handleLogIn" prefHeight="25.0" prefWidth="58.0" text="Log In" />
+      <Button fx:id="btnStaffLogIn" layoutX="132.0" layoutY="203.0" mnemonicParsing="false" onAction="#handleLogIn" onMouseClicked="#handleLogIn" prefHeight="25.0" prefWidth="58.0" text="Log In" />
       <PasswordField fx:id="txtStaffPassword" layoutX="91.0" layoutY="161.0" promptText="Password" />
       <Label layoutX="87.0" layoutY="141.0" text="Please enter the admin passcode:" textAlignment="CENTER">
          <font>
