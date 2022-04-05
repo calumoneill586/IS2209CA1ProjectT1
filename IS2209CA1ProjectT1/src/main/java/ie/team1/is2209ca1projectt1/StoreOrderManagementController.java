@@ -41,7 +41,7 @@ public class StoreOrderManagementController implements Initializable {
         @FXML
     private TableView<Order> tblViewManage;
         @FXML
-    private TableColumn<Order, Integer>orderid;  
+    private TableColumn<Order, String>orderid;  
         
         @FXML
     private TableColumn<Order, Integer>customerid;
@@ -69,17 +69,20 @@ public class StoreOrderManagementController implements Initializable {
         paymethod.setCellValueFactory(new PropertyValueFactory<Order, String>("paymethod"));
         getmethod.setCellValueFactory(new PropertyValueFactory<Order, String>("getmethod"));
        request.setCellValueFactory(new PropertyValueFactory<Order, String>("request"));
-       orderid.setCellValueFactory(new PropertyValueFactory<Order, Integer>("orderid"));
+       orderid.setCellValueFactory(new PropertyValueFactory<Order, String>("orderid"));
        customerid.setCellValueFactory(new PropertyValueFactory<Order, Integer>("customerid"));
-        
+     
+
         
 
 //ObservableList<> orders = FXCollections.observableArrayList();
         ObservableList<Order> orders = OrderDao.getOrders();
-        
+        // tblViewManage.setItems(orders);
         tblViewManage.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         
         for(Order order : orders) {
+            
+            System.out.println(order);
             tblViewManage.getItems().add(order);
             
             
