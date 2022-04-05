@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller=".StartPageController">
+   <children>
+      <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="9.0" layoutY="11.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Photos/starterbackground.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="319.0" layoutX="-2.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="319.0" layoutX="306.0" layoutY="-8.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="-1.0" layoutY="308.0" stroke="BLACK" strokeType="INSIDE" width="317.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="5.0" stroke="BLACK" strokeType="INSIDE" width="307.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fefeff" height="200.0" layoutX="59.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <ImageView fitHeight="88.0" fitWidth="137.0" layoutX="91.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Photos/Logo.JPG" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnStart" layoutX="105.0" layoutY="181.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="108.0" text="Get Started!" textAlignment="CENTER" />
+      <Hyperlink fx:id="btnStaffLogin" layoutX="197.0" layoutY="236.0" onAction="#handleClickHere" onMouseClicked="#handleClickHere" prefHeight="25.0" prefWidth="62.0" text="Staff login">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Hyperlink>
+      <Button fx:id="btnStaffLogin" layoutX="191.0" layoutY="236.0" mnemonicParsing="false" onAction="#handleClickHere" opacity="0.01" prefHeight="25.0" prefWidth="73.0" />
+   </children>
+</AnchorPane>
