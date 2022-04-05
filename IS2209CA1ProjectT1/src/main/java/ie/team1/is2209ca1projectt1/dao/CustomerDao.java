@@ -25,9 +25,9 @@ public class CustomerDao {
             
            
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(PizzaDao.class.getName()).log(Level.SEVERE, "can't load driver", ex);
+            Logger.getLogger(CustomerDao.class.getName()).log(Level.SEVERE, "can't load driver", ex);
         }   catch (SQLException ex) {
-                Logger.getLogger(PizzaDao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(CustomerDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         
     }

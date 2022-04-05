@@ -9,43 +9,40 @@ import ie.team1.is2209ca1projectt1.dao.Ingredient;
 import ie.team1.is2209ca1projectt1.dao.IngredientDao;
 import ie.team1.is2209ca1projectt1.dao.Pizza;
 import ie.team1.is2209ca1projectt1.dao.PizzaDao;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.stage.Stage;
 
-/**
- * FXML Controller class
-
- * @author Daram
- */
-
-
-    //@FXML
-   // private TextArea txtBasket;
-        
-    //These items are fot listview and textarea
-    //@FXML 
-    //private ListView listView;
 public class StorePizzaManagemntController implements Initializable {
     
      @FXML
-    private Button btnAddPizza, btnDeletePizza, btnAddingredient, btnRemoveIngredient;
+    private Button btnAddPizza, btnDeletePizza, btnAddingredient, btnRemoveIngredient, btnBack;
      
       @FXML
     private ListView lstPizza, lstIngredients;
       
        PizzaDao dao = new PizzaDao();
-       IngredientDao dao1 = new IngredientDao();
+  //     IngredientDao dao1 = new IngredientDao();
      
-
-    /**
-     * Initializes the controller class.
-     */
+ @FXML 
+    public void onBack() throws IOException {
+    Parent root = FXMLLoader.load(getClass().getResource("ManagementMenu.fxml"));
+    
+    Stage onBack = (Stage) btnBack.getScene().getWindow();
+    onBack.setScene(new Scene(root, 602,299));
+    }
+       
+       
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         

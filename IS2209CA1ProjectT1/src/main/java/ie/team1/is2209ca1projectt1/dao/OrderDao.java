@@ -48,10 +48,12 @@ public class OrderDao {
             
  
           //  orders.add(new Order(1,2, "sds", "uhg", "hghg"));
+
             
 
        // List<Order> orders = new ArrayList<Order>();
         
+
 
         try {
 
@@ -74,6 +76,10 @@ public class OrderDao {
 
 
                 int customerid = Integer.parseInt(rs.getString("CUSTOMERID"));
+
+
+              
+
                 
                 String paymethod = rs.getString("PAYMETHOD");
                 String getmethod = rs.getString("GETMETHOD");

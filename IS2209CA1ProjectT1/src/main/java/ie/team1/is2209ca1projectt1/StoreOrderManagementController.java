@@ -7,21 +7,21 @@ package ie.team1.is2209ca1projectt1;
 
 import ie.team1.is2209ca1projectt1.dao.Order;
 import ie.team1.is2209ca1projectt1.dao.OrderDao;
-import ie.team1.is2209ca1projectt1.dao.Pizza;
-import ie.team1.is2209ca1projectt1.dao.PizzaDao;
+import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -60,10 +60,20 @@ public class StoreOrderManagementController implements Initializable {
       
       
        OrderDao OrderDao = new OrderDao();
+    
+       
+    @FXML 
+    public void onBack() throws IOException {
+    Parent root = FXMLLoader.load(getClass().getResource("ManagementMenu.fxml"));
+    
+    Stage onBack = (Stage) btnBack.getScene().getWindow();
+    onBack.setScene(new Scene(root, 602,299));
+    }
      
-    /**
-     * Initializes the controller class.
-     */
+       
+       
+       
+       
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         paymethod.setCellValueFactory(new PropertyValueFactory<Order, String>("paymethod"));
@@ -87,11 +97,9 @@ public class StoreOrderManagementController implements Initializable {
             
             
             
-        // TODO
     }    
     
 }
 }
 
 
-////
