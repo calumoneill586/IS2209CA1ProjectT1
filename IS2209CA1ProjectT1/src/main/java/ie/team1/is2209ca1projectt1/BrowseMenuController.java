@@ -78,6 +78,7 @@ public class BrowseMenuController implements Initializable {
             
             for (Ingredient i : ingredients) {
                 lstIngredient.getItems().add(i.getName());
+            
                 
                 
                 
@@ -88,19 +89,29 @@ public class BrowseMenuController implements Initializable {
         for(Pizza pizza : pizzas) {
             lstPizza.getItems().add(pizza);
         }
-        
-        
-       /*List<Ingredient> ingredients = ingredientDao.getIngredients();
-        
-        lstIngredient.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        
-        for(Ingredient ingredient : ingredients) {
-            lstIngredient.getItems().add(ingredient);
-        }*/
+       
     }
     
+    public void onClick() {
+        
+        
+        
+        
+        
+        System.out.println("This button is working");
+        
+        lstPizza.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, selectedItem) -> {
+        
+        //Pizza selectedPizza = (Pizza)selectedItem;
+        
+        System.out.println(selectedItem);
+        
+            
+    });
+    }           
+    
     public void onStateChanged() {
-        SpinnerValueFactory<Integer> quantityValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10);
+        
         this.spnQuantity.setValueFactory(quantityValueFactory);
     }
     
@@ -110,23 +121,7 @@ public class BrowseMenuController implements Initializable {
     
     
     
-    public void onClick() {
-        System.out.println("This button is working");
-        
-        
-        
-        
-        /*String txtBasketString = "";
-        
-        ObservableList listOfItems = listView.getSelectionModel().getSelectedItems();
-        
-        for (Object item : listOfItems)
-        {
-            txtBasketString += String.format("%s%n", (String) item);
-        }
-        
-        this.txtBasket.setText(txtBasketString)*/
-    }
+    
     
     
 
