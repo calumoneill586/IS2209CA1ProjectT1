@@ -21,7 +21,7 @@ public class Order {
         this.request = request;
     }
 
-    public int getId() {
+    public int getId () {
         return orderid;
     }
 
@@ -62,6 +62,22 @@ public class Order {
         this.request = request;
     }
 
+    public int getOrderid() {
+        return orderid;
+    }
+
+    public void setOrderid(int orderid) {
+        this.orderid = orderid;
+    }
+
+   public int getCustomerid() {
+        return customerid;
+    }
+
+    public void setCustomerid(int customerid) {
+        this.customerid = customerid;
+    }
+
    
         
         
@@ -69,16 +85,22 @@ public class Order {
     
    
   
-  // @Override
+   //@Override
     //public String toString() {
-     //return this.paymethod +" "+ this.getmethod +" "+ this.request;
+     //return this.orderid;
         
         
        
-       // }
+        
      
  
-        }
+      //  }
+
+    @Override
+    public String toString() {
+        return "Order{" + "orderid=" + orderid + ", customerid=" + customerid + ", paymethod=" + paymethod + ", getmethod=" + getmethod + ", request=" + request + '}';
+    }
+}
         
     
    

@@ -38,9 +38,18 @@ public class OrderDao {
     
     public ObservableList<Order> getOrders() {
 
+
       // List<Order>orders = new ArrayList<Order>();
             ObservableList<Order>orders =  FXCollections.observableArrayList();
+            
+ 
           //  orders.add(new Order(1,2, "sds", "uhg", "hghg"));
+
+            
+
+       // List<Order> orders = new ArrayList<Order>();
+        
+
 
         try {
 
@@ -51,9 +60,17 @@ public class OrderDao {
             while (rs.next()) {
 
 
-                int orderid = rs.getInt("ID");
+                int orderid = Integer.parseInt(rs.getString("ID"));
 
-                int customerid = rs.getInt("CUSTOMERID");
+               
+              
+
+
+                int customerid = Integer.parseInt(rs.getString("CUSTOMERID"));
+
+
+              
+
                 
                 String paymethod = rs.getString("PAYMETHOD");
                 String getmethod = rs.getString("GETMETHOD");

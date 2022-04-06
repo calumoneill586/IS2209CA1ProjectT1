@@ -5,6 +5,8 @@ package ie.team1.is2209ca1projectt1;
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 
+import ie.team1.is2209ca1projectt1.dao.Ingredient;
+import ie.team1.is2209ca1projectt1.dao.IngredientDao;
 import ie.team1.is2209ca1projectt1.dao.Pizza;
 import ie.team1.is2209ca1projectt1.dao.PizzaDao;
 import java.io.IOException;
@@ -30,6 +32,7 @@ public class StorePizzaManagemntController implements Initializable {
     private ListView lstPizza, lstIngredients;
       
        PizzaDao dao = new PizzaDao();
+  //     IngredientDao dao1 = new IngredientDao();
      
  @FXML 
     public void onBack() throws IOException {
@@ -49,8 +52,19 @@ public class StorePizzaManagemntController implements Initializable {
         
         for(Pizza pizza : pizzas) {
             lstPizza.getItems().add(pizza);
+            
+            
+            
+            
+       // List<Ingredient> ingredients = dao1.getIngredients();
+        
+        //lstIngredients.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        
+        //for(Ingredient ingredient : ingredients) {
+          //  lstIngredients.getItems().add(ingredient);
         // TODO
-    }    
+   // }    
     
+}
 }
 }
