@@ -5,6 +5,8 @@
  */
 package ie.team1.is2209ca1projectt1.dao;
 
+import java.util.logging.Logger;
+
 /**
  *
  * @author admin
@@ -12,6 +14,8 @@ package ie.team1.is2209ca1projectt1.dao;
 public class Ingredient {
     private int id;
     private String name;
+
+
     
     
     public Ingredient() {
@@ -43,5 +47,11 @@ public class Ingredient {
     public String toString() {
         return name;
     }
+
+  
+
+  
+  
+    
 }
 

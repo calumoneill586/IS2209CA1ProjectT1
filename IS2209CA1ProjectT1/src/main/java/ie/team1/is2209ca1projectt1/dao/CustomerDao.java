@@ -25,12 +25,11 @@ public class CustomerDao {
             
            
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(PizzaDao.class.getName()).log(Level.SEVERE, "can't load driver", ex);
+            Logger.getLogger(CustomerDao.class.getName()).log(Level.SEVERE, "can't load driver", ex);
         }   catch (SQLException ex) {
-                Logger.getLogger(PizzaDao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(CustomerDao.class.getName()).log(Level.SEVERE, null, ex);
             }
-        
-    }
+        }
     
     //Validation for Login Page with Select Query
     public boolean validate(String username, String password) throws SQLException {
@@ -85,8 +84,7 @@ public class CustomerDao {
         } 
         return customerToAdd;
    }
-    
-    
+   
     
     public static void printSQLException(SQLException ex) {
         for (Throwable e: ex) {

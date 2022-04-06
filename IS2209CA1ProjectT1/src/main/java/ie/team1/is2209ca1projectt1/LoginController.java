@@ -60,7 +60,7 @@ public class LoginController implements Initializable {
            if (!flag) {
             infoBox("Please enter correct Username and Password", null, "Failed");
         } else {
-            infoBox("Login Successful!", null, "Failed");
+            infoBox("Login Successful!", null, "Success");
             Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml"));
     
             Stage login = (Stage) btnLogIn.getScene().getWindow();
