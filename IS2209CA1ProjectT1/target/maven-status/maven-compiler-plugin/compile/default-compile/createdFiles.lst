@@ -5,10 +5,7 @@ ie\team1\is2209ca1projectt1\dao\IngredientDao.class
 ie\team1\is2209ca1projectt1\dao\OrderDao.class
 ie\team1\is2209ca1projectt1\PizzaManagementWindow2Controller.class
 ie\team1\is2209ca1projectt1\dao\Customer.class
-<<<<<<< HEAD
 ie\team1\is2209ca1projectt1\dao\OrderId.class
-=======
->>>>>>> de8eea6f3acb762d69a2ec6489d5294defb196bb
 ie\team1\is2209ca1projectt1\ConfirmOrderController.class
 ie\team1\is2209ca1projectt1\dao\CustomerDao.class
 ie\team1\is2209ca1projectt1\dao\PizzaDao.class
