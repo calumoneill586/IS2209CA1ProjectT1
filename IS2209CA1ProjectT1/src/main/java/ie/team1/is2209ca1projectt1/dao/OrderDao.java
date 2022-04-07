@@ -10,21 +10,17 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.sql.*;
-import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Label;
 
 
 public class OrderDao {
     private Connection conn;
     private String connectionString = "jdbc:derby://localhost:1527/pizzadatabase";
+    private Label lblNumber;
     
     public OrderDao() {
         
@@ -58,12 +54,7 @@ public class OrderDao {
         try {
 
             Statement stmt = conn.createStatement();
-
-
-
             String sql = "SELECT * FROM ORDERS";
-
-
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
@@ -101,7 +92,13 @@ public class OrderDao {
 
         return orders;
     }
-           
+    
+
+   
+    
+        
+
+
     
         
      //   return orderToAdd;

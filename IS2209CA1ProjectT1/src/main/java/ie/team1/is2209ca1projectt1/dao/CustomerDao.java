@@ -29,8 +29,7 @@ public class CustomerDao {
         }   catch (SQLException ex) {
                 Logger.getLogger(CustomerDao.class.getName()).log(Level.SEVERE, null, ex);
             }
-        
-    }
+        }
     
     //Validation for Login Page with Select Query
     public boolean validate(String username, String password) throws SQLException {
@@ -85,8 +84,7 @@ public class CustomerDao {
         } 
         return customerToAdd;
    }
-    
-    
+   
     
     public static void printSQLException(SQLException ex) {
         for (Throwable e: ex) {
