@@ -9,7 +9,7 @@
 <AnchorPane id="AnchorPane" prefHeight="299.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.StoreOrderManagementController">
    <children>
       <Button fx:id="btnBack" layoutX="94.0" layoutY="258.0" mnemonicParsing="false" onAction="#onBack" text="Back" />
-      <Button fx:id="btnAddOrder" layoutX="353.0" layoutY="258.0" mnemonicParsing="false" text="Add order" />
+      <Button fx:id="btnAddOrder" layoutX="342.0" layoutY="258.0" mnemonicParsing="false" onAction="#onNewClick" text="Add order" />
       <Button fx:id="btnDeleteOrder" layoutX="423.0" layoutY="258.0" mnemonicParsing="false" onAction="#onPizzaClick" text="Delete Order" />
       <Label layoutX="244.0" layoutY="22.0" text="Manage Store Orders" />
       <TableView fx:id="tblViewManage" layoutX="86.0" layoutY="52.0" prefHeight="196.0" prefWidth="429.0">

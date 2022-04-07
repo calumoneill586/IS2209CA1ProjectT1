@@ -109,6 +109,26 @@ public class StoreOrderManagementController implements Initializable {
    
    
     }
+     
+          @FXML
+     void onNewClick(ActionEvent event) throws IOException {
+  Parent root = FXMLLoader.load(getClass().getResource("RegisterDetails.fxml"));
+    
+    
+    Stage onNewClick = (Stage) btnAddOrder.getScene().getWindow();
+    onNewClick.setScene(new Scene(root, 713,400)) ;
+  
+
+
+// int selectedPizza = tblViewManage.getSelectionModel().getSelectedIndex();
+    //tblViewManage.getItems().remove(selectedPizza);
+   
+   
+    }
+     
+     
+     
+     
 }
     
 
