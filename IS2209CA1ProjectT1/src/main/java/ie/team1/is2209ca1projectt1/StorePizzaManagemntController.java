@@ -11,8 +11,11 @@ import ie.team1.is2209ca1projectt1.dao.Pizza;
 import ie.team1.is2209ca1projectt1.dao.PizzaDao;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.PreparedStatement;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.jar.Attributes.Name;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -32,7 +35,7 @@ public class StorePizzaManagemntController implements Initializable {
     private ListView lstPizza, lstIngredients;
       
        PizzaDao dao = new PizzaDao();
-  //     IngredientDao dao1 = new IngredientDao();
+       IngredientDao dao1 = new IngredientDao();
      
  @FXML 
     public void onBack() throws IOException {
@@ -54,6 +57,16 @@ public class StorePizzaManagemntController implements Initializable {
             lstPizza.getItems().add(pizza);
             
             
+        }
+            
+            List<Ingredient> ingredients = dao1.getIngredients();
+
+        lstIngredients.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+        for (Ingredient ingredient : ingredients) {
+            lstIngredients.getItems().add(ingredient);
+        }
+            
             
             
        // List<Ingredient> ingredients = dao1.getIngredients();
@@ -66,5 +79,30 @@ public class StorePizzaManagemntController implements Initializable {
    // }    
     
 }
+    
+    
+    
+      @FXML
+     void onPizzaClick(ActionEvent event) {
+ 
+    int selectedPizza = lstPizza.getSelectionModel().getSelectedIndex();
+   
+    
+
+
+//String sqlc = "DELETE FROM PIZZA WHERE NAME="+ Name;
+       
+    
+
+
+//    PreparedStatement stmt = conn.prepareStatment(sqlc);
+    //lstPizza.getItems().remove(selectedPizza);
+    //java.sql.Statement statement = conn.createStatement();
+            
+            
+ 
+    
+   
+    }
 }
-}
+
