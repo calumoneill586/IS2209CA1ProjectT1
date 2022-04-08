@@ -37,7 +37,7 @@ public class ConfirmOrderController implements Initializable {
     
     
     Stage homeConfirmation = (Stage) btnHome.getScene().getWindow();
-    homeConfirmation.setScene(new Scene(root, 765 , 415));
+    homeConfirmation.setScene(new Scene(root, 607 ,282));
     }
 
        

@@ -21,10 +21,11 @@ private Button btnHome;
         //Home Button
          @FXML
          private void handleHomeHelp() throws IOException {
-         Parent root = FXMLLoader.load(getClass().getResource("CustomerMenu.fxml"));   
+        Parent root = FXMLLoader.load(getClass().getResource("CustomerMenu.fxml")); 
     
-         Stage home = (Stage) btnHome.getScene().getWindow();
-         home.setScene(new Scene(root, 607 , 282));
+    
+        Stage homeConfirmation = (Stage) btnHome.getScene().getWindow();
+        homeConfirmation.setScene(new Scene(root, 607 ,282));
         }
       
     @Override

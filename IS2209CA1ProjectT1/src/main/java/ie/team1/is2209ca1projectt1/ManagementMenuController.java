@@ -35,7 +35,7 @@ public class ManagementMenuController implements Initializable {
     
     @FXML
     public void onManageStores() throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("PizzaManagementWindow3.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("PizzaManagementWindowmark3.fxml"));
     
     Stage manageStores = (Stage) btnManageStore.getScene().getWindow();
     manageStores.setScene(new Scene(root, 620,500));
