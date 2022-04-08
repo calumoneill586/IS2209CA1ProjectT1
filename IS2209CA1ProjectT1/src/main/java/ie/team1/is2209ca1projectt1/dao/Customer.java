@@ -37,7 +37,7 @@ public class Customer {
     String getAddressLine2() {
        return addressline2;
     }
-    public void setAddresLine2 (String addressline2) {
+    public void setAddressLine2 (String addressline2) {
         this.addressline2 = addressline2;
     }
    

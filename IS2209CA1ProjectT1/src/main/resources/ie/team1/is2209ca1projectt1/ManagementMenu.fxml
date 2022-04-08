@@ -1,13 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="299.0" prefWidth="602.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="ie.team1.is2209ca1projectt1.ManagementMenuController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="282.0" prefWidth="607.0" style="-fx-background-color: darkred;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.ManagementMenuController">
    <children>
-      <Button fx:id="btnStoreOrders" layoutX="48.0" layoutY="72.0" mnemonicParsing="false" onAction="#onManageOrders" prefHeight="153.0" prefWidth="153.0" text="Manage Store Orders" />
-      <Button fx:id="btnManagePizzas" layoutX="224.0" layoutY="73.0" mnemonicParsing="false" onAction="#onManagePizzas" prefHeight="153.0" prefWidth="153.0" text="Manage Pizzas" />
-      <Button fx:id="btnManageStore" layoutX="404.0" layoutY="73.0" mnemonicParsing="false" onAction="#onManageStores" prefHeight="153.0" prefWidth="153.0" text="Manage Store Affairs" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="246.0" layoutX="38.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" width="535.0" />
+      <ImageView fitHeight="153.0" fitWidth="153.0" layoutX="50.0" layoutY="90.0" opacity="0.39">
+         <image>
+            <Image url="@../Photos/management%20menu%20orders.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="87.0" layoutY="153.0" stroke="#e7e7e7" strokeType="OUTSIDE" strokeWidth="3.0" text="Manage Store Orders" textAlignment="CENTER" wrappingWidth="78.13671875">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="51.0" fitWidth="93.0" layoutX="259.0" layoutY="20.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Photos/Logo.JPG" />
+         </image>
+      </ImageView>
+      <Text layoutX="263.0" layoutY="162.0" stroke="#e7e7e7" strokeType="OUTSIDE" strokeWidth="3.0" text="Manage Pizzas" textAlignment="CENTER" wrappingWidth="78.13671875">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="443.0" layoutY="152.0" stroke="#e7e7e7" strokeType="OUTSIDE" strokeWidth="3.0" text="Manage Store Affairs" textAlignment="CENTER" wrappingWidth="78.13671875">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="263.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Portal" wrappingWidth="93.0">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="3.0" layoutY="271.0" stroke="BLACK" strokeType="INSIDE" width="601.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="282.0" layoutX="-4.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="282.0" layoutX="596.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="608.0" />
+      <ImageView fitHeight="153.0" fitWidth="153.0" layoutX="405.0" layoutY="91.0" opacity="0.38">
+         <image>
+            <Image url="@../Photos/management%20menu%20store.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="153.0" fitWidth="153.0" layoutX="226.0" layoutY="91.0" opacity="0.38">
+         <image>
+            <Image url="@../Photos/management%20menu%20pizzas.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnManageStore" layoutX="406.0" layoutY="90.0" mnemonicParsing="false" onAction="#onManageStores" opacity="0.0" prefHeight="153.0" prefWidth="153.0" text="Manage Store Affairs" />
+      <Button fx:id="btnManagePizzas" layoutX="226.0" layoutY="90.0" mnemonicParsing="false" onAction="#onManagePizzas" opacity="0.0" prefHeight="153.0" prefWidth="153.0" text="Manage Pizzas" />
+      <Button fx:id="btnStoreOrders" layoutX="50.0" layoutY="90.0" mnemonicParsing="false" onAction="#onManageOrders" opacity="0.0" prefHeight="153.0" prefWidth="153.0" text="Manage Store Orders" />
    </children>
 </AnchorPane>
