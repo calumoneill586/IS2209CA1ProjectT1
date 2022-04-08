@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="241.0" prefWidth="614.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.KnowledgeContentController">
+   <children>
+      <ImageView fitHeight="78.0" fitWidth="114.0" layoutX="495.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Photos/Logo.JPG" />
+         </image>
+      </ImageView>
+      <Label layoutX="24.0" layoutY="48.0" prefHeight="25.0" prefWidth="275.0" text="Ingredient Knowledge:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextArea editable="false" layoutX="24.0" layoutY="73.0" prefHeight="146.0" prefWidth="256.0" text="Ingredient:   Calories per 100g:   Allergens:    &#10;Pepperoni               494                  Dairy&#10;Ham&#9;&#9;               203                      -&#10;Pineapple                 50                      -&#10;Peppers                    40                      -&#10;Sweetcorn                86                      -&#10;Anchovies               210                     -&#10;Olives                      115                     - " />
+      <Label layoutX="317.0" layoutY="48.0" prefHeight="25.0" prefWidth="275.0" text="Pizza Knowledge:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextArea editable="false" layoutX="317.0" layoutY="73.0" prefHeight="146.0" prefWidth="256.0" text="Pizza:          Calories per 100g:   Allergens:    &#10;Pepperoni              3600            Dairy, Gluten&#10;Hawaiian                2640            Dairy, Gluten&#10;Margherita             2500            Dairy, Gluten&#10;Vegetariana            2400           Dairy, Gluten&#10;Seafood                  3000           Dairy, Gluten&#10;Anchovies               210                     -&#10;Olives                      115                     - " />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="-1.0" layoutY="236.0" stroke="BLACK" strokeType="INSIDE" width="614.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="236.0" layoutX="-4.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="247.0" layoutX="603.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="614.0" />
+      <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onNextClick" style="-fx-background-color: black;" text="Back" textFill="WHITE" />
+   </children>
+</AnchorPane>

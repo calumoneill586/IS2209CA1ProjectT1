@@ -37,7 +37,7 @@ import javafx.stage.Window;
 public class BrowseMenuController implements Initializable {
     
     @FXML
-    private Button btnNext;
+    private Button btnNext, btnKnowledge;
     @FXML
     private ListView lstBasket;
     
@@ -107,6 +107,13 @@ public class BrowseMenuController implements Initializable {
         itemToDelete = lstBasket.getSelectionModel().getSelectedItem().toString();
         lstBasket.getItems().remove(itemToDelete);
         
+    }
+    
+    public void onKnowledge() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("KnowledgeContent.fxml"));
+    
+        Stage addBasket = (Stage) btnNext.getScene().getWindow();
+        addBasket.setScene(new Scene(root, 551,560));
     }
     
     public void onClick() {
