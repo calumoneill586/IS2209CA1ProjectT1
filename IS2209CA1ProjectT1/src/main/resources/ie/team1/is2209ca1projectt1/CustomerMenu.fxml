@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="282.0" prefWidth="607.0" style="-fx-background-color: darkred;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller=".CustomerMenuController">
+<AnchorPane id="AnchorPane" prefHeight="282.0" prefWidth="607.0" style="-fx-background-color: darkred;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.CustomerMenuController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="7.0" layoutY="272.0" stroke="BLACK" strokeType="INSIDE" width="601.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="282.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
@@ -55,8 +55,8 @@
             <Font name="System Bold" size="19.0" />
          </font>
       </Text>
-      <Button fx:id="btnManageStore" layoutX="59.0" layoutY="103.0" mnemonicParsing="false" onAction="#onManageStores" opacity="0.0" prefHeight="144.0" prefWidth="153.0" text="Order Pizza" />
-      <Button fx:id="btnManageStore2" mnemonicParsing="false" onAction="#onManageStores" opacity="0.0" prefHeight="144.0" prefWidth="153.0" text="View Past Orders" />
-      <Button fx:id="btnManageStore1" layoutX="399.0" layoutY="103.0" mnemonicParsing="false" onAction="#onManageStores" opacity="0.0" prefHeight="144.0" prefWidth="153.0" text="Get Help" />
+      <Button fx:id="btnOrderPizza" layoutX="59.0" layoutY="103.0" mnemonicParsing="false" onAction="#onOrderPizza" opacity="0.0" prefHeight="144.0" prefWidth="153.0" text="Order Pizza" />
+      <Button fx:id="btnPastOrders" layoutX="231.0" layoutY="104.0" mnemonicParsing="false" onAction="#onViewPastOrders" opacity="0.0" prefHeight="144.0" prefWidth="153.0" text="View Past Orders" />
+      <Button fx:id="btnHelp" layoutX="399.0" layoutY="103.0" mnemonicParsing="false" onAction="#onHelp" opacity="0.0" prefHeight="144.0" prefWidth="153.0" text="Get Help" />
    </children>
 </AnchorPane>

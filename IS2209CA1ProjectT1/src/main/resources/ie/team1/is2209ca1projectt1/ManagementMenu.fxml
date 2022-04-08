@@ -50,13 +50,13 @@
             <Image url="@../Photos/management%20menu%20store.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btnManageStore" layoutX="406.0" layoutY="90.0" mnemonicParsing="false" onAction="#onManageStores" opacity="0.0" prefHeight="153.0" prefWidth="153.0" text="Manage Store Affairs" />
-      <Button fx:id="btnManagePizzas" layoutX="226.0" layoutY="90.0" mnemonicParsing="false" onAction="#onManagePizzas" opacity="0.0" prefHeight="153.0" prefWidth="153.0" text="Manage Pizzas" />
-      <Button fx:id="btnStoreOrders" layoutX="50.0" layoutY="90.0" mnemonicParsing="false" onAction="#onManageOrders" opacity="0.0" prefHeight="153.0" prefWidth="153.0" text="Manage Store Orders" />
       <ImageView fitHeight="153.0" fitWidth="153.0" layoutX="226.0" layoutY="91.0" opacity="0.38">
          <image>
             <Image url="@../Photos/management%20menu%20pizzas.jpg" />
          </image>
       </ImageView>
+      <Button fx:id="btnManageStore" layoutX="406.0" layoutY="90.0" mnemonicParsing="false" onAction="#onManageStores" opacity="0.0" prefHeight="153.0" prefWidth="153.0" text="Manage Store Affairs" />
+      <Button fx:id="btnManagePizzas" layoutX="226.0" layoutY="90.0" mnemonicParsing="false" onAction="#onManagePizzas" opacity="0.0" prefHeight="153.0" prefWidth="153.0" text="Manage Pizzas" />
+      <Button fx:id="btnStoreOrders" layoutX="50.0" layoutY="90.0" mnemonicParsing="false" onAction="#onManageOrders" opacity="0.0" prefHeight="153.0" prefWidth="153.0" text="Manage Store Orders" />
    </children>
 </AnchorPane>
