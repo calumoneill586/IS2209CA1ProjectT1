@@ -9,12 +9,8 @@ import java.util.logging.Logger;
 //Code adapted from: https://www.javaguides.net/2019/07/login-form-using-javafx-with-mysql-database.html 
 
 public class CustomerDao {
-    private static final String database_url = "jdbc:derby://localhost:1527/pizzadatabase";
-    private static final String database_username = "username";
-    private static final String database_password = "password";
     private static final String select_query = "SELECT * FROM customer WHERE username = ? and password = ?";
-    private static final String insert_query = "INSERT INTO customer (name,addressline1,addressline2,creditcardno,phoneno,allergies,username,password)";
-
+    private static final String insert_query = "INSERT INTO customer (name,addressline1,addressline2,creditcardno,phoneno,allergies,username,password) VALUES(?,?,?,?,?,?,?,?)";
     private Connection conn;
     private String connectionString = "jdbc:derby://localhost:1527/pizzadatabase";
     
@@ -54,16 +50,16 @@ public class CustomerDao {
    //Insert new customer into database
    public static void insertRecord(String name, String addressline1, String addressline2, String creditcardno, String phoneno, String allergies, String username, String password) throws SQLException {         
        try (Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/pizzadatabase", "username", "password");
-           
             PreparedStatement preparedStatement = conn.prepareStatement(insert_query)) {
-            preparedStatement.setString(1, "name");
-            preparedStatement.setString(2, "addressline1");
-            preparedStatement.setString(3, "addressline2");
-            preparedStatement.setString(4, "creditcardno");
-            preparedStatement.setString(5, "phoneno");
-            preparedStatement.setString(6, "allergies");  
-            preparedStatement.setString(7, "username");
-            preparedStatement.setString(8, "password");
+          
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, addressline1);
+            preparedStatement.setString(3, addressline2);
+            preparedStatement.setString(4, creditcardno);
+            preparedStatement.setString(5, phoneno);
+            preparedStatement.setString(6, allergies);  
+            preparedStatement.setString(7, username);
+            preparedStatement.setString(8, password);
             
             int row = preparedStatement.executeUpdate();
 

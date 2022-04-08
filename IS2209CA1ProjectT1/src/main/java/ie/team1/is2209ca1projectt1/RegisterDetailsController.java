@@ -1,4 +1,5 @@
 package ie.team1.is2209ca1projectt1;
+import static ie.team1.is2209ca1projectt1.LoginController.infoBox;
 import ie.team1.is2209ca1projectt1.dao.CustomerDao;
 import java.io.IOException;
 import java.net.URL;
@@ -89,8 +90,8 @@ public class RegisterDetailsController implements Initializable {
             showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
                 "Please enter a password");
             return;
-        }
-        
+        } else {
+       
         String name = txtName.getText();
         String addressline1 = txtAddress1.getText();
         String addressline2 = txtAddress2.getText();
@@ -101,7 +102,16 @@ public class RegisterDetailsController implements Initializable {
         String password = txtPassword.getText();
                 
         CustomerDao.insertRecord(name, addressline1, addressline2, creditcardno, phoneno, allergies, username, password);          
-     }
+
+        //Moving to next Scene
+        
+        infoBox("Account Creation Successful!", null, "Success");
+        Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml"));
+    
+        Stage registerDetails = (Stage) btnCreateAccount.getScene().getWindow();
+        registerDetails.setScene(new Scene(root, 713,400));
+            }      
+        }
     
 
     private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
