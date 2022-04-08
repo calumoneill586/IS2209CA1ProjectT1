@@ -6,17 +6,9 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
-<<<<<<< HEAD
-
-=======
->>>>>>> 33b59f2d730367ecfe9c90bd04bcff83d42ac7d3
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<<<<<<< HEAD
-
-=======
->>>>>>> 33b59f2d730367ecfe9c90bd04bcff83d42ac7d3
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
