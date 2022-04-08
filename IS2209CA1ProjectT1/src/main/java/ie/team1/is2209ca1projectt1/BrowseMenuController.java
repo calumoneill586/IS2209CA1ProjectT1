@@ -143,14 +143,7 @@ public class BrowseMenuController implements Initializable {
         
     }
 
-    private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
-        Alert alert = new Alert(alertType);
-        alert.setTitle("Select a quantity!");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.initOwner(owner);
-        alert.show();
-         }
+   
 
     public void onNextClick() throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("OrderSummary.fxml"));
