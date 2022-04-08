@@ -5,7 +5,10 @@
  */
 package ie.team1.is2209ca1projectt1;
 
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.regex.*;
@@ -19,6 +22,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -51,11 +55,14 @@ public class OrderSummaryController implements Initializable {
     
     String customerRequest;
     
-    //String myOrder = lst
+    
+    String finalOrderDetails;
+    
     
     String dataFromParent;
     
-    
+    String payMethod;
+    String getMethod;
     
     
     
@@ -64,30 +71,48 @@ public class OrderSummaryController implements Initializable {
     private void handlePlaceOrder() throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("ConfirmOrder.fxml"));
     
+    
+    
     if (rdbCash.isSelected()) {
-        System.out.println("Customer will pay with cash");
+        payMethod = "Customer will pay with cash";
     } else {
-        System.out.println("Customer will pay with card");
+        payMethod = "Customer will pay with card";
     }
     
+    
+    
     if (rdbCollection.isSelected()) {
-        System.out.println("Order will be collected");
+        getMethod = "Order will be collected";
     } else {
-        System.out.println("Order will be delivered");
+        getMethod = "Order will be delivered";
     }
     
     customerRequest = txtRequest.getText();
     
-    System.out.println(customerRequest);
+    //System.out.println(customerRequest);
+    finalOrderDetails = payMethod + ". " + getMethod + ". " + "Customer Request (if any): " + customerRequest;
+    System.out.println(finalOrderDetails);
+    
+    
     
 
+    /*FileWriter myWriter = new FileWriter("orders.txt");
+      myWriter.write(finalOrderDetails);
+      myWriter.write(dataFromParent);
+      myWriter.close();*/
+    
+
+    
+    
     Stage addBasket = (Stage) btnPlaceOrder.getScene().getWindow();
-    addBasket.setScene(new Scene(root, 181,249));
+    addBasket.setScene(new Scene(root, 181, 249));
 
     }
+    
+    
 
     public void setDataFromParent(ObservableList<String> basketItems) {
-        
+        System.out.println(dataFromParent);
         for (String item : basketItems) {
             lstMyOrder.getItems().add(item);
 
@@ -124,7 +149,7 @@ public class OrderSummaryController implements Initializable {
     
    
        //String dataFromBrowseMenu = (String)apOrderDetails.getUserData();
-       //System.out.println(dataFromParent);
+       
 
         
         
