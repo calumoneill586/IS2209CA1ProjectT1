@@ -28,71 +28,18 @@ public class ConfirmOrderController implements Initializable {
    
     //Confirmation Page Methods Section
     @FXML
-    private Button btnViewOrders, btnHelpConfirmation, btnHomeConfirmation;
-    
+    private Button btnHome;
+
+
     @FXML
-    private Label lblNumber;
-    private Connection conn;
-    private ListView lstNumber;
-    
-    OrderDao dao = new OrderDao();
-    
-    //Tool Bar
-    
-    @FXML
-    private void handleHomeConfirmation() throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml")); 
+    private void handleHome() throws IOException {
+    Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml")); //Change to Menu
     
     
-    Stage homeConfirmation = (Stage) btnHomeConfirmation.getScene().getWindow();
+    Stage homeConfirmation = (Stage) btnHome.getScene().getWindow();
     homeConfirmation.setScene(new Scene(root, 713,400));
     }
-      
-    @FXML
-    private void handleViewOrderConfirmation() throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("PastOrders.fxml")); 
-    
-    
-    Stage viewOrdersConfirmation = (Stage) btnViewOrders.getScene().getWindow();
-    viewOrdersConfirmation.setScene(new Scene(root, 713,400)); //Change dimensions to fit
-    }
-     
-    @FXML
-    private void handleHelpConfirmation() throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("Help.fxml")); 
-    
-    
-    Stage viewHelp = (Stage) btnHelpConfirmation.getScene().getWindow();
-    viewHelp.setScene(new Scene(root, 306, 328)); 
-    }
 
-  /*  @FXML
-    private void getOrderNumber() {
-        
-         List<Order>orders = new ArrayList<Order>();
-         
-         try {
-            Statement stmt = conn.createStatement();
-            String sql = "SELECT ORDERID FROM ORDERS ORDER BY ID DESC LIMIT 1;"; //Order by found online at:https://www.tutorialspoint.com/get-the-last-record-from-a-table-in-mysql-database-with-java
-            ResultSet rs = stmt.executeQuery(sql);
-                       
-            if (lblNumber.getText().isEmpty()) {
-                int orderno = rs.getInt("ID");
-                int customerid = rs.getInt("CustomerID");
-                String paymethod = rs.getString("PAYMETHOD");
-                String getmethod = rs.getString("GETMETHOD");
-                String request = rs.getString("REQUEST");
-               
-                Order order = new Order(orderno, customerid, paymethod, getmethod, request);
-                orders.add(order);
-            }
-            rs.close();
-            stmt.close();
-        } catch(Exception ex) {
-            System.out.println("something went wrong with select from pizza");
-        }  
-    }  */
- 
        
     @Override
     public void initialize(URL location, ResourceBundle resources) {
