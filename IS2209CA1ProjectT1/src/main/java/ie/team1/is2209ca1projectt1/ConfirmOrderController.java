@@ -1,12 +1,15 @@
 package ie.team1.is2209ca1projectt1;
 
-import ie.team1.is2209ca1projectt1.dao.Customer;
+import ie.team1.is2209ca1projectt1.dao.Order;
+import ie.team1.is2209ca1projectt1.dao.OrderDao;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
@@ -16,13 +19,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import javafx.scene.control.SelectionMode;
 
 
 public class ConfirmOrderController implements Initializable {
-       
-
+   
     //Confirmation Page Methods Section
     @FXML
     private Button btnViewOrders, btnHelpConfirmation, btnHomeConfirmation;
@@ -30,7 +33,9 @@ public class ConfirmOrderController implements Initializable {
     @FXML
     private Label lblNumber;
     private Connection conn;
-    private TextField txtNumber;
+    private ListView lstNumber;
+    
+    OrderDao dao = new OrderDao();
     
     //Tool Bar
     
@@ -60,24 +65,39 @@ public class ConfirmOrderController implements Initializable {
     Stage viewHelp = (Stage) btnHelpConfirmation.getScene().getWindow();
     viewHelp.setScene(new Scene(root, 306, 328)); 
     }
-    
-    @FXML
-    private void retrieveOrderNumber() throws SQLException {  
-          try {
-            Statement stmt = conn.createStatement();
-            String sql = "SELECT ORDERID FROM ORDERS ORDER BY Id DESC LIMIT 1;"; //Order by found online at:https://www.tutorialspoint.com/get-the-last-record-from-a-table-in-mysql-database-with-java
-            ResultSet rs = stmt.executeQuery(sql);
-                        
-            txtNumber.setText(rs.getString("ORDERID")); //NOT WORKING 
+
+  /*  @FXML
+    private void getOrderNumber() {
+        
+         List<Order>orders = new ArrayList<Order>();
          
-            } catch(Exception ex) {
-              System.out.println(ex);
+         try {
+            Statement stmt = conn.createStatement();
+            String sql = "SELECT ORDERID FROM ORDERS ORDER BY ID DESC LIMIT 1;"; //Order by found online at:https://www.tutorialspoint.com/get-the-last-record-from-a-table-in-mysql-database-with-java
+            ResultSet rs = stmt.executeQuery(sql);
+                       
+            if (lblNumber.getText().isEmpty()) {
+                int orderno = rs.getInt("ID");
+                int customerid = rs.getInt("CustomerID");
+                String paymethod = rs.getString("PAYMETHOD");
+                String getmethod = rs.getString("GETMETHOD");
+                String request = rs.getString("REQUEST");
+               
+                Order order = new Order(orderno, customerid, paymethod, getmethod, request);
+                orders.add(order);
             }
-     }
+            rs.close();
+            stmt.close();
+        } catch(Exception ex) {
+            System.out.println("something went wrong with select from pizza");
+        }  
+    }  */
+ 
        
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-       
-    }
+     
+        }
  
-}
+    }
+

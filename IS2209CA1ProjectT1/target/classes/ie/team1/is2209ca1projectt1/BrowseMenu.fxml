@@ -10,10 +10,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="765.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.BrowseMenuController">
 
 
  
+=======
+
+
+
+
+
+
+
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="713.0" style="-fx-background-image: pizza.jpg;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.BrowseMenuController">
+
+
+
+ 
+
+>>>>>>> a8b4a8831f1c22b5a89c0e1b574899f5e4f12e03
    <children>
       <Separator layoutX="443.0" orientation="VERTICAL" prefHeight="430.0" prefWidth="0.0" />
       <ListView fx:id="lstIngredient" layoutX="240.0" layoutY="54.0" prefHeight="217.0" prefWidth="182.0" />
