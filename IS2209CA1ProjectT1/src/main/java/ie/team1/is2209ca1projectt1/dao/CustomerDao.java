@@ -13,8 +13,8 @@ public class CustomerDao {
     private static final String database_username = "username";
     private static final String database_password = "password";
     private static final String select_query = "SELECT * FROM customer WHERE username = ? and password = ?";
-    private static final String insert_query = "INSERT INTO customer (name, addressline1,addressline2,creditcardno,phoneno,allergies,username,password)";
-    
+    private static final String insert_query = "INSERT INTO customer (name,addressline1,addressline2,creditcardno,phoneno,allergies,username,password)";
+
     private Connection conn;
     private String connectionString = "jdbc:derby://localhost:1527/pizzadatabase";
     
@@ -22,8 +22,7 @@ public class CustomerDao {
         
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver"); conn = DriverManager.getConnection(connectionString, "username", "password");
-            
-           
+                       
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(CustomerDao.class.getName()).log(Level.SEVERE, "can't load driver", ex);
         }   catch (SQLException ex) {
@@ -34,7 +33,7 @@ public class CustomerDao {
     //Validation for Login Page with Select Query
     public boolean validate(String username, String password) throws SQLException {
             try (Connection connection = DriverManager
-            .getConnection(database_url, database_username, database_password);
+            .getConnection(connectionString, "username", "password");
 
             PreparedStatement preparedStatement = connection.prepareStatement(select_query)) {
             preparedStatement.setString(1, username);
@@ -52,37 +51,30 @@ public class CustomerDao {
         return false;
     }
    
-    //Insert new customer into database
-   public Customer insertRecord(Customer customerToAdd) throws SQLException {  
-       try { 
-           Connection conn = DriverManager.getConnection(database_url, database_username, database_password)
-               ;
-                    
-            String sql = "INSERT INTO customer (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) VALUES('" + customerToAdd.getName() + "', " + customerToAdd.getAddressLine1() + "', " + customerToAdd.getAddressLine2() + "', " + customerToAdd.getCreditCardNo() + "', " + customerToAdd.getPhoneNo() + customerToAdd.getAllergies() + customerToAdd.getUsername() + "', " + customerToAdd.getPassword () + ")" ;   
-               
-            PreparedStatement preparedStatement = conn.prepareStatement(insert_query);
+   //Insert new customer into database
+   public static void insertRecord(String name, String addressline1, String addressline2, String creditcardno, String phoneno, String allergies, String username, String password) throws SQLException {         
+       try (Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/pizzadatabase", "username", "password");
+           
+            PreparedStatement preparedStatement = conn.prepareStatement(insert_query)) {
             preparedStatement.setString(1, "name");
             preparedStatement.setString(2, "addressline1");
             preparedStatement.setString(3, "addressline2");
             preparedStatement.setString(4, "creditcardno");
             preparedStatement.setString(5, "phoneno");
-            preparedStatement.setString(6, "allergies");
+            preparedStatement.setString(6, "allergies");  
             preparedStatement.setString(7, "username");
             preparedStatement.setString(8, "password");
+            
+            int row = preparedStatement.executeUpdate();
 
-            System.out.println(preparedStatement);
-                       
-            int x = preparedStatement.executeUpdate();
-            if (x > 0)           
-                System.out.println("Successfully Inserted");           
-            else           
-                System.out.println("Insert Failed");
-             
-     
-       } catch (SQLException ex) {
-           ex.printStackTrace();
-        } 
-        return customerToAdd;
+            // rows affected
+            System.out.println(row); 
+
+        } catch (SQLException e) {
+            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+     }
    }
    
     
@@ -102,24 +94,4 @@ public class CustomerDao {
         }
     }
 }
-
-/*public void insertRecord(String name, String addressline1, String addressline2, String creditcardno, String phoneno, String allergies, String username, String password) {
-         try {
-
-            Statement stmt = conn.createStatement();
-
-            String sql = "INSERT INTO customer (NAME, ADDRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES, USERNAME, PASSWORD) VALUES('" + getName() + "', " + customerToAdd.getAddressLine1() + "', " + customerToAdd.getAddressLine2() + "', " + customerToAdd.getCreditCardNo() + "', " + customerToAdd.getPhoneNo() + customerToAdd.getAllergies() + customerToAdd.getUsername() + "', " + customerToAdd.getPassword () + ")" ;
-            
-            System.out.println(sql);
-            
-            stmt.executeUpdate(sql);
-            
-            stmt.close();
-            
-        } catch(Exception ex) {
-            System.out.println("something went wrong...");
-            System.out.println(ex.getMessage());
-        }
-    }
-}*/
  

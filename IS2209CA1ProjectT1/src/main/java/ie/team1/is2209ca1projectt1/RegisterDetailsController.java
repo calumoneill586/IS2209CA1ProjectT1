@@ -25,7 +25,7 @@ public class RegisterDetailsController implements Initializable {
     private Button btnCreateAccount, btnDetailsBack;
     
     @FXML
-    private TextField txtName, txtAddress1, txtAddress2, txtCCNumber, txtPhoneNumber,txtAllergies, txtUsername;
+    private TextField txtName, txtAddress1, txtAddress2, txtCCNumber, txtPhoneNumber, txtAllergies,txtUsername;
  
     @FXML
     private PasswordField txtPassword;
@@ -46,7 +46,6 @@ public class RegisterDetailsController implements Initializable {
     }
   
     //Create Account button  
-
     @FXML 
     public void handleCreateAccount() throws IOException, SQLException{   
     
@@ -92,30 +91,20 @@ public class RegisterDetailsController implements Initializable {
             return;
         }
         
-        showAlert(Alert.AlertType.CONFIRMATION,owner, "Account Created!", "Welcome " + txtName.getText());
-           
-       //Moving to next scene 
-        Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml"));
-
-        Stage order = (Stage) btnCreateAccount.getScene().getWindow();
-        order.setScene(new Scene(root, 713,400));
-        
         String name = txtName.getText();
         String addressline1 = txtAddress1.getText();
-        String addressline2 = txtAddress2.getText();  
+        String addressline2 = txtAddress2.getText();
         String creditcardno = txtCCNumber.getText();
         String phoneno = txtPhoneNumber.getText();
         String allergies = txtAllergies.getText();
         String username = txtUsername.getText();
         String password = txtPassword.getText();
-        
-        
-        
-    
+                
+        CustomerDao.insertRecord(name, addressline1, addressline2, creditcardno, phoneno, allergies, username, password);          
      }
     
 
- private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+    private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
         alert.setHeaderText(null);

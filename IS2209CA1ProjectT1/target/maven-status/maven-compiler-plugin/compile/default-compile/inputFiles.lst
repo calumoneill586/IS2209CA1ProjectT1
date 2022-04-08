@@ -1,30 +1,7 @@
-<<<<<<< HEAD
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\Pizza.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\PizzaDao.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\LoginController.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\App.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\PizzaManagementWindow2Controller.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\PrimaryController.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\Customer.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\IngredientDao.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\StoreOrderManagementController.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\PastOrdersController.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\OrderDao.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\OrderSummaryController.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\HelpController.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\Ingredient.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\Order.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\ConfirmOrderController.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\RegisterDetailsController.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\StorePizzaManagemntController.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\BrowseMenuController.java
-C:\Users\Daram\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\CustomerDao.java
-=======
 C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\Ingredient.java
 C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\IngredientDao.java
 C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\Order.java
 C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\OrderDao.java
-C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\ObservableArrayList.java
 C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\Pizza.java
 C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\PizzaManagementWindow2Controller.java
 C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\RegisterDetailsController.java
@@ -43,4 +20,3 @@ C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is220
 C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\App.java
 C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\StaffLoginController.java
 C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\StorePizzaManagemntController.java
->>>>>>> a684e165b73cf9ad59ef88eacc9f0fffe39dae3a
