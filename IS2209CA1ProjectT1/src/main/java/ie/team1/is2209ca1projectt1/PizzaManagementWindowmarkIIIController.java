@@ -133,7 +133,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
     } 
      @FXML 
    public void onNext() throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("ManagementMenu.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("StartPage.fxml"));
     
     Stage onBack = (Stage) btnNext.getScene().getWindow();
     onBack.setScene(new Scene(root, 602,299));
@@ -235,9 +235,9 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
     }  
        @FXML
      void onDeleteUserClick(ActionEvent event) {
- 
-    int selectedUser = tblUsers.getSelectionModel().getSelectedIndex();
-    tblUsers.getItems().remove(selectedUser); 
+ //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
+    int selectedIngredient = tblUsers.getSelectionModel().getSelectedIndex();
+    tblIngredients.getItems().remove(selectedIngredient); 
     System.out.println("Deletion completed"); 
     
      } 
