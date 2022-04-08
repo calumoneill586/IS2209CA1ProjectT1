@@ -32,13 +32,7 @@ import javafx.stage.Stage;
 public class StoreOrderManagementController implements Initializable {
 @FXML
     private Button btnBack, btnDeleteOrder, btnAddOrder;
-     
-     // @FXML
-    //private TableView tblViewManage;
-      
-     //  @FXML
-   // private TableColumn colOrder, colCustomer, colPay, colGet, colMethod;
-       
+  
         @FXML
     private TableView<Order> tblViewManage;
         @FXML
@@ -55,12 +49,8 @@ public class StoreOrderManagementController implements Initializable {
           
           @FXML
     private TableColumn<Order, String >request;
-    //private TableColumn<Order, int >colOrder;        
-                
-               // colOrder, colCustomer, colPay, colGet, colMethod;
-      
-      
-       OrderDao OrderDao = new OrderDao();
+  
+    OrderDao OrderDao = new OrderDao();
     
        
     @FXML 
@@ -70,25 +60,20 @@ public class StoreOrderManagementController implements Initializable {
     Stage onBack = (Stage) btnBack.getScene().getWindow();
     onBack.setScene(new Scene(root, 602,299));
     }
-     
-       
-       
        
        
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        paymethod.setCellValueFactory(new PropertyValueFactory<Order, String>("paymethod"));
-        getmethod.setCellValueFactory(new PropertyValueFactory<Order, String>("getmethod"));
+       paymethod.setCellValueFactory(new PropertyValueFactory<Order, String>("paymethod"));
+       getmethod.setCellValueFactory(new PropertyValueFactory<Order, String>("getmethod"));
        request.setCellValueFactory(new PropertyValueFactory<Order, String>("request"));
        orderid.setCellValueFactory(new PropertyValueFactory<Order, String>("orderid"));
        customerid.setCellValueFactory(new PropertyValueFactory<Order, Integer>("customerid"));
-     
-
         
 
-//ObservableList<> orders = FXCollections.observableArrayList();
+
         ObservableList<Order> orders = OrderDao.getOrders();
-        // tblViewManage.setItems(orders);
+     
         tblViewManage.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         
         for(Order order : orders) {
