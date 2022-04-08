@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author admin
+ * @author 120463034
  */
 public class PizzaDao {
         private Connection conn;

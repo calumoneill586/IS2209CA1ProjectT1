@@ -14,43 +14,42 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.sql.*;
-import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-
-public class OrderDao {
+/**
+ *
+ * @author cdola
+ */
+public class ShopDao {
     private Connection conn;
     private String connectionString = "jdbc:derby://localhost:1527/pizzadatabase";
     
-    public OrderDao() {
+    public ShopDao() {
         
-        try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            conn = DriverManager.getConnection(connectionString, "username", "password");
+     try {
+        Class.forName("org.apache.derby.jdbc.ClientDriver");
+        conn = DriverManager.getConnection(connectionString, "username", "password");
             
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(OrderDao.class.getName()).log(Level.SEVERE, "can't load driver", ex);
+            Logger.getLogger(ShopDao.class.getName()).log(Level.SEVERE, "can't load driver", ex);
         }   catch (SQLException ex) {
-                Logger.getLogger(OrderDao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ShopDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         
     }
     
-    public ObservableList<Order> getOrders() {
+    public List<Shop> getShop() {
 
-       // ObservableList<Order> orders = (ObservableList<Order>) new ObservableList<Order>();
-         ObservableList<Order>orders =  FXCollections.observableArrayList();
+        //List<Shop> shops = new ArrayList<Shop>();
+         ObservableList<Shop>shops =  FXCollections.observableArrayList();
         try {
 
             Statement stmt = conn.createStatement();
 
 
 
-            String sql = "SELECT * FROM ORDERS";
+            String sql = "SELECT ID, LOCATION FROM SHOP";
 
 
             ResultSet rs = stmt.executeQuery(sql);
@@ -58,22 +57,18 @@ public class OrderDao {
             while (rs.next()) {
 
                 int id = rs.getInt("ID");
-                String name = rs.getString("TYPE");
-                double price = rs.getInt("PRICE");
                 
               
               
 
-                int customerid = rs.getInt("CUSTOMERID");
-                
-                String paymethod = rs.getString("PAYMETHOD");
-                String getmethod = rs.getString("GETMETHOD");
-                String request = rs.getString("REQUEST");
+                  
+                String location = rs.getString("LOCATION");
+               
                 
                 //double price = rs.getInt("PRICE");
                 
-                Order order = new Order(id, customerid, paymethod, getmethod, request);
-                orders.add(order);
+                Shop shop = new Shop(id, location);
+                shops.add(shop);
 
                  }
             
@@ -84,16 +79,11 @@ public class OrderDao {
             System.out.println(ex);
         }
 
-        return orders;
+        return shops;
     }
            
     
         
-     //   return orderToAdd;
+    
     }
-
-  
-
-
-  
 
