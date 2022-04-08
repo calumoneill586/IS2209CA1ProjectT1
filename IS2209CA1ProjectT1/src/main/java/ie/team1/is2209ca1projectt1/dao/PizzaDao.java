@@ -19,9 +19,9 @@ public class PizzaDao {
     public PizzaDao() {
         
         try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            conn = DriverManager.getConnection(connectionString, "username", "password");
+            Class.forName("org.apache.derby.jdbc.ClientDriver"); conn = DriverManager.getConnection(connectionString, "username", "password");
             
+           
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(PizzaDao.class.getName()).log(Level.SEVERE, "can't load driver", ex);
         }   catch (SQLException ex) {
@@ -83,6 +83,14 @@ public class PizzaDao {
         return pizzaToAdd;
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
     public List<Ingredient> getIngredientsForPizza(int pizzaId) {
         
         List<Ingredient> ingredients = new ArrayList<Ingredient>();

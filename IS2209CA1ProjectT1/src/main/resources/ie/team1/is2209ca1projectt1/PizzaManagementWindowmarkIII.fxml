@@ -10,26 +10,30 @@
    <children>
       <TableView fx:id="tblPersonnel" layoutX="69.0" layoutY="41.0" prefHeight="200.0" prefWidth="200.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn prefWidth="75.0" text="ID" />
+            <TableColumn prefWidth="75.0" text="Role" />
          </columns>
       </TableView>
       <TableView fx:id="tblLocations" layoutX="305.0" layoutY="41.0" prefHeight="200.0" prefWidth="200.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="colShopID" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="colLocation" prefWidth="75.0" text="Location" />
          </columns>
       </TableView>
-      <TableView fx:id="tblUsers" layoutX="69.0" layoutY="293.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tblUsers" layoutX="66.0" layoutY="293.0" prefHeight="200.0" prefWidth="200.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="name" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="addressline1" prefWidth="75.0" text="Address" />
+            <TableColumn fx:id="phoneno" prefWidth="75.0" text="PhoneNo" />
+            <TableColumn fx:id="creditcardno" prefWidth="65.60003662109375" text="CreditCardNo" />
+            <TableColumn fx:id="username" prefWidth="75.0" text="Username" />
          </columns>
       </TableView>
-      <TableView fx:id="tblIngredients" layoutX="305.0" layoutY="293.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tblIngredients" layoutX="302.0" layoutY="293.0" prefHeight="200.0" prefWidth="200.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="colIngredientID" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="colIngredientName" prefWidth="75.0" text="Name" />
          </columns>
       </TableView>
       <Button fx:id="btnAddPersonnel" layoutX="69.0" layoutY="241.0" mnemonicParsing="false" text="Add" />
@@ -37,12 +41,12 @@
       <Button fx:id="btnAddLocations" layoutX="305.0" layoutY="241.0" mnemonicParsing="false" text="Add" />
       <Button fx:id="btnDeleteLocations" layoutX="454.0" layoutY="241.0" mnemonicParsing="false" text="Delete" />
       <Button fx:id="btnAddUsers" layoutX="69.0" layoutY="493.0" mnemonicParsing="false" text="Add" />
-      <Button fx:id="btnDeleteUsers" layoutX="217.0" layoutY="493.0" mnemonicParsing="false" text="Delete" />
+      <Button fx:id="btnDeleteUsers" layoutX="217.0" layoutY="493.0" mnemonicParsing="false" onAction="#onDeleteUserClick" text="Delete" />
       <Button fx:id="btnAddIngredients" layoutX="305.0" layoutY="493.0" mnemonicParsing="false" text="Add" />
       <Button fx:id="btnDeleteIngredients" layoutX="454.0" layoutY="493.0" mnemonicParsing="false" text="Delete" />
-      <Button fx:id="btnPrevious" layoutX="24.0" layoutY="537.0" mnemonicParsing="false" text="Previous" />
-      <Button fx:id="btnNext" layoutX="704.0" layoutY="537.0" mnemonicParsing="false" text="Next" />
-      <TableView fx:id="tblOrders" layoutX="521.0" layoutY="293.0" prefHeight="200.0" prefWidth="322.0">
+      <Button fx:id="btnPrevious" layoutX="24.0" layoutY="537.0" mnemonicParsing="false" onAction="#onBack" text="Menu" />
+      <Button fx:id="btnNext" layoutX="704.0" layoutY="537.0" mnemonicParsing="false" text="Exit" />
+      <TableView fx:id="tblOrders" layoutX="521.0" layoutY="293.0" prefHeight="200.0" prefWidth="208.0">
          <columns>
             <TableColumn fx:id="paymethod" prefWidth="75.0" text="Pay Method" />
             <TableColumn fx:id="getmethod" prefWidth="75.0" text="Get Method" />

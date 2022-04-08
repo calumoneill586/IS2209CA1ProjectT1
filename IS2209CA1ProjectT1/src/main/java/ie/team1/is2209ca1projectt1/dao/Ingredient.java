@@ -5,13 +5,17 @@
  */
 package ie.team1.is2209ca1projectt1.dao;
 
+import java.util.logging.Logger;
+
 /**
  *
- * @author admin
+ * @author 120463034
  */
 public class Ingredient {
     private int id;
     private String name;
+
+
     
     
     public Ingredient() {
@@ -44,5 +48,11 @@ public class Ingredient {
       return this.id +" "+ this.name;
    
     }
+
+  
+
+  
+  
+    
 }
 

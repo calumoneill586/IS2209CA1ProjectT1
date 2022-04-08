@@ -1,4 +1,5 @@
 package ie.team1.is2209ca1projectt1;
+import static ie.team1.is2209ca1projectt1.LoginController.infoBox;
 import ie.team1.is2209ca1projectt1.dao.CustomerDao;
 import java.io.IOException;
 import java.net.URL;
@@ -25,13 +26,15 @@ public class RegisterDetailsController implements Initializable {
     private Button btnCreateAccount, btnDetailsBack;
     
     @FXML
-    private TextField txtName, txtAddress1, txtAddress2, txtCCNumber, txtPhoneNumber,txtAllergies, txtUsername;
+    private TextField txtName, txtAddress1, txtAddress2, txtCCNumber, txtPhoneNumber, txtAllergies,txtUsername;
  
     @FXML
     private PasswordField txtPassword;
     
     @FXML
     public ComboBox cboAllergies; 
+         
+   CustomerDao customerDao = new CustomerDao();
     
    
     //Back button 
@@ -44,7 +47,6 @@ public class RegisterDetailsController implements Initializable {
     }
   
     //Create Account button  
-
     @FXML 
     public void handleCreateAccount() throws IOException, SQLException{   
     
@@ -88,32 +90,31 @@ public class RegisterDetailsController implements Initializable {
             showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
                 "Please enter a password");
             return;
-        }
-        
+        } else {
+       
         String name = txtName.getText();
-        String address1 = txtAddress1.getText();
-        String address2 = txtAddress2.getText();  
-        String ccNumber = txtCCNumber.getText();
-        String phoneNumber = txtPhoneNumber.getText();
+        String addressline1 = txtAddress1.getText();
+        String addressline2 = txtAddress2.getText();
+        String creditcardno = txtCCNumber.getText();
+        String phoneno = txtPhoneNumber.getText();
         String allergies = txtAllergies.getText();
         String username = txtUsername.getText();
         String password = txtPassword.getText();
-        
-        CustomerDao customerDao = new CustomerDao();
-        customerDao.insertRecord(name, address1,address2,ccNumber,phoneNumber,allergies,username,password);
-        
-        showAlert(Alert.AlertType.CONFIRMATION,owner, "Account Created!", "Welcome " + txtName.getText());
-           
-       //Moving to next scene 
-        Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml"));
+                
+        CustomerDao.insertRecord(name, addressline1, addressline2, creditcardno, phoneno, allergies, username, password);          
 
-        Stage order = (Stage) btnCreateAccount.getScene().getWindow();
-        order.setScene(new Scene(root, 713,400));
+        //Moving to next Scene
+        
+        infoBox("Account Creation Successful!", null, "Success");
+        Parent root = FXMLLoader.load(getClass().getResource("CustomerMenu.fxml"));
     
-     }
+        Stage registerDetails = (Stage) btnCreateAccount.getScene().getWindow();
+        registerDetails.setScene(new Scene(root, 607,282));
+            }      
+        }
     
 
- private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+    private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
         alert.setHeaderText(null);

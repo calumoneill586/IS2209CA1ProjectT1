@@ -20,11 +20,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Label;
 
 
 public class OrderDao {
     private Connection conn;
     private String connectionString = "jdbc:derby://localhost:1527/pizzadatabase";
+    private Label lblNumber;
     
     public OrderDao() {
         
@@ -42,29 +44,39 @@ public class OrderDao {
     
     public ObservableList<Order> getOrders() {
 
-       // ObservableList<Order> orders = (ObservableList<Order>) new ObservableList<Order>();
-         ObservableList<Order>orders =  FXCollections.observableArrayList();
+
+      // List<Order>orders = new ArrayList<Order>();
+            ObservableList<Order>orders =  FXCollections.observableArrayList();
+            
+ 
+          //  orders.add(new Order(1,2, "sds", "uhg", "hghg"));
+
+            
+
+       // List<Order> orders = new ArrayList<Order>();
+        
+
+
         try {
 
             Statement stmt = conn.createStatement();
-
-
-
             String sql = "SELECT * FROM ORDERS";
-
-
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
 
-                int id = rs.getInt("ID");
-                String name = rs.getString("TYPE");
-                double price = rs.getInt("PRICE");
-                
-              
+
+                int orderid = Integer.parseInt(rs.getString("ID"));
+
+               
               
 
-                int customerid = rs.getInt("CUSTOMERID");
+
+                int customerid = Integer.parseInt(rs.getString("CUSTOMERID"));
+
+
+              
+
                 
                 String paymethod = rs.getString("PAYMETHOD");
                 String getmethod = rs.getString("GETMETHOD");
@@ -72,7 +84,7 @@ public class OrderDao {
                 
                 //double price = rs.getInt("PRICE");
                 
-                Order order = new Order(id, customerid, paymethod, getmethod, request);
+                Order order = new Order( orderid, customerid, paymethod, getmethod, request);
                 orders.add(order);
 
                  }
@@ -86,11 +98,16 @@ public class OrderDao {
 
         return orders;
     }
-           
     
+   
+       /*     String orderNumber = rs.toString();
+            lblNumber.setText(String.valueOf(orderNumber)); 
+         
+            return orderNumber ;*/  
         
      //   return orderToAdd;
     }
+
 
   
 

@@ -55,7 +55,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
      */   
       @FXML
     //Inserting buttons
-    private Button btnNext, btnExit, btnDeleteIngredients, btnCreateIngredients, btnCreateUser, btnDeleteUser, btnCreateLocation, btnDeleteLocation, btnCreateOrder, btnDeleteOrder, btnCreatePersonnel, btnDeletePersonnel;
+    private Button btnNext, btnPrevious, btnDeleteIngredients, btnCreateIngredients, btnCreateUser, btnDeleteUser, btnCreateLocation, btnDeleteLocation, btnCreateOrder, btnDeleteOrder, btnCreatePersonnel, btnDeletePersonnel;
     //Inserting the TableView panels 
       //Order tableview, code based on other management windows throughout project...
 @FXML
@@ -81,10 +81,10 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
     @FXML
    private TableView<Ingredient> tblIngredients = null; 
     @FXML 
-   private TableColumn <Ingredient,  Integer> colIngredientID; 
+   private TableColumn <Ingredient,  Integer> colIngredientID;  
+    @FXML
    private TableColumn <Ingredient,  String> colIngredientName; 
-   private TableColumn <Ingredient,  String> colCalories; 
-   private TableColumn <Ingredient,  String> colAllergens; 
+
  
     
     
@@ -92,7 +92,8 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
     @FXML
     private TableView <Shop> tblLocations = null;  
      @FXML 
-   private TableColumn <Shop, Integer> colShopID; 
+   private TableColumn <Shop, Integer> colShopID;  
+     @FXML
    private TableColumn <Shop, String> colLocation;  
     
      
@@ -109,20 +110,34 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
     @FXML 
     private TableView<Customer> tblUsers = null; 
      @FXML 
-   private TableColumn <Customer, Integer> colID; 
-   private TableColumn <Customer, String>colName;
-   private TableColumn <Customer, String>colUsername; 
-   private TableColumn <Customer, String> colPhoneNo; 
-   private TableColumn <Customer, String> colCreditCardNo; 
+   private TableColumn <Customer, Integer> id;  
+     @FXML
+   private TableColumn <Customer, String>name; 
+     @FXML
+   private TableColumn <Customer, String>addressline1; 
+     @FXML
+   private TableColumn <Customer, String> phoneno; 
+     @FXML
+   private TableColumn <Customer, String> creditcardno;  
+     @FXML
+   private TableColumn <Customer,String> username; 
  
           
     @FXML 
    public void onBack() throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("ManagementMenu.fxml"));
     
-    Stage onBack = (Stage) btnExit.getScene().getWindow();
+    Stage onBack = (Stage) btnPrevious.getScene().getWindow();
+    onBack.setScene(new Scene(root, 602,299));
+    } 
+     @FXML 
+   public void onNext() throws IOException {
+    Parent root = FXMLLoader.load(getClass().getResource("ManagementMenu.fxml"));
+    
+    Stage onBack = (Stage) btnNext.getScene().getWindow();
     onBack.setScene(new Scene(root, 602,299));
     }
+      
       
     OrderDao orderdao = new OrderDao();
     IngredientDao ingredientdao = new IngredientDao();
@@ -139,7 +154,19 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
        request.setCellValueFactory(new PropertyValueFactory<Order, String>("request"));
        orderid.setCellValueFactory(new PropertyValueFactory<Order, String>("orderid"));
        customerid.setCellValueFactory(new PropertyValueFactory<Order, Integer>("customerid"));
-     
+     //Ingredients 
+     colIngredientID.setCellValueFactory(new PropertyValueFactory<Ingredient, Integer>("id"));
+     colIngredientName.setCellValueFactory(new PropertyValueFactory<Ingredient, String>("name"));
+     //Users 
+     id.setCellValueFactory(new PropertyValueFactory<Customer, Integer>("id")); 
+     name.setCellValueFactory(new PropertyValueFactory<Customer, String>("name")); 
+     addressline1.setCellValueFactory(new PropertyValueFactory<Customer, String>("addressline1")); 
+     phoneno.setCellValueFactory(new PropertyValueFactory<Customer, String>("phoneno")); 
+     creditcardno.setCellValueFactory(new PropertyValueFactory<Customer, String>("creditcardno")); 
+     username.setCellValueFactory(new PropertyValueFactory<Customer, String>("username")); 
+     //Locations 
+     colShopID.setCellValueFactory(new PropertyValueFactory<Shop, Integer>("ID"));  
+     colLocation.setCellValueFactory(new PropertyValueFactory<Shop, String>("location")); 
       
 
         
@@ -203,8 +230,17 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
             tblUsers.getItems().add(customer);
 
         }
-       
-    } 
+    
+    }  
+       @FXML
+     void onDeleteUserClick(ActionEvent event) {
+ 
+    int selectedUser = tblUsers.getSelectionModel().getSelectedIndex();
+    tblUsers.getItems().remove(selectedUser); 
+    System.out.println("Deletion completed"); 
+    
+     } 
+     
 } 
  
 

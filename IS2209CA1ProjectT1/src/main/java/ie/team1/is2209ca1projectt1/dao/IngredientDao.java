@@ -40,7 +40,7 @@ public class IngredientDao {
 
             Statement stmt = conn.createStatement();
 
-            String sql = "SELECT ID, NAME FROM INGREDIENT";
+            String sql = "SELECT * FROM INGREDIENT";
 
             ResultSet rs = stmt.executeQuery(sql);
 
@@ -48,6 +48,8 @@ public class IngredientDao {
 
                 int id = rs.getInt("ID");
                 String name = rs.getString("NAME");
+            
+                
                 
 
                 Ingredient ingredient = new Ingredient(id, name);

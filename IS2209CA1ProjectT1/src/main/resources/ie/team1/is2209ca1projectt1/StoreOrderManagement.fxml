@@ -2,15 +2,40 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.StoreOrderManagementController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="269.0" prefWidth="603.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.StoreOrderManagementController">
    <children>
-      <ListView fx:id="lstManageOrders" layoutX="87.0" layoutY="61.0" prefHeight="278.0" prefWidth="409.0" />
-      <Button fx:id="btnBack" layoutX="83.0" layoutY="350.0" mnemonicParsing="false" text="Back" />
-      <Button fx:id="btnAddOrder" layoutX="342.0" layoutY="350.0" mnemonicParsing="false" text="Add order" />
-      <Button fx:id="btnDeleteOrder" layoutX="412.0" layoutY="350.0" mnemonicParsing="false" text="Delete Order" />
-      <Label layoutX="235.0" layoutY="43.0" text="Manage Store Orders" />
+      <ImageView fitHeight="46.0" fitWidth="78.0" layoutX="514.0" layoutY="10.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Photos/Logo.JPG" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnBack" layoutX="88.0" layoutY="258.0" mnemonicParsing="false" onAction="#onBack" style="-fx-background-color: black;" text="Back" textFill="WHITE" />
+      <Button fx:id="btnAddOrder" layoutX="349.0" layoutY="258.0" mnemonicParsing="false" onAction="#onNewClick" style="-fx-background-color: black;" text="Add order" textFill="WHITE" />
+      <Button fx:id="btnDeleteOrder" layoutX="430.0" layoutY="258.0" mnemonicParsing="false" onAction="#onPizzaClick" style="-fx-background-color: black;" text="Delete Order" textFill="WHITE" />
+      <Label layoutX="222.0" layoutY="22.0" text="Manage Store Orders">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <TableView fx:id="tblViewManage" layoutX="86.0" layoutY="52.0" prefHeight="196.0" prefWidth="429.0">
+        <columns>
+          <TableColumn fx:id="orderid" prefWidth="75.0" text="Order ID" />
+            <TableColumn fx:id="customerid" prefWidth="82.79998779296875" text="Customer ID" />
+            <TableColumn fx:id="paymethod" prefWidth="86.0" text="Pay Method" />
+            <TableColumn fx:id="getmethod" prefWidth="86.0" text="Get Method" />
+            <TableColumn fx:id="request" prefWidth="98.39993286132812" text="Request" />
+        </columns>
+      </TableView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="311.0" layoutY="-8.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="311.0" layoutX="592.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="-2.0" layoutY="298.0" stroke="BLACK" strokeType="INSIDE" width="603.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="5.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="594.0" />
    </children>
 </AnchorPane>

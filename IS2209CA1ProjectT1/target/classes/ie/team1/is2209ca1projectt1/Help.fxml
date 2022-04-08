@@ -3,39 +3,42 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="328.0" prefWidth="306.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.HelpController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="331.0" prefWidth="309.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.HelpController">
    <children>
-      <Label layoutX="14.0" layoutY="36.0" prefHeight="292.0" prefWidth="273.0" text="We are always happy to help!" textAlignment="CENTER">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff000011" height="97.0" layoutX="17.0" layoutY="32.0" stroke="#141313" strokeType="INSIDE" width="282.0" />
+      <Label layoutX="72.0" layoutY="231.0" prefHeight="17.0" prefWidth="172.0" text="We are always happy to help!" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="67.0" text="Contact us at:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="15.0" layoutY="98.0" text="Give us a call:" />
-      <Label layoutX="16.0" layoutY="125.0" text="Email us here:" />
-      <Hyperlink layoutX="121.0" layoutY="94.0" text="(021) 437-4380" />
-      <Hyperlink layoutX="125.0" layoutY="121.0" text="youwannapizzame@gmail.com" />
-      <ImageView fitHeight="110.0" fitWidth="283.0" layoutX="16.0" layoutY="198.0" pickOnBounds="true">
+      <Hyperlink layoutX="117.0" layoutY="94.0" text="youwannapizzame@gmail.com" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="331.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="331.0" layoutX="304.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <ImageView fitHeight="97.0" fitWidth="172.0" layoutX="71.0" layoutY="136.0" pickOnBounds="true">
          <image>
-            <Image url="@pizza1.jpg" />
+            <Image url="@../Photos/Logo.JPG" />
          </image>
       </ImageView>
-      <ToolBar layoutX="-1.0" prefHeight="45.0" prefWidth="315.0">
-        <items>
-          <Button fx:id="btnHomeHelp" mnemonicParsing="false" text="Home" />
-            <Button fx:id="btnViewOrderHelp" mnemonicParsing="false" text="View Orders" />
-            <Button fx:id="btnLogOutHelp" mnemonicParsing="false" text="Log Out" />
-        </items>
-      </ToolBar>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutY="320.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="5.0" layoutX="310.0" layoutY="326.0" stroke="BLACK" strokeType="INSIDE" width="5.0" />
+      <Label layoutX="28.0" layoutY="40.0" text="Contact us at:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="70.0" text="Give us a call:">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Label>
+      <Label layoutX="27.0" layoutY="97.0" text="Email us here:" />
+      <Hyperlink layoutX="117.0" layoutY="67.0" text="(021) 437-4380" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="1.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Button fx:id="btnHome" layoutX="120.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleHomeHelp" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: black;" text="Home" textFill="WHITE" />
    </children>
 </AnchorPane>
