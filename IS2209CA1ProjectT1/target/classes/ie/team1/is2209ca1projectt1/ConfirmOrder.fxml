@@ -8,12 +8,8 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
-<AnchorPane id="AnchorPane" prefHeight="249.0" prefWidth="181.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.ConfirmOrderController">
-=======
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="249.0" prefWidth="181.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.ConfirmOrderController">
->>>>>>> b5bc421a1ae8c4752f8431275612aa78d49c627e
-   <children>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="249.0" prefWidth="181.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.ConfirmOrderController">
+
       <ImageView fitHeight="80.0" fitWidth="155.0" layoutX="73.0" layoutY="26.0" pickOnBounds="true">
          <image>
             <Image url="@../Photos/Logo.JPG" />
@@ -34,5 +30,5 @@
       <Button fx:id="btnHome" layoutX="124.0" layoutY="173.0" mnemonicParsing="false" onAction="#handleHome" style="-fx-background-color: black;" text="Home" textFill="WHITE" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="245.0" layoutX="296.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="5.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="302.0" />
-   </children>
+   
 </AnchorPane>
