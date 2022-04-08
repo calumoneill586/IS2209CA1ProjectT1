@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author admin
+ * @author 120463034
  */
 public class Ingredient {
     private int id;
@@ -45,7 +45,8 @@ public class Ingredient {
 
     @Override
     public String toString() {
-        return name;
+      return this.id +" "+ this.name;
+   
     }
 
   

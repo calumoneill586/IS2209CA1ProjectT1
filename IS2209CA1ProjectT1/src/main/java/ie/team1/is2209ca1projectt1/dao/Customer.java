@@ -1,6 +1,13 @@
 
 package ie.team1.is2209ca1projectt1.dao;
 
+/**
+ *
+ * @author Orla
+**/
+
+
+
 
 public class Customer {
  private String name, addressline1, addressline2, creditcardno, phoneno, allergies, username, password;
@@ -81,6 +88,9 @@ public class Customer {
         this.password = password;
     }
     
+ 
 }
+   
+
 
 

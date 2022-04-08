@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+ie\team1\is2209ca1projectt1\OrderSummaryController.class
+ie\team1\is2209ca1projectt1\dao\Shop.class
+ie\team1\is2209ca1projectt1\PrimaryController.class
+=======
 ie\team1\is2209ca1projectt1\ManagementMenuController.class
 ie\team1\is2209ca1projectt1\dao\OrderDao.class
 ie\team1\is2209ca1projectt1\EditCustomersController.class
@@ -12,11 +17,25 @@ ie\team1\is2209ca1projectt1\HelpController.class
 ie\team1\is2209ca1projectt1\dao\OrderItem.class
 ie\team1\is2209ca1projectt1\OrderSummaryController.class
 ie\team1\is2209ca1projectt1\StaffLoginController.class
+>>>>>>> b5bc421a1ae8c4752f8431275612aa78d49c627e
 ie\team1\is2209ca1projectt1\dao\IngredientDao.class
 ie\team1\is2209ca1projectt1\PizzaManagementWindow2Controller.class
 ie\team1\is2209ca1projectt1\dao\Customer.class
+<<<<<<< HEAD
+<<<<<<< HEAD
 ie\team1\is2209ca1projectt1\ConfirmOrderController.class
 ie\team1\is2209ca1projectt1\dao\CustomerDao.class
+ie\team1\is2209ca1projectt1\dao\ShopDao.class
+=======
+ie\team1\is2209ca1projectt1\dao\OrderId.class
+ie\team1\is2209ca1projectt1\ConfirmOrderController.class
+ie\team1\is2209ca1projectt1\dao\CustomerDao.class
+>>>>>>> b5bc421a1ae8c4752f8431275612aa78d49c627e
+ie\team1\is2209ca1projectt1\dao\PizzaDao.class
+=======
+ie\team1\is2209ca1projectt1\ConfirmOrderController.class
+ie\team1\is2209ca1projectt1\dao\CustomerDao.class
+>>>>>>> 9dc3332718b556f6a15d6658f191ba3b7b414e19
 ie\team1\is2209ca1projectt1\RegisterDetailsController.class
 ie\team1\is2209ca1projectt1\LoginController.class
 .netbeans_automatic_build
@@ -24,6 +43,22 @@ ie\team1\is2209ca1projectt1\App.class
 ie\team1\is2209ca1projectt1\KnowledgeContentController.class
 ie\team1\is2209ca1projectt1\dao\Order.class
 ie\team1\is2209ca1projectt1\dao\Ingredient.class
+<<<<<<< HEAD
+ie\team1\is2209ca1projectt1\dao\CustomerDao2.class
+=======
 ie\team1\is2209ca1projectt1\StartPageController.class
+<<<<<<< HEAD
 ie\team1\is2209ca1projectt1\Basket.class
+=======
+<<<<<<< HEAD
+ie\team1\is2209ca1projectt1\Basket.class
+=======
+<<<<<<< HEAD
+>>>>>>> b5bc421a1ae8c4752f8431275612aa78d49c627e
+ie\team1\is2209ca1projectt1\HelpController.class
+ie\team1\is2209ca1projectt1\dao\OrderIdDao.class
+=======
+>>>>>>> fcf46a2cc75e0d05bc887f3bd787a4a4cfdb5f64
+>>>>>>> 0a4badb74008ea5e3ea4fd65650fd36281d4a60a
 ie\team1\is2209ca1projectt1\CustomerMenuController.class
+>>>>>>> 9dc3332718b556f6a15d6658f191ba3b7b414e19

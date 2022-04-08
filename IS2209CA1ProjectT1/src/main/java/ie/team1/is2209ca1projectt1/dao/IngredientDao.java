@@ -7,6 +7,8 @@ import java.sql.*;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -32,8 +34,8 @@ public class IngredientDao {
     
     public List<Ingredient> getIngredients() {
 
-        List<Ingredient>ingredients = new ArrayList<Ingredient>();
-        
+        //List<Ingredient>ingredients = new ArrayList<Ingredient>();
+         ObservableList<Ingredient>ingredients =  FXCollections.observableArrayList();
         try {
 
             Statement stmt = conn.createStatement();

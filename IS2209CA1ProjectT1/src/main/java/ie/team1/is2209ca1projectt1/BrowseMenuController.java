@@ -109,7 +109,7 @@ public class BrowseMenuController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("KnowledgeContent.fxml"));
     
         Stage addBasket = (Stage) btnNext.getScene().getWindow();
-        addBasket.setScene(new Scene(root, 551,560));
+        addBasket.setScene(new Scene(root, 614,241));
     }
     
     public void onClick() {
@@ -171,11 +171,7 @@ public class BrowseMenuController implements Initializable {
   
     ObservableList basketItems = lstBasket.getItems();
     controller.setDataFromParent(basketItems);
-    
-    
-
-    
-        //addBasket.setUserData("data from browse menu");
+   
     }
 
 
