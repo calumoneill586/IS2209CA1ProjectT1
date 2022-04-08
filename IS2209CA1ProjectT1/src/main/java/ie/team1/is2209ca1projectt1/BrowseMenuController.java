@@ -22,9 +22,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 
 /**
@@ -40,12 +43,11 @@ public class BrowseMenuController implements Initializable {
     
     @FXML
     private Spinner spnQuantity;
-    
     SpinnerValueFactory<Integer> quantityValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,10,1);
-    //this.spnQuantity.setValueFactory(quantityValueFactory);
     
-    
-    
+    @FXML
+    private Button btnAddToBasket;
+
     //These items are fot listview and textarea
     @FXML 
     private ListView lstPizza;
@@ -53,11 +55,24 @@ public class BrowseMenuController implements Initializable {
     @FXML 
     private ListView lstIngredient;
     
+    @FXML
+    private Label lblQuantity;
+    
     PizzaDao pizzaDao = new PizzaDao();
     IngredientDao ingredientDao = new IngredientDao();
+    
+    String ingredientToDelete;
+    String itemToDelete;
+    String selectedPizza;
+    int value;
+    String order = selectedPizza + " x" + value;
        
     @Override
-    public void initialize(URL url, ResourceBundle rb) {     
+    public void initialize(URL url, ResourceBundle rb) { 
+        
+        btnAddToBasket.setDisable(true);
+        btnNext.setDisable(true);
+        
         List<Pizza> pizzas = pizzaDao.getPizzas();
         
         //lstPizza.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -66,124 +81,82 @@ public class BrowseMenuController implements Initializable {
             lstIngredient.getItems().clear();
             
             List<Ingredient> ingredients = pizzaDao.getIngredientsForPizza(selectedPizza.getId());
+            lstIngredient.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
             
             for (Ingredient i : ingredients) {
                 lstIngredient.getItems().add(i.getName());
-                
-            
+
             }
         });
-                
-        
+
         for(Pizza pizza : pizzas) {
             lstPizza.getItems().add(pizza);
         }
        
     }
-    //java.lang.ClassCastException: ie.team1.is2209ca1projectt1.dao.Pizza cannot be cast to java.lang.String
-    /*public void addToBasket() {
-        System.out.println("This button is working");
-        
-        String basketString = "";
-        
-        ObservableList listOfPizzas = lstPizza.getSelectionModel().getSelectedItems();
-        
-        for (Object pizza : listOfPizzas)
-        {
-            basketString += String.format("%s%n", (String) pizza);
-        }
-        
-        this.lstBasket.setText(basketString);
-    }*/
     
-    public void onDelClick() {
-    
-        /*String ingredientToDelete = lstIngredient.getSelectionModel().getSelectedItem().toString();
+    public void onDeleteIngredient() {
+
+        ingredientToDelete = lstIngredient.getSelectionModel().getSelectedItem().toString();
         lstIngredient.getItems().remove(ingredientToDelete);
-        System.out.println(ingredientToDelete);*/
-        
+ 
     }
     
-    
-    
+    public void onDeleteItem() {
+        
+        itemToDelete = lstBasket.getSelectionModel().getSelectedItem().toString();
+        lstBasket.getItems().remove(itemToDelete);
+        
+    }
     
     public void onClick() {
         
-        String ingredientToDelete = lstIngredient.getSelectionModel().getSelectedItem().toString();
-        lstIngredient.getItems().remove(ingredientToDelete);
         int value = (Integer) spnQuantity.getValue();
-        System.out.println(lstPizza.getSelectionModel().getSelectedItem() + " x" + value + " with no " + ingredientToDelete);
         
+        String selectedPizza = lstPizza.getSelectionModel().getSelectedItem().toString();
         
+        //String order = "";
         
-        //System.out.println(ingredientToDelete);
-        
-        
-        /*@FXML
-          void onPizzaClick(ActionEvent event) {
- 
-          int selectedPizza = tblViewManage.getSelectionModel().getSelectedIndex();
-          tblViewManage.getItems().remove(selectedPizza);*/
-
-
-    }
-        
-        //String basketString = lstPizza.getSelectionModel().getSelectedItem().toString();
-        
-        //ObservableList listOfPizzas = lstPizza.getSelectionModel().getSelectedItems();
-        
-        //int value = (Integer) spnQuantity.getValue();
-        
-        //System.out.println(value);
-        
-        
-        
-        
-        
-        
-        
-        /*for (Object pizza : listOfPizzas)
-        {
-            basketString += String.format("%s%n", (String) pizza);
+        if (ingredientToDelete == null) {
+            order = selectedPizza + " x" + value;
+        } else {
+            order = selectedPizza + " x" + value + ", no " + ingredientToDelete;
         }
         
-        this.lstBasket.setText(basketString);
+        if (lstBasket != null) {
+            btnNext.setDisable(false);
+        }
         
-        System.out.println(basketString);*/
+        lstBasket.getItems().add(order);
         
-        //lstPizza.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, selectedItem) -> {
+        ingredientToDelete = null;
         
-        //Pizza selectedPizza = (Pizza)selectedItem;
-        
-        //System.out.println(selectedItem);
-        
-        
-    //});
-    
-        
-               
+    }         
     
     public void onStateChanged() {
         
+        lblQuantity.setVisible(false);
         this.spnQuantity.setValueFactory(quantityValueFactory);
+        btnAddToBasket.setDisable(false);
+            
+        
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle("Select a quantity!");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.initOwner(owner);
+        alert.show();
+         }
 
     public void onNextClick() throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("OrderSummary.fxml"));
     
     Stage addBasket = (Stage) btnNext.getScene().getWindow();
-    addBasket.setScene(new Scene(root, 562,508));
+    addBasket.setScene(new Scene(root, 551,560));
     }
 
 
