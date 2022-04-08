@@ -15,6 +15,10 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 33b59f2d730367ecfe9c90bd04bcff83d42ac7d3
         scene = new Scene(loadFXML("OrderSummary"));
         stage.setScene(scene);
         stage.setTitle("Pizza Me");
