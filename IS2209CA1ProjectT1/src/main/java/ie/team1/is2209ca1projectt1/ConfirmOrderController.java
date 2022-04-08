@@ -33,11 +33,11 @@ public class ConfirmOrderController implements Initializable {
 
     @FXML
     private void handleHome() throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml")); //Change to Menu
+    Parent root = FXMLLoader.load(getClass().getResource("CustomerMenu.fxml")); 
     
     
     Stage homeConfirmation = (Stage) btnHome.getScene().getWindow();
-    homeConfirmation.setScene(new Scene(root, 713,400));
+    homeConfirmation.setScene(new Scene(root, 765 , 415));
     }
 
        

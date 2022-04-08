@@ -80,8 +80,9 @@ public class OrderSummaryController implements Initializable {
     
     System.out.println(customerRequest);
     
-     Stage addBasket = (Stage) btnPlaceOrder.getScene().getWindow();
-     addBasket.setScene(new Scene(root, 464,284));
+
+    Stage addBasket = (Stage) btnPlaceOrder.getScene().getWindow();
+    addBasket.setScene(new Scene(root, 181,249));
 
     }
 

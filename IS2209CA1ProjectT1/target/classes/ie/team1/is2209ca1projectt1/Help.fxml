@@ -3,48 +3,42 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="331.0" maxWidth="309.0" prefHeight="331.0" prefWidth="325.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.HelpController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="331.0" prefWidth="309.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.HelpController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff000011" height="97.0" layoutX="17.0" layoutY="66.0" stroke="#141313" strokeType="INSIDE" width="282.0" />
-      <Label layoutX="72.0" layoutY="284.0" prefHeight="17.0" prefWidth="172.0" text="We are always happy to help!" textAlignment="CENTER">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff000011" height="97.0" layoutX="17.0" layoutY="32.0" stroke="#141313" strokeType="INSIDE" width="282.0" />
+      <Label layoutX="72.0" layoutY="231.0" prefHeight="17.0" prefWidth="172.0" text="We are always happy to help!" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Hyperlink layoutX="117.0" layoutY="128.0" text="youwannapizzame@gmail.com" />
-      <ToolBar prefHeight="45.0" prefWidth="315.0" style="-fx-background-color: black;">
-        <items>
-          <Button fx:id="btnHomeHelp" mnemonicParsing="false" text="Home" />
-            <Button fx:id="btnViewOrderHelp" mnemonicParsing="false" text="View Orders" />
-            <Button fx:id="btnLogOutHelp" mnemonicParsing="false" text="Log Out" />
-        </items>
-      </ToolBar>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="292.0" layoutY="38.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="292.0" layoutX="304.0" layoutY="38.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
-      <ImageView fitHeight="115.0" fitWidth="172.0" layoutX="71.0" layoutY="169.0" pickOnBounds="true">
+      <Hyperlink layoutX="117.0" layoutY="94.0" text="youwannapizzame@gmail.com" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="331.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="331.0" layoutX="304.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <ImageView fitHeight="97.0" fitWidth="172.0" layoutX="71.0" layoutY="136.0" pickOnBounds="true">
          <image>
             <Image url="@../Photos/Logo.JPG" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutY="320.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="5.0" layoutX="310.0" layoutY="326.0" stroke="BLACK" strokeType="INSIDE" width="5.0" />
-      <Label layoutX="28.0" layoutY="74.0" text="Contact us at:">
+      <Label layoutX="28.0" layoutY="40.0" text="Contact us at:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="28.0" layoutY="104.0" text="Give us a call:">
+      <Label layoutX="28.0" layoutY="70.0" text="Give us a call:">
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Label>
-      <Label layoutX="27.0" layoutY="131.0" text="Email us here:" />
-      <Hyperlink layoutX="117.0" layoutY="101.0" text="(021) 437-4380" />
+      <Label layoutX="27.0" layoutY="97.0" text="Email us here:" />
+      <Hyperlink layoutX="117.0" layoutY="67.0" text="(021) 437-4380" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="1.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Button fx:id="btnHome" layoutX="120.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleHomeHelp" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: black;" text="Home" textFill="WHITE" />
    </children>
 </AnchorPane>

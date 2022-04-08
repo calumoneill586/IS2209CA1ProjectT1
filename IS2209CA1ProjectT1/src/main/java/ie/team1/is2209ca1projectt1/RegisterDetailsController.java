@@ -106,10 +106,10 @@ public class RegisterDetailsController implements Initializable {
         //Moving to next Scene
         
         infoBox("Account Creation Successful!", null, "Success");
-        Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("CustomerMenu.fxml"));
     
         Stage registerDetails = (Stage) btnCreateAccount.getScene().getWindow();
-        registerDetails.setScene(new Scene(root, 713,400));
+        registerDetails.setScene(new Scene(root, 607,282));
             }      
         }
     

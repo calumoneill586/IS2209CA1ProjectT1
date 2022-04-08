@@ -19,6 +19,7 @@ public class App extends Application {
 
         scene = new Scene(loadFXML("StorePizzaManagemnt"));
 
+
         stage.setScene(scene);
         stage.setTitle("Pizza Me");
         stage.show();
