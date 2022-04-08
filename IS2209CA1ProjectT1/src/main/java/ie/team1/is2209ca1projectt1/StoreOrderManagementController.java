@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -100,6 +101,36 @@ public class StoreOrderManagementController implements Initializable {
     }    
     
 }
+     @FXML
+     void onPizzaClick(ActionEvent event) {
+ 
+    int selectedPizza = tblViewManage.getSelectionModel().getSelectedIndex();
+    tblViewManage.getItems().remove(selectedPizza);
+   
+   
+    }
+     
+          @FXML
+     void onNewClick(ActionEvent event) throws IOException {
+  Parent root = FXMLLoader.load(getClass().getResource("RegisterDetails.fxml"));
+    
+    
+    Stage onNewClick = (Stage) btnAddOrder.getScene().getWindow();
+    onNewClick.setScene(new Scene(root, 713,400)) ;
+  
+
+
+// int selectedPizza = tblViewManage.getSelectionModel().getSelectedIndex();
+    //tblViewManage.getItems().remove(selectedPizza);
+   
+   
+    }
+     
+     
+     
+     
 }
+    
+
 
 
