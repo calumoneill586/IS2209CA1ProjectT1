@@ -119,8 +119,15 @@ public class StorePizzaManagemntController implements Initializable {
       @FXML
      void onPizzaClick(ActionEvent event) {
  
-    int selectedPizza = lstPizza.getSelectionModel().getSelectedIndex();
-   lstPizza.getItems().remove(selectedPizza);
+     int selectedPizza = lstPizza.getSelectionModel().getSelectedIndex();
+  // lstPizza.getItems().remove(selectedPizza);
+     if (lstPizza.getSelectionModel().getSelectedIndex()==-1){
+         System.out.println("No Pizza selected");
+        
+     }else{
+         
+           lstPizza.getItems().remove(selectedPizza);
+     }
      }
       @FXML  
      void onAddPizzaClick(ActionEvent event) {
@@ -133,7 +140,12 @@ public class StorePizzaManagemntController implements Initializable {
      }
          @FXML  
      void onConfirmClick(ActionEvent event) {
- lstPizza.getItems().add(txtAddPizza.getText());
+    
+         
+     
+
+         
+         lstPizza.getItems().add(txtAddPizza.getText());
 
    //lstPizza.getItems().add(txtAddPizza.getText());
      }
@@ -162,7 +174,15 @@ public class StorePizzaManagemntController implements Initializable {
      void onDeleteIngredientClick(ActionEvent event) {
  
     int selectedIngredient = lstIngredients.getSelectionModel().getSelectedIndex();
-   lstIngredients.getItems().remove(selectedIngredient);
+  // lstPizza.getItems().remove(selectedPizza);
+     if (lstIngredients.getSelectionModel().getSelectedIndex()==-1){
+         System.out.println("No Ingredient selected");
+        
+     }else{
+         
+           lstIngredients.getItems().remove(selectedIngredient);
+     }
+   
      }
 
          @FXML  
@@ -181,7 +201,14 @@ public class StorePizzaManagemntController implements Initializable {
      void onDeleteOfferClick(ActionEvent event) {
  
     int selectedOffers = lstSpecialOffers.getSelectionModel().getSelectedIndex();
-   lstSpecialOffers.getItems().remove(selectedOffers);
+  // lstPizza.getItems().remove(selectedPizza);
+     if (lstSpecialOffers.getSelectionModel().getSelectedIndex()==-1){
+         System.out.println("No Offer selected");
+        
+     }else{
+         
+           lstSpecialOffers.getItems().remove(selectedOffers);
+     }
      }
 
      
