@@ -9,17 +9,17 @@ package ie.team1.is2209ca1projectt1.dao;
  *
  * @author admin
  */
-public class OrderId {
+public class OrderItem {
     private int id;
     private int orderid;
     private int pizzaid;
     private int quantity;
     
-    public OrderId() {
+    public OrderItem() {
         
     }
 
-    public OrderId(int id, int orderid, int pizzaid) {
+    public OrderItem(int id, int orderid, int pizzaid, int quantity) {
         this.id = id;
         this.orderid = orderid;
         this.pizzaid = pizzaid;
