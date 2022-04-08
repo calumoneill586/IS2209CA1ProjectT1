@@ -7,17 +7,14 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="560.0" prefWidth="551.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.OrderSummaryController">
+<AnchorPane fx:id="apOrderDetails" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="560.0" prefWidth="551.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.OrderSummaryController">
    <children>
-      <Label layoutX="307.0" layoutY="381.0" text="Total Cost:" />
-      <Label layoutX="481.0" layoutY="375.0" text="Cost">
+      <Label layoutX="307.0" layoutY="341.0" text="Total Cost:" />
+      <Label layoutX="482.0" layoutY="337.0" text="Cost">
          <font>
             <Font name="System Bold" size="20.0" />
          </font></Label>
@@ -56,10 +53,8 @@
             </RadioButton>
          </children>
       </VBox>
-
       <TextArea fx:id="txtRequest" layoutX="24.0" layoutY="348.0" prefHeight="180.0" prefWidth="216.0" />
       <Label layoutX="24.0" layoutY="87.0" text="Select Method">
-
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
@@ -67,7 +62,6 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-
       <Label layoutX="24.0" layoutY="196.0" text="Select Payment Method">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -77,21 +71,11 @@
          <font>
             <Font name="System Bold" size="23.0" />
          </font></Label>
-      <ListView layoutX="307.0" layoutY="108.0" prefHeight="244.0" prefWidth="216.0" />
-      <Label layoutX="307.0" layoutY="76.0" text="My Order">
+      <ListView fx:id="lstMyOrder" layoutX="308.0" layoutY="74.0" prefHeight="244.0" prefWidth="216.0" />
+      <Label layoutX="308.0" layoutY="48.0" text="My Order">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <ImageView fitHeight="67.0" fitWidth="102.0" layoutX="438.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Photos/Logo.JPG" />
-         </image>
-      </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="560.0" layoutX="548.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="1.0" stroke="BLACK" strokeType="INSIDE" width="554.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="-1.0" layoutY="550.0" stroke="BLACK" strokeType="INSIDE" width="554.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="552.0" layoutX="-2.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
-
    </children>
 </AnchorPane>
