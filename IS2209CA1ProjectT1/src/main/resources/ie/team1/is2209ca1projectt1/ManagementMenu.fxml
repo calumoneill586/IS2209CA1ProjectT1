@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="282.0" prefWidth="607.0" style="-fx-background-color: darkred;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.ManagementMenuController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="282.0" prefWidth="607.0" style="-fx-background-color: darkred;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.ManagementMenuController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="246.0" layoutX="38.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" width="535.0" />
       <ImageView fitHeight="153.0" fitWidth="153.0" layoutX="50.0" layoutY="90.0" opacity="0.39">

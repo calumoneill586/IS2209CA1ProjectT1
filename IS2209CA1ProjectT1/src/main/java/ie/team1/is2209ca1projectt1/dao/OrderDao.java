@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ie.team1.is2209ca1projectt1.dao;
 
 import java.sql.Connection;
@@ -99,6 +95,28 @@ public class OrderDao {
         return orders;
     }
     
+    public Order addOrder(Order orderToAdd) {
+        
+        try {
+
+            Statement stmt = conn.createStatement();
+
+            String sqlOrdersUpdate = "INSERT INTO orders (CUSTOMERID) VALUES('" + orderToAdd.getCustomerid() + ")";
+           
+            
+            System.out.println(sqlOrdersUpdate);
+            
+            stmt.executeUpdate(sqlOrdersUpdate);
+            
+            stmt.close();
+            
+        } catch(Exception ex) {
+            System.out.println("something went wrong...");
+            System.out.println(ex.getMessage());
+        }
+        
+        return orderToAdd;
+    }
    
        /*     String orderNumber = rs.toString();
             lblNumber.setText(String.valueOf(orderNumber)); 

@@ -30,10 +30,7 @@ public class RegisterDetailsController implements Initializable {
  
     @FXML
     private PasswordField txtPassword;
-    
-    @FXML
-    public ComboBox cboAllergies; 
-         
+ 
    CustomerDao customerDao = new CustomerDao();
     
    

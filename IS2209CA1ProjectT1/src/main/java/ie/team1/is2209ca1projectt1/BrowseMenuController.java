@@ -30,14 +30,10 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 
-/**
- *
- * @author admin
- */
 public class BrowseMenuController implements Initializable {
     
     @FXML
-    private Button btnNext;
+    private Button btnNext, btnKnowledge;
     @FXML
     private ListView lstBasket;
     
@@ -109,9 +105,17 @@ public class BrowseMenuController implements Initializable {
         
     }
     
+    public void onKnowledge() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("KnowledgeContent.fxml"));
+    
+        Stage addBasket = (Stage) btnNext.getScene().getWindow();
+        addBasket.setScene(new Scene(root, 551,560));
+    }
+    
     public void onClick() {
         
         int value = (Integer) spnQuantity.getValue();
+        //OrderItemDao.addOrderItem(value);
         
         String selectedPizza = lstPizza.getSelectionModel().getSelectedItem().toString();
         
@@ -131,6 +135,8 @@ public class BrowseMenuController implements Initializable {
         
         ingredientToDelete = null;
         
+        //orderDao.addOrder(quantity);
+        
     }         
     
     public void onStateChanged() {
@@ -146,10 +152,30 @@ public class BrowseMenuController implements Initializable {
    
 
     public void onNextClick() throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("OrderSummary.fxml"));
+    
+//Parent root = FXMLLoader.load(getClass().getResource("OrderSummary.fxml"));
+    
+      FXMLLoader loader = new FXMLLoader(
+    getClass().getResource(
+      "OrderSummary.fxml"
+    )
+  );
+    
+    
     
     Stage addBasket = (Stage) btnNext.getScene().getWindow();
-    addBasket.setScene(new Scene(root, 551,560));
+
+    addBasket.setScene(new Scene(loader.load(), 551,560));
+    
+    OrderSummaryController controller = loader.getController();
+  
+    ObservableList basketItems = lstBasket.getItems();
+    controller.setDataFromParent(basketItems);
+    
+    
+
+    
+        //addBasket.setUserData("data from browse menu");
     }
 
 

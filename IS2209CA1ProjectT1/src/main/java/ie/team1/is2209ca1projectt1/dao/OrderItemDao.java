@@ -12,11 +12,11 @@ import java.util.logging.Logger;
  *
  * @author admin
  */
-    public class OrderIdDao {
+    public class OrderItemDao {
         private Connection conn;
         private String connectionString = "jdbc:derby://localhost:1527/pizzadatabase";
     
-    public OrderIdDao () {
+    public OrderItemDao () {
             
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver"); conn = DriverManager.getConnection(connectionString, "username", "password");
@@ -30,13 +30,13 @@ import java.util.logging.Logger;
         
     }
         
-        public OrderId addSelectedPizza(OrderId selectedPizzaToAdd) {
+        public OrderItem addOrderItem(OrderItem orderItemToAdd) {
         
         try {
 
             Statement stmt = conn.createStatement();
             
-            String sql = "INSERT INTO orderitem (selectedItem) VALUES('" + selectedPizzaToAdd.getPizzaid() + "', " + selectedPizzaToAdd.getOrderid()+ "', " + selectedPizzaToAdd.getQuantity() + ")";
+            String sql = "INSERT INTO orderitem (QUANTITY) VALUES('" + orderItemToAdd.getQuantity() + ")";
             
             System.out.println(sql);
             
@@ -49,7 +49,7 @@ import java.util.logging.Logger;
             System.out.println(ex.getMessage());
         }
         
-        return selectedPizzaToAdd;
+        return orderItemToAdd;
     }
         
         
