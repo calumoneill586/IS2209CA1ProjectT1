@@ -91,16 +91,29 @@ public class OrderSummaryController implements Initializable {
         for (String item : basketItems) {
             lstMyOrder.getItems().add(item);
 
+            
+            /*String REGEX = ".*x.*";
+            Pattern pattern = Pattern.compile(REGEX);
+            
+            Matcher matcher = pattern.matcher(item);
+            
+            boolean matches = matcher.matches();
+ 
+            System.out.println("actualString "
+                           + "contains REGEX = "
+                           + matches);
+            
             String[] pizzas = item.split(" ");
             String pizza = pizzas[0];
             
-            /*String[] quantities = item.split("[\\D]");
+            String[] quantities = item.split("^[0-9]+$");
             String quantity = quantities[0];
                         
             
-            System.out.println(quantity);*/
-            System.out.println(pizza);
             
+            System.out.println(pizza);
+            System.out.println(quantity);
+            System.out.println(pattern);*/
         }
         
     }

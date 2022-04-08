@@ -95,6 +95,28 @@ public class OrderDao {
         return orders;
     }
     
+    public Order addOrder(Order orderToAdd) {
+        
+        try {
+
+            Statement stmt = conn.createStatement();
+
+            String sqlOrdersUpdate = "INSERT INTO orders (CUSTOMERID) VALUES('" + orderToAdd.getCustomerid() + ")";
+           
+            
+            System.out.println(sqlOrdersUpdate);
+            
+            stmt.executeUpdate(sqlOrdersUpdate);
+            
+            stmt.close();
+            
+        } catch(Exception ex) {
+            System.out.println("something went wrong...");
+            System.out.println(ex.getMessage());
+        }
+        
+        return orderToAdd;
+    }
    
        /*     String orderNumber = rs.toString();
             lblNumber.setText(String.valueOf(orderNumber)); 

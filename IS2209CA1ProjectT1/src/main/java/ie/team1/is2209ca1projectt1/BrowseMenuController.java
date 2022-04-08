@@ -108,6 +108,7 @@ public class BrowseMenuController implements Initializable {
     public void onClick() {
         
         int value = (Integer) spnQuantity.getValue();
+        //OrderItemDao.addOrderItem(value);
         
         String selectedPizza = lstPizza.getSelectionModel().getSelectedItem().toString();
         
@@ -126,6 +127,8 @@ public class BrowseMenuController implements Initializable {
         lstBasket.getItems().add(order);
         
         ingredientToDelete = null;
+        
+        //orderDao.addOrder(quantity);
         
     }         
     
