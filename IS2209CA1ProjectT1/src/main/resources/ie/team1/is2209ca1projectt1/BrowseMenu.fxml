@@ -10,6 +10,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="765.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.BrowseMenuController">
+
+
+ 
+=======
 
 
 
@@ -25,42 +31,44 @@
 
  
 
+>>>>>>> a8b4a8831f1c22b5a89c0e1b574899f5e4f12e03
    <children>
-      <Button fx:id="btnAddToBasket" layoutX="334.0" layoutY="515.0" mnemonicParsing="false" onAction="#onClick" prefHeight="64.0" prefWidth="182.0" style="-fx-background-color: Green;" text="Add to Basket" textFill="WHITE">
+      <Separator layoutX="443.0" orientation="VERTICAL" prefHeight="430.0" prefWidth="0.0" />
+      <ListView fx:id="lstIngredient" layoutX="240.0" layoutY="54.0" prefHeight="217.0" prefWidth="182.0" />
+      <Button fx:id="btnAddToBasket" layoutX="30.0" layoutY="336.0" mnemonicParsing="false" onAction="#onClick" prefHeight="64.0" prefWidth="390.0" style="-fx-background-color: Green;" text="Add to Basket" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Separator layoutX="434.0" orientation="VERTICAL" prefHeight="336.0" prefWidth="7.0" />
-      <Label layoutX="36.0" layoutY="36.0" prefWidth="145.0" text="Choose Your Pizza">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <ListView fx:id="lstPizza" layoutX="30.0" layoutY="69.0" prefHeight="160.0" prefWidth="182.0">
+      <ListView fx:id="lstPizza" layoutX="30.0" layoutY="54.0" prefHeight="217.0" prefWidth="182.0">
          <opaqueInsets>
-            <Insets top="10.0" />
+            <Insets />
          </opaqueInsets></ListView>
-      <Label layoutX="90.0" layoutY="464.0" text="Select Quantity">
+      <Label layoutX="30.0" layoutY="26.0" prefWidth="145.0" text="Choose Your Pizza!">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Spinner fx:id="spnQuantity" layoutX="90.0" layoutY="497.0" minWidth="-Infinity" onMouseClicked="#onStateChanged" prefHeight="31.0" prefWidth="182.0">
+      <Label layoutX="240.0" layoutY="26.0" prefHeight="8.0" prefWidth="182.0" text="Ingredients">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="469.0" layoutY="26.0" text="Your Basket">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnNext" layoutX="628.0" layoutY="368.0" mnemonicParsing="false" onAction="#onNextClick" prefHeight="25.0" prefWidth="108.0" text="Next &gt;" />
+      <ListView fx:id="lstBasket" layoutX="466.0" layoutY="54.0" prefHeight="217.0" prefWidth="270.0" />
+      <Spinner fx:id="spnQuantity" layoutX="30.0" layoutY="277.0" minWidth="-Infinity" onMouseClicked="#onStateChanged" prefHeight="31.0" prefWidth="182.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Spinner>
-      <Label layoutX="334.0" layoutY="304.0" prefHeight="8.0" prefWidth="182.0" text="Edit Ingredients">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <ListView fx:id="lstIngredient" layoutX="335.0" layoutY="336.0" prefHeight="160.0" prefWidth="145.0" />
-      <Label layoutX="469.0" layoutY="36.0" text="Basket">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Button fx:id="btnNext" layoutX="571.0" layoutY="281.0" mnemonicParsing="false" onAction="#onNextClick" prefHeight="25.0" prefWidth="108.0" text="Next &gt;" />
-      <ListView fx:id="lstBasket" layoutX="469.0" layoutY="68.0" prefHeight="200.0" prefWidth="210.0" />
+      <Label fx:id="lblQuantity" layoutX="36.0" layoutY="282.0" text="Select Quantity" textFill="#00000091" />
+      <Button fx:id="btnDelete" layoutX="240.0" layoutY="277.0" mnemonicParsing="false" onAction="#onDeleteIngredient" prefHeight="31.0" prefWidth="182.0" style="-fx-background-color: red;" text="Remove Ingredient" textFill="WHITE" />
+      <Button fx:id="btnDelItem" layoutX="554.0" layoutY="277.0" mnemonicParsing="false" onAction="#onDeleteItem" prefHeight="31.0" prefWidth="182.0" style="-fx-background-color: red;" text="Remove Item" textFill="WHITE" />
    </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
 </AnchorPane>

@@ -6,13 +6,47 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
+<<<<<<< HEAD
+<?import javafx.scene.control.ToggleGroup?>
+=======
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+>>>>>>> a8b4a8831f1c22b5a89c0e1b574899f5e4f12e03
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="560.0" prefWidth="551.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.OrderSummaryController">
+   <children>
+      <Label layoutX="307.0" layoutY="341.0" text="Total Cost:" />
+      <Label layoutX="482.0" layoutY="337.0" text="Cost">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <Separator layoutX="270.0" orientation="VERTICAL" prefHeight="560.0" prefWidth="12.0" />
+      <VBox layoutX="24.0" layoutY="230.0" prefHeight="50.0" prefWidth="216.0" spacing="10.0">
+         <children>
+            <RadioButton fx:id="rdbCash" mnemonicParsing="false" text="Cash (Pay driver / Pay at Store)">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="Payment" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rdbCard" mnemonicParsing="false" text="Card (Bill linked card)" toggleGroup="$Payment">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </VBox>
+      <VBox layoutX="25.0" layoutY="119.0" prefHeight="50.0" prefWidth="178.0" spacing="10.0">
+         <children>
+            <RadioButton fx:id="rdbCollection" lineSpacing="1.0" mnemonicParsing="false" text="Collection">
+=======
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="554.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.OrderSummaryController">
    <children>
       <ImageView fitHeight="448.0" fitWidth="545.0" layoutX="6.0" layoutY="11.0" opacity="0.32" pickOnBounds="true">
@@ -26,26 +60,52 @@
       <VBox layoutX="320.0" layoutY="77.0" prefHeight="50.0" prefWidth="178.0" spacing="10.0">
          <children>
             <RadioButton lineSpacing="1.0" mnemonicParsing="false" text="Collection">
+>>>>>>> a8b4a8831f1c22b5a89c0e1b574899f5e4f12e03
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="Method" />
+               </toggleGroup>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" text="Delivery">
+            <RadioButton fx:id="rdbDelivery" mnemonicParsing="false" text="Delivery" toggleGroup="$Method">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </RadioButton>
          </children>
       </VBox>
+<<<<<<< HEAD
+      <TextArea fx:id="txtRequest" layoutX="24.0" layoutY="348.0" prefHeight="180.0" prefWidth="216.0" />
+      <Label layoutX="24.0" layoutY="87.0" text="Select Method">
+=======
       <TextArea layoutX="320.0" layoutY="182.0" opacity="0.69" prefHeight="189.0" prefWidth="200.0" />
       <Label layoutX="320.0" layoutY="31.0" text="Select Method" underline="true">
+>>>>>>> a8b4a8831f1c22b5a89c0e1b574899f5e4f12e03
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-      <Label layoutX="320.0" layoutY="148.0" text="Specify Requests">
+      <Label layoutX="24.0" layoutY="318.0" text="Specify Requests">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
+<<<<<<< HEAD
+      <Label layoutX="24.0" layoutY="196.0" text="Select Payment Method">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Button fx:id="btnPlaceOrder" layoutX="307.0" layoutY="438.0" mnemonicParsing="false" onAction="#handlePlaceOrder" prefHeight="92.0" prefWidth="216.0" style="-fx-background-color: Green;" text="Place Order and Pay" textFill="WHITE" />
+      <Label layoutX="24.0" layoutY="31.0" text="Order Details">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font></Label>
+      <ListView layoutX="308.0" layoutY="74.0" prefHeight="244.0" prefWidth="216.0" />
+      <Label layoutX="308.0" layoutY="38.0" text="My Order">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+=======
       <Label layoutX="46.0" layoutY="327.0" text="Select Payment Method" underline="true">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -79,5 +139,6 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="1.0" stroke="BLACK" strokeType="INSIDE" width="554.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="1.0" layoutY="454.0" stroke="BLACK" strokeType="INSIDE" width="554.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="461.0" layoutX="-2.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+>>>>>>> a8b4a8831f1c22b5a89c0e1b574899f5e4f12e03
    </children>
 </AnchorPane>
