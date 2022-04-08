@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="331.0" maxWidth="309.0" prefHeight="331.0" prefWidth="309.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.HelpController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="331.0" prefWidth="309.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.HelpController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff000011" height="97.0" layoutX="17.0" layoutY="32.0" stroke="#141313" strokeType="INSIDE" width="282.0" />
       <Label layoutX="72.0" layoutY="231.0" prefHeight="17.0" prefWidth="172.0" text="We are always happy to help!" textAlignment="CENTER">
