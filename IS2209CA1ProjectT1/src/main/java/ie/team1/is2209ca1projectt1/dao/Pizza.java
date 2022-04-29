@@ -12,19 +12,14 @@ package ie.team1.is2209ca1projectt1.dao;
 public class Pizza {
     private int id;
     private String name;
-    public double price;
+    private double price;
     
     public Pizza() {
-        
     }
 
     public Pizza(int id, String name, double price) {
         this.id = id;
         this.name = name;
-        this.price = price;
-    }
-
-    public Pizza(double price) {
         this.price = price;
     }
 
@@ -40,8 +35,8 @@ public class Pizza {
         return name;
     }
 
-    public void setName(String type) {
-        this.name = type;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getPrice() {
@@ -51,12 +46,13 @@ public class Pizza {
     public void setPrice(double price) {
         this.price = price;
     }
-  
+ 
     @Override
     public String toString() {
-        return name;
+       
+                
+        return name + " - " + price;
         
     }
-    
-    
+   
 }
