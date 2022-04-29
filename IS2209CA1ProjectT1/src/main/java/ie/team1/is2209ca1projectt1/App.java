@@ -19,7 +19,7 @@ public class App extends Application {
 
 
 
-        scene = new Scene(loadFXML("BrowseMenu"));
+        scene = new Scene(loadFXML("PizzaManagementWindowmarkIII"));
 
 
 
@@ -27,11 +27,7 @@ public class App extends Application {
   
 
 
-<<<<<<< HEAD
-        scene = new Scene(loadFXML("PizzaManagementWindowmarkIII"));
 
-=======
->>>>>>> 33244c0310b61497db520e13b7a891c10ae32a1f
         stage.setScene(scene);
         stage.setTitle("Pizza Me");
         stage.show();
