@@ -74,6 +74,7 @@ public class BrowseMenuController implements Initializable {
         //lstPizza.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         lstPizza.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, selectedItem) -> {
             Pizza selectedPizza = (Pizza)selectedItem;
+            
             lstIngredient.getItems().clear();
             
             List<Ingredient> ingredients = pizzaDao.getIngredientsForPizza(selectedPizza.getId());
@@ -81,6 +82,7 @@ public class BrowseMenuController implements Initializable {
             
             for (Ingredient i : ingredients) {
                 lstIngredient.getItems().add(i.getName());
+                
 
             }
         });
@@ -114,24 +116,29 @@ public class BrowseMenuController implements Initializable {
     
     public void onClick() {
         
-        int value = (Integer) spnQuantity.getValue();
-        //OrderItemDao.addOrderItem(value);
+        int quantity = (Integer) spnQuantity.getValue();
+        //OrderItemDao.addOrderItem(quantity);
         
-        String selectedPizza = lstPizza.getSelectionModel().getSelectedItem().toString();
+        //String selectedPizza = lstPizza.getSelectionModel().getSelectedItem().toString();
+        
+        Pizza selectedPizza = (Pizza)lstPizza.getSelectionModel().getSelectedItem();
         
         //String order = "";
         
         if (ingredientToDelete == null) {
-            order = selectedPizza + " x" + value;
+            order = selectedPizza.getName() + " x" + quantity;
         } else {
-            order = selectedPizza + " x" + value + ", no " + ingredientToDelete;
+            order = selectedPizza.getName() + " x" + quantity + ", no " + ingredientToDelete;
         }
+        
+        
+        OrderItem orderItem = new OrderItem(selectedPizza.getId(), selectedPizza.getName(), quantity);
         
         if (lstBasket != null) {
             btnNext.setDisable(false);
         }
         
-        lstBasket.getItems().add(order);
+        lstBasket.getItems().add(orderItem);
         
         ingredientToDelete = null;
         
@@ -169,7 +176,7 @@ public class BrowseMenuController implements Initializable {
     
     OrderSummaryController controller = loader.getController();
   
-    ObservableList basketItems = lstBasket.getItems();
+    ObservableList<OrderItem> basketItems = lstBasket.getItems();
     controller.setDataFromParent(basketItems);
    
     }

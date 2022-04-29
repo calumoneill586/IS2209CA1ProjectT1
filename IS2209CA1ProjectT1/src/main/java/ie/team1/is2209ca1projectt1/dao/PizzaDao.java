@@ -46,7 +46,7 @@ public class PizzaDao {
 
                 int id = rs.getInt("ID");
                 String name = rs.getString("NAME");
-                double price = rs.getInt("PRICE");
+                double price = rs.getDouble("PRICE"); // 29/04/22 changed getInt to getDouble
 
                 Pizza pizza = new Pizza(id, name, price);
                 pizzas.add(pizza);

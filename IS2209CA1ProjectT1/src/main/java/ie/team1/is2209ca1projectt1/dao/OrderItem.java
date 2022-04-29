@@ -14,9 +14,16 @@ public class OrderItem {
     private int orderid;
     private int pizzaid;
     private int quantity;
+    private String pizzaName;
     
     public OrderItem() {
         
+    }
+    
+    public OrderItem(int pizzaid, String pizzaName, int quantity) {
+        this.pizzaid = pizzaid;
+        this.quantity = quantity;
+        this.pizzaName = pizzaName;
     }
 
     public OrderItem(int id, int orderid, int pizzaid, int quantity) {
@@ -58,5 +65,11 @@ public class OrderItem {
         this.quantity = quantity;
     }
 
+    @Override
+    public String toString() {
+        return "" + pizzaName + " x " + quantity;
+    }
+
+    
     
 }
