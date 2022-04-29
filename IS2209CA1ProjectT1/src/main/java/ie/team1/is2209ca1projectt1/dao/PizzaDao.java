@@ -7,6 +7,8 @@ import java.sql.*;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -46,9 +48,10 @@ public class PizzaDao {
 
                 int id = rs.getInt("ID");
                 String name = rs.getString("NAME");
-                double price = rs.getInt("PRICE");
+                double price = rs.getDouble("PRICE"); // 29/04/22 changed getInt to getDouble
 
                 Pizza pizza = new Pizza(id, name, price);
+                //Pizza pizza = new Pizza(price);
                 pizzas.add(pizza);
             }
 
@@ -60,7 +63,8 @@ public class PizzaDao {
 
         return pizzas;
     }
-           
+            
+      
     public Pizza addPizza(Pizza pizzaToAdd) {
         
         try {

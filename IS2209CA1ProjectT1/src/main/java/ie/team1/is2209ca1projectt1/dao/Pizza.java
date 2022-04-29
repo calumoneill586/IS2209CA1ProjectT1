@@ -15,7 +15,6 @@ public class Pizza {
     private double price;
     
     public Pizza() {
-        
     }
 
     public Pizza(int id, String name, double price) {
@@ -36,8 +35,8 @@ public class Pizza {
         return name;
     }
 
-    public void setName(String type) {
-        this.name = type;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getPrice() {
@@ -47,9 +46,13 @@ public class Pizza {
     public void setPrice(double price) {
         this.price = price;
     }
-  
+ 
     @Override
     public String toString() {
-        return name;
+       
+                
+        return name + " - " + price;
+        
     }
+   
 }

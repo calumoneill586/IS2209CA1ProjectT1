@@ -5,6 +5,7 @@
  */
 package ie.team1.is2209ca1projectt1;
 
+import ie.team1.is2209ca1projectt1.dao.OrderItem;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -110,9 +111,9 @@ public class OrderSummaryController implements Initializable {
     
     
 
-    public void setDataFromParent(ObservableList<String> basketItems) {
-        System.out.println(dataFromParent);
-        for (String item : basketItems) {
+    public void setDataFromParent(ObservableList<OrderItem> basketItems) {
+        System.out.println(basketItems);
+        for (OrderItem item : basketItems) {
             lstMyOrder.getItems().add(item);
 
             
