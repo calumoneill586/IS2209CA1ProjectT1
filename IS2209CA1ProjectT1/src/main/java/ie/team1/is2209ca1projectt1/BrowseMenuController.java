@@ -189,6 +189,8 @@ public class BrowseMenuController implements Initializable {
         total.add(price);
         System.out.println(total);
         
+        
+
     }    
 
     

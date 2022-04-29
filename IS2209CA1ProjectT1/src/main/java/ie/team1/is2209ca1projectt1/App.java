@@ -20,7 +20,7 @@ public class App extends Application {
 
 
 
-        scene = new Scene(loadFXML("BrowseMenu"));
+        scene = new Scene(loadFXML("StartPage"));
 
 
 
