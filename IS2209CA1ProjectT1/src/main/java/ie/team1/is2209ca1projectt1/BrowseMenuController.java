@@ -75,6 +75,8 @@ public class BrowseMenuController implements Initializable {
         lstPizza.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, selectedItem) -> {
             Pizza selectedPizza = (Pizza)selectedItem;
             
+            
+            
             lstIngredient.getItems().clear();
             
             List<Ingredient> ingredients = pizzaDao.getIngredientsForPizza(selectedPizza.getId());
