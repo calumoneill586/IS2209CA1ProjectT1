@@ -65,11 +65,6 @@
             <Font size="9.0" />
          </font>
       </Button>
-      <ListView fx:id="lstPrice" layoutX="146.0" layoutY="54.0" prefHeight="217.0" prefWidth="66.0">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </ListView>
    </children>
    <opaqueInsets>
       <Insets />

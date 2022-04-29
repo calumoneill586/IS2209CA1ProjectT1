@@ -12,10 +12,7 @@ public class App extends Application {
     private static Scene scene;
 
     @Override
-    //test
-    // hi Orla
-
-    public void start(Stage stage) throws IOException {
+        public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("BrowseMenu"));
         stage.setScene(scene);
         stage.setTitle("Pizza Me");
