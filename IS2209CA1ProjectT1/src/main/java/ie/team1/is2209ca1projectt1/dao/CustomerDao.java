@@ -111,6 +111,7 @@ public class CustomerDao {
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
+                int Id = rs.getInt("INT");
                 String name = rs.getString("NAME");
                 String addressline1 = rs.getString("ADDRESSLINE1");
                 String addressline2 = rs.getString("ADDRESSLINE2");
@@ -120,7 +121,7 @@ public class CustomerDao {
                 String username = rs.getString("USERNAME");
                 String password = rs.getString("PASSWORD");
                 
-                Customer customer = new Customer(name,addressline1,addressline2,creditcardno,phoneno,allergies,username,password);
+                Customer customer = new Customer(Id, name,addressline1,addressline2,creditcardno,phoneno,allergies,username,password);
                 customers.add(customer);
                  }
             
@@ -134,6 +135,7 @@ public class CustomerDao {
         return customers;
 
 }
+
     public static void printSQLException(SQLException ex) {
         for (Throwable e: ex) {
             if (e instanceof SQLException) {

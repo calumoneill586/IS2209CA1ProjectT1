@@ -102,8 +102,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
      //**Ran out of time to figure out personnel
     @FXML 
     private TableView  tblPersonnel = null; 
-     @FXML 
-   private TableColumn colStaffID, colStaffRole;  
+   
      
      
      
@@ -118,10 +117,27 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
    private TableColumn <Customer, String>addressline1; 
      @FXML
    private TableColumn <Customer, String> phoneno; 
-     @FXML
-   private TableColumn <Customer, String> creditcardno;  
-     @FXML
-   private TableColumn <Customer,String> username; 
+  //   @FXML
+   //private TableColumn <Customer, String> creditcardno;  
+   //  @FXML
+   //private TableColumn <Customer,String> username; 
+     //  @FXML
+  // private TableColumn <Customer ,String> password;
+           @FXML
+   private TableColumn <Customer ,String> allergies;
+            @FXML
+   private TableColumn <Customer, String>addressline2;
+           
+                   
+       
+     
+         @FXML
+   private TableColumn <Staff ,Integer> StaffId;
+             @FXML
+   private TableColumn <Staff ,Integer> ShopId;
+                 @FXML
+   private TableColumn <Staff ,String> StaffRole; 
+         
  
           
     @FXML 
@@ -143,7 +159,8 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
     OrderDao orderdao = new OrderDao();
     IngredientDao ingredientdao = new IngredientDao();
     ShopDao shopdao = new ShopDao();// = new ShopDao();
-    CustomerDao2 customerdao = new CustomerDao2();  
+    CustomerDao2 customerdao2 = new CustomerDao2();  
+    StaffDao staffdao = new StaffDao();
     
        
        
@@ -162,14 +179,22 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
      id.setCellValueFactory(new PropertyValueFactory<Customer, Integer>("id")); 
      name.setCellValueFactory(new PropertyValueFactory<Customer, String>("name")); 
      addressline1.setCellValueFactory(new PropertyValueFactory<Customer, String>("addressline1")); 
+       addressline2.setCellValueFactory(new PropertyValueFactory<Customer, String>("addressline2")); 
      phoneno.setCellValueFactory(new PropertyValueFactory<Customer, String>("phoneno")); 
-     creditcardno.setCellValueFactory(new PropertyValueFactory<Customer, String>("creditcardno")); 
-     username.setCellValueFactory(new PropertyValueFactory<Customer, String>("username")); 
+    // creditcardno.setCellValueFactory(new PropertyValueFactory<Customer, String>("creditcardno")); 
+     //username.setCellValueFactory(new PropertyValueFactory<Customer, String>("username")); 
+     // password.setCellValueFactory(new PropertyValueFactory<Customer, String>("password")); 
+      allergies.setCellValueFactory(new PropertyValueFactory<Customer, String>("allergies")); 
+     
      //Locations 
-     colShopID.setCellValueFactory(new PropertyValueFactory<Shop, Integer>("ID"));  
+     colShopID.setCellValueFactory(new PropertyValueFactory<Shop, Integer>("id"));  
      colLocation.setCellValueFactory(new PropertyValueFactory<Shop, String>("location")); 
+     
+       StaffId.setCellValueFactory(new PropertyValueFactory<Staff, Integer>("id"));  
+       ShopId.setCellValueFactory(new PropertyValueFactory<Staff, Integer>("ShopId")); 
       
-
+       StaffRole.setCellValueFactory(new PropertyValueFactory<Staff, String>("StaffRole")); 
+      
         
 
       //ObservableList<> orders = FXCollections.observableArrayList();
@@ -223,7 +248,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
         }
 
         //User listview 
-        ObservableList<Customer> customers = (ObservableList<Customer>) customerdao.getCustomers();
+        ObservableList<Customer> customers = (ObservableList<Customer>) customerdao2.getCustomers();
 
         tblUsers.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
@@ -231,6 +256,17 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
             tblUsers.getItems().add(customer);
 
         }
+        
+        //User listview 
+        ObservableList<Staff> staffs = (ObservableList<Staff>) staffdao.getStaff();
+
+        tblPersonnel.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+        for (Staff staff : staffs) {
+            tblPersonnel.getItems().add(staff);
+
+        }
+        
     
     }  
        @FXML

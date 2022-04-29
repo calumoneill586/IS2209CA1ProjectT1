@@ -34,8 +34,8 @@ public class OrderSummaryController implements Initializable {
     @FXML private AnchorPane apOrderDetails;
     
     @FXML
-    private Button btnPlaceOrder;
-    
+    private Button btnPlaceOrder, btnBack;
+      
     @FXML
     private ListView lstMyOrder;
 
@@ -109,7 +109,12 @@ public class OrderSummaryController implements Initializable {
 
     }
     
-    
+ @FXML
+    private void handleBack() throws IOException {
+    Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml")); 
+    Stage goBack = (Stage) btnBack.getScene().getWindow();
+    goBack.setScene(new Scene(root, 747 ,400));
+    }
 
     public void setDataFromParent(ObservableList<OrderItem> basketItems) {
         System.out.println(basketItems);
@@ -155,6 +160,5 @@ public class OrderSummaryController implements Initializable {
         
         
     }
-    
-    
+
 }
