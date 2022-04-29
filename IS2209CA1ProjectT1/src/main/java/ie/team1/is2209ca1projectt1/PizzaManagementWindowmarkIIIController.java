@@ -256,7 +256,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
             tblUsers.getItems().add(customer);
 
         }
-        
+           
         //User listview 
         ObservableList<Staff> staffs = (ObservableList<Staff>) staffdao.getStaff();
 
@@ -266,12 +266,16 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
             tblPersonnel.getItems().add(staff);
 
         }
-        
+          
     
-    }  
+    }   
+       @FXML  
+        void onbtnAddIngredientsClick(ActionEvent event) {
+        //tblIngredients.getItems().add(txtIngredients.getText());
+        }
        @FXML
      void onDeleteIngredientClick(ActionEvent event) {
- //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
+ 
     int selectedIngredient = tblIngredients.getSelectionModel().getSelectedIndex();
     tblIngredients.getItems().remove(selectedIngredient); 
     System.out.println("Deletion completed"); 
@@ -279,7 +283,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
      } 
             @FXML
      void onDeleteUserClick(ActionEvent event) {
- //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
+
     int selectedIngredient = tblUsers.getSelectionModel().getSelectedIndex();
     tblUsers.getItems().remove(selectedIngredient); 
     System.out.println("Deletion completed"); 
@@ -287,7 +291,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
      } 
             @FXML
      void onDeleteOrderClick(ActionEvent event) {
- //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
+
     int selectedIngredient = tblOrders.getSelectionModel().getSelectedIndex();
     tblOrders.getItems().remove(selectedIngredient); 
     System.out.println("Deletion completed"); 
@@ -295,7 +299,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
      } 
             @FXML
      void onDeleteStaffClick(ActionEvent event) {
- //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
+
     int selectedIngredient = tblPersonnel.getSelectionModel().getSelectedIndex();
     tblPersonnel.getItems().remove(selectedIngredient); 
     System.out.println("Deletion completed"); 
@@ -303,7 +307,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
      } 
             @FXML
      void onDeleteLocationClick(ActionEvent event) {
- //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
+
     int selectedIngredient = tblLocations.getSelectionModel().getSelectedIndex();
     tblLocations.getItems().remove(selectedIngredient); 
     System.out.println("Deletion completed"); 
