@@ -60,7 +60,7 @@ public class PizzaDao {
         } catch(Exception ex) {
             System.out.println("something went wrong with select from pizza");
         }
-
+        
         return pizzas;
     }
             

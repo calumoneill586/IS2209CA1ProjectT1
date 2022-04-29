@@ -12,7 +12,7 @@ package ie.team1.is2209ca1projectt1.dao;
 public class Pizza {
     private int id;
     private String name;
-    private double price;
+    public double price;
     
     public Pizza() {
     }

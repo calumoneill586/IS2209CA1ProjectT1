@@ -28,6 +28,8 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import java.util.ArrayList;
+import javafx.collections.FXCollections;
 
 
 public class BrowseMenuController implements Initializable {
@@ -62,12 +64,15 @@ public class BrowseMenuController implements Initializable {
     String selectedPizza;
     int value;
     String order = selectedPizza + " x" + value;
+    
        
     @Override
     public void initialize(URL url, ResourceBundle rb) { 
         
         btnAddToBasket.setDisable(true);
         btnNext.setDisable(true);
+        
+        
         
        List<Pizza> pizzas = pizzaDao.getPizzas();
  
@@ -95,6 +100,7 @@ public class BrowseMenuController implements Initializable {
 
         for(Pizza pizza : pizzas) {
             lstPizza.getItems().add(pizza);
+            
         }
        
     }
@@ -129,7 +135,23 @@ public class BrowseMenuController implements Initializable {
         
         Pizza selectedPizza = (Pizza)lstPizza.getSelectionModel().getSelectedItem();
         
-        //String order = "";
+        
+        
+        //System.out.println(selectedPizza.getPrice()* quantity);
+        
+        double quantityByPrice = selectedPizza.getPrice()* quantity;
+        
+        
+        
+        
+        System.out.println(quantityByPrice);
+        
+      
+        
+        
+        
+        
+        
         
         if (ingredientToDelete == null) {
             order = selectedPizza.getName() + " x" + quantity;
@@ -166,6 +188,8 @@ public class BrowseMenuController implements Initializable {
 
     public void onNextClick() throws IOException {
     
+        
+        
 //Parent root = FXMLLoader.load(getClass().getResource("OrderSummary.fxml"));
     
       FXMLLoader loader = new FXMLLoader(
@@ -184,7 +208,8 @@ public class BrowseMenuController implements Initializable {
   
     ObservableList<OrderItem> basketItems = lstBasket.getItems();
     controller.setDataFromParent(basketItems);
-   
+  
+    
     }
 
 

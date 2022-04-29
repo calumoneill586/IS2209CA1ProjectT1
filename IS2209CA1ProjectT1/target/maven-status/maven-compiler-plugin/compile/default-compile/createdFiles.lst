@@ -12,7 +12,6 @@ ie\team1\is2209ca1projectt1\PastOrdersController.class
 ie\team1\is2209ca1projectt1\HelpController.class
 ie\team1\is2209ca1projectt1\dao\OrderItem.class
 ie\team1\is2209ca1projectt1\OrderSummaryController.class
-ie\team1\is2209ca1projectt1\dao\Staff.class
 ie\team1\is2209ca1projectt1\StaffLoginController.class
 ie\team1\is2209ca1projectt1\dao\Shop.class
 ie\team1\is2209ca1projectt1\dao\IngredientDao.class
@@ -25,7 +24,6 @@ ie\team1\is2209ca1projectt1\App.class
 ie\team1\is2209ca1projectt1\KnowledgeContentController.class
 ie\team1\is2209ca1projectt1\dao\Order.class
 ie\team1\is2209ca1projectt1\PizzaManagementWindowmarkIIIController.class
-ie\team1\is2209ca1projectt1\dao\StaffDao.class
 ie\team1\is2209ca1projectt1\dao\Ingredient.class
 ie\team1\is2209ca1projectt1\dao\CustomerDao2.class
 ie\team1\is2209ca1projectt1\StartPageController.class
