@@ -117,12 +117,12 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
    private TableColumn <Customer, String>addressline1; 
      @FXML
    private TableColumn <Customer, String> phoneno; 
-  //   @FXML
-   //private TableColumn <Customer, String> creditcardno;  
-   //  @FXML
-   //private TableColumn <Customer,String> username; 
-     //  @FXML
-  // private TableColumn <Customer ,String> password;
+     @FXML
+   private TableColumn <Customer, String> creditcardno;  
+     @FXML
+   private TableColumn <Customer,String> username; 
+       @FXML
+   private TableColumn <Customer ,String> password;
            @FXML
    private TableColumn <Customer ,String> allergies;
             @FXML
@@ -135,7 +135,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
    private TableColumn <Staff ,Integer> StaffId;
              @FXML
    private TableColumn <Staff ,Integer> ShopId;
-                 @FXML
+                @FXML
    private TableColumn <Staff ,String> StaffRole; 
          
  
@@ -160,7 +160,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
     IngredientDao ingredientdao = new IngredientDao();
     ShopDao shopdao = new ShopDao();// = new ShopDao();
     CustomerDao2 customerdao2 = new CustomerDao2();  
-    StaffDao staffdao = new StaffDao();
+   // StaffDao staffdao = new StaffDao();
     
        
        
@@ -190,10 +190,10 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
      colShopID.setCellValueFactory(new PropertyValueFactory<Shop, Integer>("id"));  
      colLocation.setCellValueFactory(new PropertyValueFactory<Shop, String>("location")); 
      
-       StaffId.setCellValueFactory(new PropertyValueFactory<Staff, Integer>("id"));  
-       ShopId.setCellValueFactory(new PropertyValueFactory<Staff, Integer>("ShopId")); 
+     //  StaffId.setCellValueFactory(new PropertyValueFactory<Staff, Integer>("id"));  
+      // ShopId.setCellValueFactory(new PropertyValueFactory<Staff, Integer>("ShopId")); 
       
-       StaffRole.setCellValueFactory(new PropertyValueFactory<Staff, String>("StaffRole")); 
+     //  StaffRole.setCellValueFactory(new PropertyValueFactory<Staff, String>("StaffRole")); 
       
         
 
@@ -258,17 +258,19 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
         }
            
         //User listview 
-        ObservableList<Staff> staffs = (ObservableList<Staff>) staffdao.getStaff();
+      //  ObservableList<Staff> staffs = (ObservableList<Staff>) staffdao.getStaff();
 
-        tblPersonnel.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+      //  tblPersonnel.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
-        for (Staff staff : staffs) {
-            tblPersonnel.getItems().add(staff);
+     //   for (Staff staff : staffs) {
+      //      tblPersonnel.getItems().add(staff);
+
+
+     //   }
+        
 
         }
-          
     
-    }   
        @FXML  
         void onbtnAddIngredientsClick(ActionEvent event) {
         //tblIngredients.getItems().add(txtIngredients.getText());

@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="apOrderDetails" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="560.0" prefWidth="551.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.OrderSummaryController">
+<AnchorPane fx:id="apOrderDetails" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="560.0" prefWidth="551.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.OrderSummaryController">
    <children>
       <ImageView fitHeight="77.0" fitWidth="102.0" layoutX="437.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -89,6 +89,9 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="560.0" layoutX="541.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="4.0" layoutY="550.0" stroke="BLACK" strokeType="INSIDE" width="542.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="552.0" />
+<<<<<<< HEAD
+=======
       <Button fx:id="btnBack" layoutX="307.0" layoutY="401.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="25.0" prefWidth="216.0" style="-fx-background-color: black;" text="&lt; Back" textFill="WHITE" />
+>>>>>>> 6e7a58c47b2973d2fedf30bcfb30ef742e9a66d6
    </children>
 </AnchorPane>

@@ -1,4 +1,37 @@
 <<<<<<< HEAD
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\Shop.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\ShopDao.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\OrderDao.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\ManagementMenuController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\Order.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\ConfirmOrderController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\IngredientDao.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\KnowledgeContentController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\StartPageController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\App.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\CustomerMenuController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\Ingredient.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\EditCustomersController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\StoreOrderManagementController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\PizzaManagementWindowmarkIIIController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\OrderItem.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\Pizza.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\PastOrdersController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\StaffLoginController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\StorePizzaManagemntController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\BrowseMenuController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\CustomerDao2.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\HelpController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\CustomerDao.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\OrderSummaryController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\Customer.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\LoginController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\Basket.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\PizzaDao.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\RegisterDetailsController.java
+C:\Users\calum\1A SecondYear\IS2209\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\OrderItemDao.java
+=======
+<<<<<<< HEAD
 C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\Ingredient.java
 C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\Basket.java
 C:\Users\Orla\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\PizzaManagementWindowmarkIIIController.java
@@ -67,3 +100,4 @@ C:\Users\cdola\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is22
 C:\Users\cdola\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\OrderDao.java
 C:\Users\cdola\IS2209CA1ProjectT1\IS2209CA1ProjectT1\src\main\java\ie\team1\is2209ca1projectt1\dao\Pizza.java
 >>>>>>> 60d3ece6699692f7932cf90f3012f23d5d19b865
+>>>>>>> 6e7a58c47b2973d2fedf30bcfb30ef742e9a66d6
