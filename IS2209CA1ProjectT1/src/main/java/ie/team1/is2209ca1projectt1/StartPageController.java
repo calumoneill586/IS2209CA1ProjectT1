@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 
 public class StartPageController implements Initializable {
+    
     //Button for moving to Login Page
     @FXML
     private Button btnStart, btnStaffLogin;
@@ -36,7 +37,7 @@ public class StartPageController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-   
+
     }    
     
 }

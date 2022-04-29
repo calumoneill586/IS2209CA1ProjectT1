@@ -10,9 +10,10 @@ package ie.team1.is2209ca1projectt1.dao;
 
 
 public class Customer {
- private String name, addressline1, addressline2, creditcardno, phoneno, allergies, username, password;
-
-    public Customer(String name, String addressline1, String addressline2, String creditcardno, String phoneno, String allergies, String username, String password ) {
+ private String name, addressline1, addressline2, creditcardno, phoneno, allergies, username,password;
+   private int id;
+    public Customer(int id, String name, String addressline1, String addressline2, String creditcardno, String phoneno, String allergies, String username, String Password ) {
+       this.id = id;
         this.name = name;
         this.addressline1 = addressline1;
         this.addressline2 = addressline2;
@@ -23,9 +24,48 @@ public class Customer {
         this.password = password;
         
     }
-       
+
+    public String getAddressline1() {
+        return addressline1;
+    }
+
+    public void setAddressline1(String addressline1) {
+        this.addressline1 = addressline1;
+    }
+
+    public String getAddressline2() {
+        return addressline2;
+    }
+
+    public void setAddressline2(String addressline2) {
+        this.addressline2 = addressline2;
+    }
+
+    public String getCreditcardno() {
+        return creditcardno;
+    }
+
+    public void setCreditcardno(String creditcardno) {
+        this.creditcardno = creditcardno;
+    }
+
+    public String getPhoneno() {
+        return phoneno;
+    }
+
+    public void setPhoneno(String phoneno) {
+        this.phoneno = phoneno;
+    }
+          
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     
-    String getName() {
+    public String getName() {
        return name;
     }
      
@@ -33,7 +73,7 @@ public class Customer {
         this.name = name;
     }
 
-    String getAddressLine1() {
+    public String getAddressLine1() {
         return addressline1;
     }
      
@@ -41,14 +81,14 @@ public class Customer {
         this.addressline1 = addressline1;
     }
 
-    String getAddressLine2() {
+   public String getAddressLine2() {
        return addressline2;
     }
     public void setAddressLine2 (String addressline2) {
         this.addressline2 = addressline2;
     }
    
-    String getCreditCardNo() {
+   public String getCreditCardNo() {
        return creditcardno;
     }
 
@@ -56,7 +96,7 @@ public class Customer {
         this.creditcardno = creditcardno;
     }
     
-    String getPhoneNo() {
+   public  String getPhoneNo() {
        return phoneno;
     }
     
@@ -64,7 +104,7 @@ public class Customer {
         this.phoneno = phoneno;
     }
 
-    String getAllergies() {
+   public String getAllergies() {
       return allergies;
     }
 
@@ -72,7 +112,7 @@ public class Customer {
         this.allergies = allergies;
     }
     
-    String getUsername() {
+   public  String getUsername() {
       return username;
     }
     
@@ -80,14 +120,20 @@ public class Customer {
         this.username = username;
     }
  
-    String getPassword() {
+    public String getPassword() {
       return password;
     }
     
     public void setPassword (String password) {
         this.password = password;
     }
+
+    @Override
+
+    public String toString() {
+        return "Customer{" + "id=" + id + ", name=" + name + ", addressline1=" + addressline1 +", addressline2=" + addressline2 +", creditcardno=" + creditcardno+", phoneno=" + phoneno + ", allergies=" + allergies+ ", username=" + username+ ", password=" + password+   '}';
     
+    }
  
 }
    

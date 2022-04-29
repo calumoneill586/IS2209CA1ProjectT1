@@ -56,17 +56,17 @@ public class StorePizzaManagemntController implements Initializable {
         
         txtSpecialOffers.setVisible(false);
         btnConfirmSpecialOffers.setVisible(false);
-        lblOffer.setVisible(false);
+       // lblOffer.setVisible(false);
                
         lstSpecialOffers.getItems().addAll(Deals);
         
         
         txtAddPizza.setVisible(false);
         btnConfirm.setVisible(false); 
-        lblNewPizza.setVisible(false);
+      //  lblNewPizza.setVisible(false);
         txtAddIngredient.setVisible(false);
         btnConfirmIngredient.setVisible(false); 
-        lblNewIngredient.setVisible(false); 
+      //  lblNewIngredient.setVisible(false); 
                       
         List<Pizza> pizzas = dao.getPizzas();
         

@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */ 
-//120463034
+
 package ie.team1.is2209ca1projectt1.dao;
 
 import java.sql.Connection;
@@ -15,42 +10,73 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.*;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Label;
 
 
 public class CustomerDao2 {
-        private Connection conn;
+    private Connection conn;
     private String connectionString = "jdbc:derby://localhost:1527/pizzadatabase";
+    private Label lblNumber;
     
-    
-    public List<Customer> getCustomers() {
- ObservableList<Customer>customers =  FXCollections.observableArrayList();
-        //List<Customer>customers = new ArrayList<Customer>();
+    public CustomerDao2() {
         
         try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            conn = DriverManager.getConnection(connectionString, "username", "password");
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(OrderDao.class.getName()).log(Level.SEVERE, "can't load driver", ex);
+        }   catch (SQLException ex) {
+                Logger.getLogger(OrderDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+    }
+    
+    public ObservableList<Customer> getCustomers() {
 
-            Statement stmt = conn.createStatement(); 
+
+      // List<Order>orders = new ArrayList<Order>();
+            ObservableList<Customer>customers =  FXCollections.observableArrayList();
+            
+ 
+          //  orders.add(new Order(1,2, "sds", "uhg", "hghg"));
+
+            
+
+       // List<Order> orders = new ArrayList<Order>();
+        
+
+
+        try {
+
+          Statement stmt = conn.createStatement(); 
             //name, addressline1, addressline2, creditcardno, phoneno, allergies, username, password
 
-            String sql = "SELECT PASSWORD, USERNAME, NAME, ADRESSLINE1, ADDRESSLINE2, CREDITCARDNO, PHONENO, ALLERGIES FROM CUSTOMER";
+            String sql = "SELECT * FROM CUSTOMER";
 
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
 
-                String password = rs.getString("PASSWORD");
-                String username = rs.getString("USERNAME"); 
+                int id = rs.getInt("ID");
                 String name = rs.getString("NAME"); 
                 String addressline1 = rs.getString("ADDRESSLINE1"); 
                 String addressline2 = rs.getString("ADDRESSLINE2"); 
-                String creditcardno = rs.getString("CREDITCARDNO"); 
+               String creditcardno = rs.getString("CREDITCARDNO"); 
                 String phoneno = rs.getString("PHONENO"); 
                 String allergies = rs.getString("ALLERGIES");
+                String username = rs.getString("USERNAME");
+                 String password = rs.getString("PASSWORD");
                 
             
 
-                Customer customer = new Customer(password, username, name, addressline1, addressline2, creditcardno, phoneno, allergies );
+                Customer customer = new Customer( id, name, addressline1,addressline2, creditcardno, phoneno, allergies, username, password );
                 customers.add(customer); 
                 
             }
@@ -63,6 +89,22 @@ public class CustomerDao2 {
         return customers;
     }
 }
+
+    
+   
+       /*     String orderNumber = rs.toString();
+            lblNumber.setText(String.valueOf(orderNumber)); 
+         
+            return orderNumber ;*/  
+        
+     //   return orderToAdd;
+    
+
+
+  
+
+
+  
 
       
    
