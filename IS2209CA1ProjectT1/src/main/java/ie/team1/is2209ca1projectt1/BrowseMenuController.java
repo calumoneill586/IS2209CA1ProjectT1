@@ -67,10 +67,10 @@ public class BrowseMenuController implements Initializable {
     int value;
     int quantity;
     String order = selectedPizza + " x" + value;
-    String price = selectedPizza + " x " + quantity;
+    Double price;
        
        
-    ArrayList total = new ArrayList(); 
+    ArrayList orderItemPrices = new ArrayList(); 
    
     
     @Override
@@ -155,12 +155,17 @@ public class BrowseMenuController implements Initializable {
         
         //orderDao.addOrder(quantity);
         
-        price =  " " + selectedPizza.getPrice() * quantity;
+        //Gets Total for the entire order 
+        price = selectedPizza.getPrice() * quantity;
         
-        total.add(price);
-        System.out.println(total);
+        orderItemPrices.add(price);
+        double orderTotal = 0;
         
-    }    
+        for (int i=0; i < orderItemPrices.size(); i++) {
+            orderTotal = orderTotal + price;
+        }
+        System.out.println(orderTotal);
+     }    
 
     
     public void onStateChanged() {
