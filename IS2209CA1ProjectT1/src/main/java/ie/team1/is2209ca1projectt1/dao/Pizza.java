@@ -24,6 +24,10 @@ public class Pizza {
         this.price = price;
     }
 
+    public Pizza(double price) {
+        this.price = price;
+    }
+
     public int getId() {
         return id;
     }

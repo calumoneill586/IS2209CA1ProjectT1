@@ -49,6 +49,7 @@ public class PizzaDao {
                 double price = rs.getDouble("PRICE"); // 29/04/22 changed getInt to getDouble
 
                 Pizza pizza = new Pizza(id, name, price);
+                //Pizza pizza = new Pizza(price);
                 pizzas.add(pizza);
             }
 
