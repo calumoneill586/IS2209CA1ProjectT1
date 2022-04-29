@@ -69,16 +69,20 @@ public class BrowseMenuController implements Initializable {
         btnAddToBasket.setDisable(true);
         btnNext.setDisable(true);
         
-        List<Pizza> pizzas = pizzaDao.getPizzas();
+       List<Pizza> pizzas = pizzaDao.getPizzas();
+ 
         
         //lstPizza.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         lstPizza.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, selectedItem) -> {
             Pizza selectedPizza = (Pizza)selectedItem;
+
             
             
             
             lstIngredient.getItems().clear();
+
             
+            lstIngredient.getItems().clear();
             List<Ingredient> ingredients = pizzaDao.getIngredientsForPizza(selectedPizza.getId());
             lstIngredient.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
             

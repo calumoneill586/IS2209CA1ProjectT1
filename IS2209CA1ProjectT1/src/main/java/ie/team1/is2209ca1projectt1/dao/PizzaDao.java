@@ -7,6 +7,8 @@ import java.sql.*;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -61,7 +63,8 @@ public class PizzaDao {
 
         return pizzas;
     }
-           
+            
+      
     public Pizza addPizza(Pizza pizzaToAdd) {
         
         try {
