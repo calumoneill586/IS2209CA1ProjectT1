@@ -109,6 +109,7 @@ public class OrderSummaryController implements Initializable {
 
     }
     
+    
  @FXML
     private void handleBack() throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml")); 
@@ -117,6 +118,7 @@ public class OrderSummaryController implements Initializable {
     }
 
     public void setDataFromParent(ObservableList<OrderItem> basketItems) {
+        
         System.out.println(basketItems);
         for (OrderItem item : basketItems) {
             lstMyOrder.getItems().add(item);
