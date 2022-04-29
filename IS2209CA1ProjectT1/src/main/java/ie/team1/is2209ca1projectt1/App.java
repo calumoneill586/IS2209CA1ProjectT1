@@ -16,9 +16,7 @@ public class App extends Application {
     // hi Orla
 
     public void start(Stage stage) throws IOException {
-
         scene = new Scene(loadFXML("BrowseMenu"));
-
         stage.setScene(scene);
         stage.setTitle("Pizza Me");
         stage.show();
