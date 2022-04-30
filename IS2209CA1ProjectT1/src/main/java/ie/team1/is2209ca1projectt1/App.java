@@ -14,6 +14,7 @@ public class App extends Application {
     @Override
 
 
+
     //test
     // hi Orla
 
@@ -32,7 +33,7 @@ public class App extends Application {
 
 
         
-        stage.setScene(scene);
+
         stage.setTitle("Pizza Me");
         stage.show();
     }
