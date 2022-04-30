@@ -166,7 +166,8 @@ public class BrowseMenuController implements Initializable {
         
         //orderDao.addOrder(quantity);
         
-        //Gets Total for the entire order 
+        //Gets a Total for the entire order
+        //Test
         price = selectedPizza.getPrice();
         orderTotal = orderTotal + (price * quantity);
         System.out.println(orderTotal);
