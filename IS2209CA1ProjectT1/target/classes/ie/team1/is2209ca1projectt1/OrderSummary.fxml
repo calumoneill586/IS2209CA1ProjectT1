@@ -22,7 +22,7 @@
          </image>
       </ImageView>
       <Label layoutX="307.0" layoutY="341.0" text="Total Cost:" />
-      <Label layoutX="423.0" layoutY="340.0" prefHeight="30.0" prefWidth="80.0" text="Cost">
+      <Label fx:id="lblCost" layoutX="423.0" layoutY="331.0" prefHeight="30.0" prefWidth="80.0" text="Cost">
          <font>
             <Font name="System Bold" size="20.0" />
          </font></Label>

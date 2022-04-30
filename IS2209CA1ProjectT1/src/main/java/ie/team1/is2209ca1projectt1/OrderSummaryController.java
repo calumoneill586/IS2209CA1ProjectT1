@@ -20,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
@@ -54,6 +55,9 @@ public class OrderSummaryController implements Initializable {
     @FXML
     private TextArea txtRequest;
     
+    @FXML
+    private Label lblCost;
+       
     String customerRequest;
     
     
@@ -64,6 +68,7 @@ public class OrderSummaryController implements Initializable {
     
     String payMethod;
     String getMethod;
+    
     
     
     
@@ -159,7 +164,7 @@ public class OrderSummaryController implements Initializable {
        
        BrowseMenuController browseMenu = new BrowseMenuController();
        System.out.println(browseMenu.orderTotal);
-        
+       lblCost.setText("€ " + browseMenu.orderTotal); 
         
     }
 

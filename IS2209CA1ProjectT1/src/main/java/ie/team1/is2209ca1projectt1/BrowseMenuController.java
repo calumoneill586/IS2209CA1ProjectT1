@@ -58,7 +58,7 @@ public class BrowseMenuController implements Initializable {
     private ListView lstIngredient;
     
     @FXML
-    private Label lblQuantity;
+    private Label lblQuantity, lblCost;
     
     PizzaDao pizzaDao = new PizzaDao();
     IngredientDao ingredientDao = new IngredientDao();
@@ -70,10 +70,8 @@ public class BrowseMenuController implements Initializable {
     int quantity;
     String order = selectedPizza + " x" + value;
     Double price; 
-    public static double orderTotal;
+    public static double orderTotal = 0;
 
-    ArrayList orderItemPrices = new ArrayList(); 
-    ArrayList numberOfPizzas = new ArrayList();
    
     @Override
     public void initialize(URL url, ResourceBundle rb) { 
@@ -180,11 +178,10 @@ public class BrowseMenuController implements Initializable {
         }
 
         price = selectedPizza.getPrice();
-        numberOfPizzas.add(lstBasket);  
         orderTotal = orderTotal + (price * quantity);
 
         System.out.println(orderTotal);
-     
+        lblCost.setText("€ " + orderTotal); 
      }    
 
     
