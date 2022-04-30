@@ -69,10 +69,11 @@ public class BrowseMenuController implements Initializable {
     int value;
     int quantity;
     String order = selectedPizza + " x" + value;
-    Double price;
+    Double price; 
+    public static double orderTotal;
 
     ArrayList orderItemPrices = new ArrayList(); 
-   
+    ArrayList numberOfPizzas = new ArrayList();
    
     @Override
     public void initialize(URL url, ResourceBundle rb) { 
@@ -143,21 +144,7 @@ public class BrowseMenuController implements Initializable {
         //String selectedPizza = lstPizza.getSelectionModel().getSelectedItem().toString();
         
         Pizza selectedPizza = (Pizza)lstPizza.getSelectionModel().getSelectedItem();
-        
-        
-        
-        //System.out.println(selectedPizza.getPrice()* quantity);
-        
-        double quantityByPrice = selectedPizza.getPrice()* quantity;
-        
-        
-        
-        
-        System.out.println(quantityByPrice);
-        
-      
-        
-        
+          
         
         
         
@@ -182,17 +169,12 @@ public class BrowseMenuController implements Initializable {
         //orderDao.addOrder(quantity);
         
         //Gets Total for the entire order 
-        price = selectedPizza.getPrice() * quantity;
-        
-        orderItemPrices.add(price);
-        double orderTotal = 0;
-        
-        for (int i=0; i < orderItemPrices.size(); i++) {
-            orderTotal = orderTotal + price;
-        }
+        price = selectedPizza.getPrice();
+        numberOfPizzas.add(lstBasket);  
+        orderTotal = orderTotal + (price * quantity);
         System.out.println(orderTotal);
+     
      }    
-
     
     public void onStateChanged() {
         

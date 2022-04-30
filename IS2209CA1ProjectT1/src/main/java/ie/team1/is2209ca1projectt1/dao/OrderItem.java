@@ -13,7 +13,7 @@ public class OrderItem {
     private int id;
     private int orderid;
     private int pizzaid;
-    private int quantity;
+    public int quantity;
     private String pizzaName;
     
     public OrderItem() {

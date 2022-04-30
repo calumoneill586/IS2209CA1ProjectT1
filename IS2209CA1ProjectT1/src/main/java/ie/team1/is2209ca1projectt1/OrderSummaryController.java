@@ -157,8 +157,8 @@ public class OrderSummaryController implements Initializable {
    
        //String dataFromBrowseMenu = (String)apOrderDetails.getUserData();
        
-
-        
+       BrowseMenuController browseMenu = new BrowseMenuController();
+       System.out.println(browseMenu.orderTotal);
         
         
     }
