@@ -165,17 +165,17 @@ public class BrowseMenuController implements Initializable {
         ingredientToDelete = null;
         
         //orderDao.addOrder(quantity);
-        
+        //test
         //Gets Total for the entire order 
 
         price = selectedPizza.getPrice() * quantity;
         
-        orderItemPrices.add(price);
+        
         double orderTotal = 0;
 
-        for (int i=0; i < orderItemPrices.size(); i++) {
+        
             orderTotal = orderTotal + price;
-        }
+        
 
         price = selectedPizza.getPrice();
         orderTotal = orderTotal + (price * quantity);
