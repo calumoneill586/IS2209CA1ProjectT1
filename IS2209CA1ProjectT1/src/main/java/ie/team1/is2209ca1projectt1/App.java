@@ -11,29 +11,10 @@ import java.io.IOException;
 public class App extends Application { 
     private static Scene scene;
 
-    @Override
-<<<<<<< HEAD
-
-
-    //test
-    // hi Orla
 
     public void start(Stage stage) throws IOException {
 
-
-
         scene = new Scene(loadFXML("StartPage"));
-
-
-
-
-  
-
-
-
-
-        
-
         stage.setScene(scene);
         stage.setTitle("Pizza Me");
         stage.show();
