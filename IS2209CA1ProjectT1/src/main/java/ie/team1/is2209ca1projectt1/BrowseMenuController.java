@@ -72,8 +72,6 @@ public class BrowseMenuController implements Initializable {
     Double price; 
     public static double orderTotal;
 
-    ArrayList orderItemPrices = new ArrayList(); 
-    ArrayList numberOfPizzas = new ArrayList();
    
     @Override
     public void initialize(URL url, ResourceBundle rb) { 
@@ -170,7 +168,6 @@ public class BrowseMenuController implements Initializable {
         
         //Gets Total for the entire order 
         price = selectedPizza.getPrice();
-        numberOfPizzas.add(lstBasket);  
         orderTotal = orderTotal + (price * quantity);
         System.out.println(orderTotal);
      
