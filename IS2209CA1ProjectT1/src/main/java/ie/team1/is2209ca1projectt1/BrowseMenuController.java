@@ -40,7 +40,8 @@ public class BrowseMenuController implements Initializable {
     private Button btnNext, btnKnowledge;
     @FXML
     private ListView lstBasket;
-      @FXML
+    
+    @FXML
     private TextField txtTotal;
     
     @FXML
@@ -67,7 +68,7 @@ public class BrowseMenuController implements Initializable {
     String itemToDelete;
     String selectedPizza;
     int value;
-    int quantity;
+    public int quantity;
     String order = selectedPizza + " x" + value;
     Double price; 
     public static double orderTotal = 0;
@@ -137,16 +138,9 @@ public class BrowseMenuController implements Initializable {
     public void onClick() {
         
         int quantity = (Integer) spnQuantity.getValue();
-        //OrderItemDao.addOrderItem(quantity);
-        
-        //String selectedPizza = lstPizza.getSelectionModel().getSelectedItem().toString();
-        
+             
         Pizza selectedPizza = (Pizza)lstPizza.getSelectionModel().getSelectedItem();
           
-        
-        
-        
-        
         if (ingredientToDelete == null) {
             order = selectedPizza.getName() + " x" + quantity;
         } else {
@@ -164,10 +158,6 @@ public class BrowseMenuController implements Initializable {
           
         ingredientToDelete = null;
         
-        //orderDao.addOrder(quantity);
-
-        
-        //test
         //Gets Total for the entire order     
         price = selectedPizza.getPrice();
         orderTotal = orderTotal + (price * quantity);
