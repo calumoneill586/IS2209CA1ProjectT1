@@ -32,7 +32,8 @@ import javafx.stage.Stage;
 public class OrderSummaryController implements Initializable {
 
     
-    @FXML private AnchorPane apOrderDetails;
+    @FXML 
+    private AnchorPane apOrderDetails;
     
     @FXML
     private Button btnPlaceOrder, btnBack;

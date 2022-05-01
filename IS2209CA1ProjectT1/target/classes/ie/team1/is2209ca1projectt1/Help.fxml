@@ -39,6 +39,6 @@
       <Label layoutX="27.0" layoutY="97.0" text="Email us here:" />
       <Hyperlink layoutX="117.0" layoutY="67.0" text="(021) 437-4380" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="1.0" stroke="BLACK" strokeType="INSIDE" width="314.0" />
-      <Button fx:id="btnHome" layoutX="120.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleHomeHelp" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: black;" text="Home" textFill="WHITE" />
+      <Button fx:id="btnHome" layoutX="120.0" layoutY="271.0" mnemonicParsing="false" onAction="#onHome" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: black;" text="Home" textFill="WHITE" />
    </children>
 </AnchorPane>
