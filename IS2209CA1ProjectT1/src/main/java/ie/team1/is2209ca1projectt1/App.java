@@ -11,6 +11,7 @@ import java.io.IOException;
 public class App extends Application { 
     private static Scene scene;
 
+
     @Override
 
 
@@ -18,7 +19,9 @@ public class App extends Application {
     //test
     // hi Orla
 
+
     public void start(Stage stage) throws IOException {
+
 
 
 
@@ -32,7 +35,7 @@ public class App extends Application {
 
 
 
-        
+        scene = new Scene(loadFXML("StartPage"));
 
         stage.setScene(scene);
         stage.setTitle("Pizza Me");

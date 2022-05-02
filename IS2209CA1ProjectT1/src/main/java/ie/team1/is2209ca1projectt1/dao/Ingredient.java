@@ -12,6 +12,10 @@ import java.util.logging.Logger;
  * @author 120463034
  */
 public class Ingredient {
+
+    public static void add(Ingredient ingredient) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private int id;
     private String name;
 
@@ -19,10 +23,11 @@ public class Ingredient {
     
     
     public Ingredient() {
-        
+       
     }
 
     public Ingredient(int id, String name) {
+        
         this.id = id;
         this.name = name;
     }
@@ -39,8 +44,8 @@ public class Ingredient {
         return name;
     }
 
-    public void setName(String type) {
-        this.name = type;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

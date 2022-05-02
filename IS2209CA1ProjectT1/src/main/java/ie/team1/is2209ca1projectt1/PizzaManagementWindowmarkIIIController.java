@@ -38,6 +38,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView; 
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory; 
 import javafx.stage.Stage;
 /**
@@ -55,8 +56,9 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
      */   
       @FXML
     //Inserting buttons
-    private Button btnNext, btnPrevious, btnDeleteIngredients, btnCreateIngredients, btnCreateUser, btnDeleteUser, btnCreateLocation, btnDeleteLocation, btnCreateOrder, btnDeleteOrder, btnCreatePersonnel, btnDeletePersonnel;
-    //Inserting the TableView panels 
+    private Button btnNext, btnPrevious, btnDeleteIngredients, btnCreateIngredients, btnCreateUser, btnDeleteUser, btnCreateLocation, btnDeleteLocation, btnCreateOrder, btnDeleteOrder, btnCreatePersonnel, btnDeletePersonnel, btnAddUsers,btnAddOrders;
+ //  private TextField txtId,txtName;
+      //Inserting the TableView panels 
       //Order tableview, code based on other management windows throughout project...
 @FXML
     private TableView<Order> tblOrders = null;
@@ -74,9 +76,16 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
           
           @FXML
     private TableColumn<Order, String >request; 
+   @FXML
+      private TextField txtId,txtName;
+   
+   @FXML
+      private TextField txtStaffId,txtShopId, txtStaffRole;
+   
+      @FXML
+      private TextField txtShopId2, txtShopLocation;
    
    
-          
               //Ingredients   
     @FXML
    private TableView<Ingredient> tblIngredients = null; 
@@ -138,7 +147,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
                 @FXML
    private TableColumn <Staff ,String> StaffRole; 
          
- 
+   
           
     @FXML 
    public void onBack() throws IOException {
@@ -160,7 +169,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
     IngredientDao ingredientdao = new IngredientDao();
     ShopDao shopdao = new ShopDao();// = new ShopDao();
     CustomerDao2 customerdao2 = new CustomerDao2();  
-   // StaffDao staffdao = new StaffDao();
+    StaffDao staffdao = new StaffDao();
     
        
        
@@ -175,6 +184,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
      //Ingredients 
      colIngredientID.setCellValueFactory(new PropertyValueFactory<Ingredient, Integer>("id"));
      colIngredientName.setCellValueFactory(new PropertyValueFactory<Ingredient, String>("name"));
+     
      //Users 
      id.setCellValueFactory(new PropertyValueFactory<Customer, Integer>("id")); 
      name.setCellValueFactory(new PropertyValueFactory<Customer, String>("name")); 
@@ -190,12 +200,16 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
      colShopID.setCellValueFactory(new PropertyValueFactory<Shop, Integer>("id"));  
      colLocation.setCellValueFactory(new PropertyValueFactory<Shop, String>("location")); 
      
-     //  StaffId.setCellValueFactory(new PropertyValueFactory<Staff, Integer>("id"));  
-      // ShopId.setCellValueFactory(new PropertyValueFactory<Staff, Integer>("ShopId")); 
+       StaffId.setCellValueFactory(new PropertyValueFactory<Staff, Integer>("id"));  
+       ShopId.setCellValueFactory(new PropertyValueFactory<Staff, Integer>("ShopId")); 
       
-     //  StaffRole.setCellValueFactory(new PropertyValueFactory<Staff, String>("StaffRole")); 
+       StaffRole.setCellValueFactory(new PropertyValueFactory<Staff, String>("StaffRole")); 
       
-        
+
+       
+       
+       
+  
 
       //ObservableList<> orders = FXCollections.observableArrayList();
         ObservableList<Order> orders = (ObservableList<Order>) orderdao.getOrders();
@@ -258,23 +272,109 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
         }
            
         //User listview 
-      //  ObservableList<Staff> staffs = (ObservableList<Staff>) staffdao.getStaff();
+        ObservableList<Staff> staffs = (ObservableList<Staff>) staffdao.getStaff();
 
-      //  tblPersonnel.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        tblPersonnel.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
-     //   for (Staff staff : staffs) {
-      //      tblPersonnel.getItems().add(staff);
+        for (Staff staff : staffs) {
+            tblPersonnel.getItems().add(staff);
 
 
-     //   }
+        }
         
 
         }
     
+      
+   
+    
+                       
+   public void onAddIngredientClick() {
+       Ingredient ingred = new Ingredient (Integer.parseInt(txtId.getText()),txtName.getText());       
+       ObservableList<Ingredient> ingredients = tblIngredients.getItems();
+       ingredients.add(ingred);
+       tblIngredients.setItems(ingredients);
+     //         txtName.getText()));)
+      //Ingredient.add(new Ingredient(
+      //         (Integer.parseInt(txtId.getText())),         
+     //         txtName.getText()));
+//                 public void onAddIngredientClick() {
+  //                 Ingredient.add(new Ingredient(
+    //           (Integer.parseInt(txtId.getText())),         
+      //        txtName.getText()));
+                  //  addFirstName.clear();
+                    //addLastName.clear();
+                    //addEmail.clear();
+                }
+                                              
+   public void onAddStaffClick() {
+       Staff newstaff = new Staff (Integer.parseInt(txtStaffId.getText()),Integer.parseInt(txtShopId.getText()),txtStaffRole.getText());       
+       ObservableList<Staff> staff = tblPersonnel.getItems();
+       staff.add(newstaff);
+       tblPersonnel.setItems(staff);
+     //         txtName.getText()));)
+      //Ingredient.add(new Ingredient(
+      //         (Integer.parseInt(txtId.getText())),         
+     //         txtName.getText()));
+//                 public void onAddIngredientClick() {
+  //                 Ingredient.add(new Ingredient(
+    //           (Integer.parseInt(txtId.getText())),         
+      //        txtName.getText()));
+                  //  addFirstName.clear();
+                    //addLastName.clear();
+                    //addEmail.clear();
+                }
+      public void onAddLocationClick() {
+       Shop newshop = new Shop (Integer.parseInt(txtShopId2.getText()),txtShopLocation.getText());       
+       ObservableList<Shop> shop = tblLocations.getItems();
+       shop.add(newshop);
+       tblLocations.setItems(shop);
+     //         txtName.getText()));)
+      //Ingredient.add(new Ingredient(
+      //         (Integer.parseInt(txtId.getText())),         
+     //         txtName.getText()));
+//                 public void onAddIngredientClick() {
+  //                 Ingredient.add(new Ingredient(
+    //           (Integer.parseInt(txtId.getText())),         
+      //        txtName.getText()));
+                  //  addFirstName.clear();
+                    //addLastName.clear();
+                    //addEmail.clear();
+                }
+         
+    //    String addressline1 = txtAddress1.getText();
+      //  String addressline2 = txtAddress2.getText();
+        //String creditcardno = txtCCNumber.getText();
+        //String phoneno = txtPhoneNumber.getText();
+        //String allergies = txtAllergies.getText();
+        //String username = txtUsername.getText();
+        //String password = txtPassword.getText();
+                
+//tblIngredients.getItems ().add(txtName.getText()); 
+
+//         Ingredient ingred = new Ingredient();
+    //ingred.setId(Integer.parseInt(txtId.getText()));
+    //ingred.setName(txtName.getText());
+      //   ObservableList<Ingredient> ingredients = (ObservableList<Ingredient>) ingredientdao.getIngredients();
+
+        //tblIngredients.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+     //   for (Ingredient ingredient : ingredients) {
+       //     tblIngredients.getItems().add(ingredient); 
+        
+        
+
+ //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
+    //ingredients.add(ingred);
+    //tblIngredients.setItems(ingredients);
+    
+      
+   
        @FXML  
         void onbtnAddIngredientsClick(ActionEvent event) {
         //tblIngredients.getItems().add(txtIngredients.getText());
         }
+
        @FXML
      void onDeleteIngredientClick(ActionEvent event) {
  
@@ -286,39 +386,80 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
             @FXML
      void onDeleteUserClick(ActionEvent event) {
 
-    int selectedIngredient = tblUsers.getSelectionModel().getSelectedIndex();
-    tblUsers.getItems().remove(selectedIngredient); 
+ //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
+    int selectedUser = tblUsers.getSelectionModel().getSelectedIndex();
+    tblUsers.getItems().remove(selectedUser); 
+
+
+   
+
     System.out.println("Deletion completed"); 
     
      } 
             @FXML
      void onDeleteOrderClick(ActionEvent event) {
 
-    int selectedIngredient = tblOrders.getSelectionModel().getSelectedIndex();
-    tblOrders.getItems().remove(selectedIngredient); 
+ //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
+    int selectedOrder = tblOrders.getSelectionModel().getSelectedIndex();
+    tblOrders.getItems().remove(selectedOrder); 
+
+
+ 
+
     System.out.println("Deletion completed"); 
     
      } 
             @FXML
      void onDeleteStaffClick(ActionEvent event) {
 
-    int selectedIngredient = tblPersonnel.getSelectionModel().getSelectedIndex();
-    tblPersonnel.getItems().remove(selectedIngredient); 
+ //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
+    int selectedStaff = tblPersonnel.getSelectionModel().getSelectedIndex();
+    tblPersonnel.getItems().remove(selectedStaff); 
+   
     System.out.println("Deletion completed"); 
     
      } 
             @FXML
      void onDeleteLocationClick(ActionEvent event) {
+ //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
+    int selectedLocation = tblLocations.getSelectionModel().getSelectedIndex();
+    tblLocations.getItems().remove(selectedLocation); 
 
-    int selectedIngredient = tblLocations.getSelectionModel().getSelectedIndex();
-    tblLocations.getItems().remove(selectedIngredient); 
+
+    
     System.out.println("Deletion completed"); 
     
      } 
+       @FXML
+     void onNewUser(ActionEvent event) throws IOException {
+  Parent root = FXMLLoader.load(getClass().getResource("RegisterDetails.fxml"));
+    
+    
+    Stage onNewClick = (Stage) btnAddUsers.getScene().getWindow();
+    onNewClick.setScene(new Scene(root, 713,400)) ;
+  
+
+
+// int selectedPizza = tblViewManage.getSelectionModel().getSelectedIndex();
+    //tblViewManage.getItems().remove(selectedPizza);
+   
+   
+    }
+     @FXML
+          void onNewOrder(ActionEvent event) throws IOException {
+  Parent root = FXMLLoader.load(getClass().getResource("RegisterDetails.fxml"));
+    
+    
+    Stage onNewClick = (Stage) btnAddOrders.getScene().getWindow();
+    onNewClick.setScene(new Scene(root, 713,400)) ;
+  
+
+
+// int selectedPizza = tblViewManage.getSelectionModel().getSelectedIndex();
+    //tblViewManage.getItems().remove(selectedPizza);
+   
+   
+    }
+     
      
 } 
- 
-
-       
-    
-
