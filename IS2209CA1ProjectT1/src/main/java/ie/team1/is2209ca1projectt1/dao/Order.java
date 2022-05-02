@@ -13,7 +13,7 @@ public class Order {
     private String request;
     
 
-    public Order(int orderid, int customerid, String paymethod, String getmethod, String request) { //change data types to fit 
+    public Order(int orderid, int customerid, String paymethod, String getmethod, String request, Double total) { //change data types to fit 
         this.orderid = orderid;
         this.customerid = customerid;
         this.paymethod = paymethod;
