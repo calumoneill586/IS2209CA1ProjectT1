@@ -13,13 +13,6 @@ public class App extends Application {
 
 
     @Override
-
-
-
-    //test
-    // hi Orla
-
-
     public void start(Stage stage) throws IOException {
 
 
@@ -34,6 +27,9 @@ public class App extends Application {
 
 
 
+
+
+   
 
 
  
