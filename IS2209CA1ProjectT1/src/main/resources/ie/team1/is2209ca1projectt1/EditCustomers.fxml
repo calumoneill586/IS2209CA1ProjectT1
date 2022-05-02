@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="677.0" style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="ie.team1.is2209ca1projectt1.EditCustomersController">
+<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="677.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.team1.is2209ca1projectt1.EditCustomersController">
     <children>
         <Label fx:id="label" layoutX="57.0" layoutY="157.0" minHeight="16" minWidth="69" text="Edit User Details" underline="true">
          <font>
@@ -46,7 +46,7 @@
       <Separator layoutX="11.0" layoutY="145.0" prefHeight="5.0" prefWidth="653.0" />
       <TableView fx:id="tblCustomers" layoutX="36.0" layoutY="24.0" prefHeight="111.0" prefWidth="603.0">
         <columns>
-          <TableColumn fx:id="cname" prefWidth="54.800048828125" text="Name" />
+          <TableColumn fx:id="cname" onEditCommit="#changeNameCellEvent" prefWidth="54.800048828125" text="Name" />
           <TableColumn fx:id="caddressline1" prefWidth="82.39995574951172" text="Address 1" />
             <TableColumn fx:id="caddressline2" prefWidth="75.199951171875" text="Address 2" />
             <TableColumn fx:id="ccreditcardno" prefWidth="77.5999755859375" text="Credit Card" />

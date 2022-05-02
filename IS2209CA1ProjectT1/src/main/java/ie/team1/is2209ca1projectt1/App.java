@@ -12,7 +12,7 @@ public class App extends Application {
     private static Scene scene;
 
     @Override
-<<<<<<< HEAD
+
 
 
     //test
@@ -22,7 +22,7 @@ public class App extends Application {
 
 
 
-        scene = new Scene(loadFXML("StartPage"));
+        scene = new Scene(loadFXML("EditCustomers"));
 
 
 
