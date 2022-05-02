@@ -14,10 +14,10 @@ public class App extends Application {
 
     public void start(Stage stage) throws IOException {
 
-<<<<<<< HEAD
 
 
-        scene = new Scene(loadFXML("EditCustomers"));
+
+        scene = new Scene(loadFXML("PizzaManagementWindowmarkIII"));
 
 
 
@@ -26,9 +26,8 @@ public class App extends Application {
 
 
 
-=======
-        scene = new Scene(loadFXML("StartPage"));
->>>>>>> 7c2b0f60e9e398c142088b6fefcc0068cb755068
+
+        
         stage.setScene(scene);
         stage.setTitle("Pizza Me");
         stage.show();
