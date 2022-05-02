@@ -33,7 +33,7 @@ public class CustomerMenuController implements Initializable {
         );
 
         Stage login = (Stage) btnOrderPizza.getScene().getWindow();
-        login.setScene(new Scene(loader.load(), 607, 282));
+        login.setScene(new Scene(loader.load(), 765, 415));
 
         // get the controller for the next scene
         BrowseMenuController controller = loader.getController();

@@ -101,7 +101,7 @@ public class StoreOrderManagementController implements Initializable {
     
     
     Stage onNewClick = (Stage) btnAddOrder.getScene().getWindow();
-    onNewClick.setScene(new Scene(root, 713,400)) ;
+    onNewClick.setScene(new Scene(root, 651,413)) ;
   
 
 

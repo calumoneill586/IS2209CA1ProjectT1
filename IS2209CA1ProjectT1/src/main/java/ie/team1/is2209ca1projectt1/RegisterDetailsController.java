@@ -39,7 +39,7 @@ public class RegisterDetailsController implements Initializable {
     Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
     
     Stage back = (Stage) btnDetailsBack.getScene().getWindow();
-    back.setScene(new Scene(root, 600,316));
+    back.setScene(new Scene(root, 602,299));
     }
   
     //Create Account button  

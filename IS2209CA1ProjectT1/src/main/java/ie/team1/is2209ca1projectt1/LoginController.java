@@ -87,7 +87,7 @@ public class LoginController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("RegisterDetails.fxml"));
 
         Stage clickHere = (Stage) btnCreateAccount.getScene().getWindow();
-        clickHere.setScene(new Scene(root, 681, 597));
+        clickHere.setScene(new Scene(root, 651, 413));
     }
 
     public static void infoBox(String infoMessage, String headerText, String title) {
