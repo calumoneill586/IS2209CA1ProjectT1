@@ -22,7 +22,7 @@
          </image>
       </ImageView>
       <Label layoutX="307.0" layoutY="341.0" text="Total Cost:" />
-      <Label layoutX="482.0" layoutY="337.0" text="Cost">
+      <Label fx:id="lblCost" layoutX="423.0" layoutY="331.0" prefHeight="30.0" prefWidth="80.0" text="Cost">
          <font>
             <Font name="System Bold" size="20.0" />
          </font></Label>
@@ -74,7 +74,7 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-      <Button fx:id="btnPlaceOrder" layoutX="307.0" layoutY="438.0" mnemonicParsing="false" onAction="#handlePlaceOrder" prefHeight="92.0" prefWidth="216.0" style="-fx-background-color: Green;" text="Place Order and Pay" textFill="WHITE" />
+      <Button fx:id="btnPlaceOrder" layoutX="307.0" layoutY="438.0" mnemonicParsing="false" onAction="#handlePlaceOrder" prefHeight="89.0" prefWidth="216.0" style="-fx-background-color: Green;" text="Place Order and Pay" textFill="WHITE" />
       <Label layoutX="24.0" layoutY="31.0" text="Order Details">
          <font>
             <Font name="System Bold" size="23.0" />
@@ -89,6 +89,6 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="560.0" layoutX="541.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="4.0" layoutY="550.0" stroke="BLACK" strokeType="INSIDE" width="542.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="11.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="552.0" />
-      <Button fx:id="btnBack" layoutX="363.0" layoutY="391.0" mnemonicParsing="false" onAction="#handleBack" text="Button" />
+      <Button fx:id="btnBack" layoutX="307.0" layoutY="401.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="25.0" prefWidth="216.0" style="-fx-background-color: black;" text="&lt; Back" textFill="WHITE" />
    </children>
 </AnchorPane>

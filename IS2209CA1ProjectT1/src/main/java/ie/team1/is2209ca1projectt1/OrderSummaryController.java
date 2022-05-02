@@ -5,12 +5,16 @@
  */
 package ie.team1.is2209ca1projectt1;
 
+import ie.team1.is2209ca1projectt1.dao.Customer;
+import ie.team1.is2209ca1projectt1.dao.OrderDao;
 import ie.team1.is2209ca1projectt1.dao.OrderItem;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.regex.*;
 import javafx.collections.ObservableList;
@@ -20,6 +24,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
@@ -31,7 +36,8 @@ import javafx.stage.Stage;
 public class OrderSummaryController implements Initializable {
 
     
-    @FXML private AnchorPane apOrderDetails;
+    @FXML 
+    private AnchorPane apOrderDetails;
     
     @FXML
     private Button btnPlaceOrder, btnBack;
@@ -54,6 +60,9 @@ public class OrderSummaryController implements Initializable {
     @FXML
     private TextArea txtRequest;
     
+    @FXML
+    private Label lblCost;
+       
     String customerRequest;
     
     
@@ -65,6 +74,7 @@ public class OrderSummaryController implements Initializable {
     String payMethod;
     String getMethod;
     
+    OrderDao orderDao = new OrderDao();
     
     
     //Add to Basket button
@@ -96,18 +106,15 @@ public class OrderSummaryController implements Initializable {
     finalOrderDetails = payMethod + ". " + getMethod + ". " + "Customer Request (if any): " + customerRequest;
     System.out.println(finalOrderDetails);
     
+    String customerid = orderDao.customerid;
+    String paymethod = payMethod;
+    String getmethod = getMethod;
+    String request = customerRequest;
     
+    OrderDao.insertOrder(customerid, paymethod, getmethod, request);          
     
-
-    /*FileWriter myWriter = new FileWriter("orders.txt");
-      myWriter.write(finalOrderDetails);
-      myWriter.write(dataFromParent);
-      myWriter.close();*/
-    
-
-    
-
     }
+    
     
  @FXML
     private void handleBack() throws IOException {
@@ -117,6 +124,7 @@ public class OrderSummaryController implements Initializable {
     }
 
     public void setDataFromParent(ObservableList<OrderItem> basketItems) {
+        
         System.out.println(basketItems);
         for (OrderItem item : basketItems) {
             lstMyOrder.getItems().add(item);
@@ -149,15 +157,18 @@ public class OrderSummaryController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+     //  customerid = orderDao.getId();
+       
+    System.out.println(orderDao.customerid);
         
        // Stage addBasket = (Stage) btnPlaceOrder.getScene().getWindow();
     
    
        //String dataFromBrowseMenu = (String)apOrderDetails.getUserData();
        
-
-        
-        
+       BrowseMenuController browseMenu = new BrowseMenuController();
+       System.out.println(browseMenu.orderTotal);
+       lblCost.setText("€ " + browseMenu.orderTotal); 
         
     }
 

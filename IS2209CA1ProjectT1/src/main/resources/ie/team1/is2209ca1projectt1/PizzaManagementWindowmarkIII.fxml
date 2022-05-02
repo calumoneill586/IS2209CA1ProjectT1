@@ -43,6 +43,7 @@
             <TableColumn fx:id="colIngredientName" prefWidth="75.0" text="Name" />
          </columns>
       </TableView>
+<<<<<<< HEAD
       <Button fx:id="btnCreatePersonnel" layoutX="764.0" layoutY="431.0" mnemonicParsing="false" onAction="#onAddStaffClick" prefHeight="26.0" prefWidth="150.0" text="Add" />
       <Button fx:id="btnDeletePersonnel" layoutX="888.0" layoutY="241.0" mnemonicParsing="false" onAction="#onDeleteStaffClick" text="Delete" />
       <Button fx:id="btnCreateLocation" layoutX="319.0" layoutY="379.0" mnemonicParsing="false" onAction="#onAddLocationClick" prefHeight="26.0" prefWidth="150.0" text="Add" />
@@ -50,6 +51,15 @@
       <Button fx:id="btnAddUsers" layoutX="69.0" layoutY="493.0" mnemonicParsing="false" onAction="#onNewUser" text="Add" />
       <Button fx:id="btnDeleteUsers" layoutX="217.0" layoutY="493.0" mnemonicParsing="false" onAction="#onDeleteUserClick" text="Delete" />
       <Button fx:id="btnCreateIngredients" layoutX="543.0" layoutY="380.0" mnemonicParsing="false" onAction="#onAddIngredientClick" prefHeight="26.0" prefWidth="150.0" text="Add" />
+=======
+      <Button fx:id="btnAddPersonnel" layoutX="764.0" layoutY="431.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Add" />
+      <Button fx:id="btnDeletePersonnel" layoutX="888.0" layoutY="241.0" mnemonicParsing="false" onAction="#onDeleteStaffClick" text="Delete" />
+      <Button fx:id="btnAddLocations" layoutX="319.0" layoutY="379.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Add" />
+      <Button fx:id="btnDeleteLocations" layoutX="447.0" layoutY="241.0" mnemonicParsing="false" onAction="#onDeleteLocationClick" text="Delete" />
+      <Button fx:id="btnAddUsers" layoutX="69.0" layoutY="493.0" mnemonicParsing="false" text="Add" />
+      <Button fx:id="btnDeleteUsers" layoutX="217.0" layoutY="493.0" mnemonicParsing="false" onAction="#onDeleteUserClick" text="Delete" />
+      <Button fx:id="btnAddIngredients" layoutX="543.0" layoutY="380.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Add" />
+>>>>>>> 7c2b0f60e9e398c142088b6fefcc0068cb755068
       <Button fx:id="btnDeleteIngredients" layoutX="671.0" layoutY="241.0" mnemonicParsing="false" onAction="#onDeleteIngredientClick" text="Delete" />
       <Button fx:id="btnPrevious" layoutX="40.0" layoutY="537.0" mnemonicParsing="false" onAction="#onBack" text="Menu" />
       <Button fx:id="btnNext" layoutX="920.0" layoutY="537.0" mnemonicParsing="false" text="Exit" />
@@ -62,8 +72,13 @@
             <TableColumn fx:id="customerid" prefWidth="75.0" text="Customer ID" />
          </columns>
       </TableView>
+<<<<<<< HEAD
       <Button fx:id="btnDeleteOrder" layoutX="217.0" layoutY="241.0" mnemonicParsing="false" onAction="#onDeleteOrderClick" text="Delete" />
       <Button fx:id="btnAddOrders" layoutX="69.0" layoutY="241.0" mnemonicParsing="false" onAction="#onNewOrder" text="Add" />
+=======
+      <Button fx:id="btnDeleteOrdersmarkIII" layoutX="217.0" layoutY="241.0" mnemonicParsing="false" onAction="#onDeleteOrderClick" text="Delete" />
+      <Button fx:id="btnAddOrders" layoutX="69.0" layoutY="241.0" mnemonicParsing="false" text="Add" />
+>>>>>>> 7c2b0f60e9e398c142088b6fefcc0068cb755068
       <Label layoutX="813.0" layoutY="24.0" text="Personnel" />
       <Label layoutX="377.0" layoutY="24.0" text="Locations" />
       <Label layoutX="155.0" layoutY="276.0" text="Users" />
@@ -83,6 +98,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="609.0" layoutX="965.0" stroke="BLACK" strokeType="INSIDE" width="38.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="26.0" layoutX="-1.0" layoutY="582.0" stroke="BLACK" strokeType="INSIDE" width="985.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17130f" height="598.0" layoutX="-6.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+<<<<<<< HEAD
       <TextField fx:id="txtShopId2" layoutX="320.0" layoutY="284.0" promptText="Enter ID" />
       <TextField fx:id="txtShopLocation" layoutX="320.0" layoutY="340.0" promptText="Enter Location" />
       <TextField fx:id="txtId" layoutX="544.0" layoutY="281.0" promptText="Enter ID" />
@@ -90,5 +106,14 @@
       <TextField fx:id="txtStaffId" layoutX="765.0" layoutY="281.0" promptText="Enter ID" />
       <TextField fx:id="txtShopId" layoutX="765.0" layoutY="340.0" promptText="Enter Shop ID" />
       <TextField fx:id="txtStaffRole" layoutX="766.0" layoutY="393.0" promptText="Enter Staff Role" />
+=======
+      <TextField fx:id="txtLocationid" layoutX="320.0" layoutY="284.0" promptText="Enter ID" />
+      <TextField fx:id="txtLocationname" layoutX="320.0" layoutY="340.0" promptText="Enter Location" />
+      <TextField fx:id="txtingredientid" layoutX="544.0" layoutY="281.0" promptText="Enter ID" />
+      <TextField fx:id="txtingredientname" layoutX="544.0" layoutY="340.0" promptText="Enter Ingredient Name" />
+      <TextField fx:id="txtpersonnelid" layoutX="765.0" layoutY="281.0" promptText="Enter ID" />
+      <TextField fx:id="txtshopid" layoutX="765.0" layoutY="340.0" promptText="Enter Shop ID" />
+      <TextField fx:id="txtstaffrole" layoutX="766.0" layoutY="393.0" promptText="Enter Staff Role" />
+>>>>>>> 7c2b0f60e9e398c142088b6fefcc0068cb755068
    </children>
 </AnchorPane>

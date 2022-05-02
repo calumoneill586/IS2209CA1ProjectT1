@@ -18,6 +18,7 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextArea;
 import ie.team1.is2209ca1projectt1.dao.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,8 +27,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import java.util.ArrayList;
+import javafx.collections.FXCollections;
 
 
 public class BrowseMenuController implements Initializable {
@@ -36,6 +40,9 @@ public class BrowseMenuController implements Initializable {
     private Button btnNext, btnKnowledge;
     @FXML
     private ListView lstBasket;
+    
+    @FXML
+    private TextField txtTotal;
     
     @FXML
     private Spinner spnQuantity;
@@ -52,7 +59,7 @@ public class BrowseMenuController implements Initializable {
     private ListView lstIngredient;
     
     @FXML
-    private Label lblQuantity;
+    private Label lblQuantity, lblCost;
     
     PizzaDao pizzaDao = new PizzaDao();
     IngredientDao ingredientDao = new IngredientDao();
@@ -61,23 +68,26 @@ public class BrowseMenuController implements Initializable {
     String itemToDelete;
     String selectedPizza;
     int value;
+    public int quantity;
     String order = selectedPizza + " x" + value;
-       
+    Double price; 
+    public static double orderTotal = 0;
+
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) { 
         
         btnAddToBasket.setDisable(true);
         btnNext.setDisable(true);
         
+        
+        
        List<Pizza> pizzas = pizzaDao.getPizzas();
  
         
         //lstPizza.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         lstPizza.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, selectedItem) -> {
-            Pizza selectedPizza = (Pizza)selectedItem;
-
-            
-            
+            Pizza selectedPizza = (Pizza)selectedItem;          
             
             lstIngredient.getItems().clear();
 
@@ -89,15 +99,20 @@ public class BrowseMenuController implements Initializable {
             for (Ingredient i : ingredients) {
                 lstIngredient.getItems().add(i.getName());
                 
-
             }
         });
 
         for(Pizza pizza : pizzas) {
             lstPizza.getItems().add(pizza);
+
+            
         }
        
-    }
+
+              } 
+
+    
+    
     
     public void onDeleteIngredient() {
 
@@ -123,14 +138,9 @@ public class BrowseMenuController implements Initializable {
     public void onClick() {
         
         int quantity = (Integer) spnQuantity.getValue();
-        //OrderItemDao.addOrderItem(quantity);
-        
-        //String selectedPizza = lstPizza.getSelectionModel().getSelectedItem().toString();
-        
+             
         Pizza selectedPizza = (Pizza)lstPizza.getSelectionModel().getSelectedItem();
-        
-        //String order = "";
-        
+          
         if (ingredientToDelete == null) {
             order = selectedPizza.getName() + " x" + quantity;
         } else {
@@ -145,12 +155,16 @@ public class BrowseMenuController implements Initializable {
         }
         
         lstBasket.getItems().add(orderItem);
-        
+          
         ingredientToDelete = null;
         
-        //orderDao.addOrder(quantity);
-        
-    }         
+        //Gets Total for the entire order     
+        price = selectedPizza.getPrice();
+        orderTotal = orderTotal + (price * quantity);
+        System.out.println(orderTotal);
+        lblCost.setText("€ " + orderTotal); 
+     }    
+
     
     public void onStateChanged() {
         
@@ -166,6 +180,8 @@ public class BrowseMenuController implements Initializable {
 
     public void onNextClick() throws IOException {
     
+        
+        
 //Parent root = FXMLLoader.load(getClass().getResource("OrderSummary.fxml"));
     
       FXMLLoader loader = new FXMLLoader(
@@ -184,10 +200,8 @@ public class BrowseMenuController implements Initializable {
   
     ObservableList<OrderItem> basketItems = lstBasket.getItems();
     controller.setDataFromParent(basketItems);
-   
+  
+    
     }
-
-
-        
-    }
+ }
 
