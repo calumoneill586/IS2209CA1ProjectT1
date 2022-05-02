@@ -32,104 +32,97 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-
 public class OrderSummaryController implements Initializable {
 
-    
-    @FXML 
+    @FXML
     private AnchorPane apOrderDetails;
-    
+
     @FXML
     private Button btnPlaceOrder, btnBack;
-      
+
     @FXML
     private ListView lstMyOrder;
 
     @FXML
     private RadioButton rdbCash;
-    
+
     @FXML
     private RadioButton rdbCard;
-    
+
     @FXML
     private RadioButton rdbCollection;
-    
+
     @FXML
     private RadioButton rdbDelivery;
-    
+
     @FXML
     private TextArea txtRequest;
-    
+
     @FXML
     private Label lblCost;
-       
+
     String customerRequest;
-    
-    
+
     String finalOrderDetails;
-    
-    
+
     String dataFromParent;
-    
+
     String payMethod;
     String getMethod;
-    
+
+    private Customer customer;
+
     OrderDao orderDao = new OrderDao();
-    
-    
+    BrowseMenuController browseMenu = new BrowseMenuController();
+
     //Add to Basket button
     @FXML
     private void handlePlaceOrder() throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("ConfirmOrder.fxml"));
-      Stage addBasket = (Stage) btnPlaceOrder.getScene().getWindow();
-    addBasket.setScene(new Scene(root, 181,249)); 
-    
-    
-    
-    if (rdbCash.isSelected()) {
-        payMethod = "Customer will pay with cash";
-    } else {
-        payMethod = "Customer will pay with card";
+        Parent root = FXMLLoader.load(getClass().getResource("ConfirmOrder.fxml"));
+        Stage addBasket = (Stage) btnPlaceOrder.getScene().getWindow();
+        addBasket.setScene(new Scene(root, 181, 249));
+
+        if (rdbCash.isSelected()) {
+            payMethod = "Customer will pay with cash";
+        } else {
+            payMethod = "Customer will pay with card";
+        }
+
+        if (rdbCollection.isSelected()) {
+            getMethod = "Order will be collected";
+        } else {
+            getMethod = "Order will be delivered";
+        }
+
+        customerRequest = txtRequest.getText();
+
+        //System.out.println(customerRequest);
+        finalOrderDetails = payMethod + ". " + getMethod + ". " + "Customer Request (if any): " + customerRequest;
+        System.out.println(finalOrderDetails);
+
+        String customerid = " " + customer.getId();
+        String paymethod = payMethod;
+        String getmethod = getMethod;
+        String request = customerRequest;
+        Double total = browseMenu.orderTotal;
+
+        OrderDao.insertOrder(customerid, paymethod, getmethod, request, total);
+
     }
-    
-    
-    
-    if (rdbCollection.isSelected()) {
-        getMethod = "Order will be collected";
-    } else {
-        getMethod = "Order will be delivered";
-    }
-    
-    customerRequest = txtRequest.getText();
-    
-    //System.out.println(customerRequest);
-    finalOrderDetails = payMethod + ". " + getMethod + ". " + "Customer Request (if any): " + customerRequest;
-    System.out.println(finalOrderDetails);
-    
-    String customerid = orderDao.customerid;
-    String paymethod = payMethod;
-    String getmethod = getMethod;
-    String request = customerRequest;
-    
-    OrderDao.insertOrder(customerid, paymethod, getmethod, request);          
-    
-    }
-    
-    
- @FXML
+
+    @FXML
     private void handleBack() throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml")); 
-    Stage goBack = (Stage) btnBack.getScene().getWindow();
-    goBack.setScene(new Scene(root, 747 ,400));
+        Parent root = FXMLLoader.load(getClass().getResource("BrowseMenu.fxml"));
+        Stage goBack = (Stage) btnBack.getScene().getWindow();
+        goBack.setScene(new Scene(root, 747, 400));
     }
 
     public void setDataFromParent(ObservableList<OrderItem> basketItems) {
-        
+
         System.out.println(basketItems);
         for (OrderItem item : basketItems) {
             lstMyOrder.getItems().add(item);
 
-            
             /*String REGEX = ".*x.*";
             Pattern pattern = Pattern.compile(REGEX);
             
@@ -153,23 +146,24 @@ public class OrderSummaryController implements Initializable {
             System.out.println(quantity);
             System.out.println(pattern);*/
         }
-        
+
     }
+
+    public void setDataFromParent2(Customer customer) {
+
+        this.customer = customer;
+
+        System.out.println("CustomerMenu:");
+        System.out.println(customer);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-     //  customerid = orderDao.getId();
-       
-    System.out.println(orderDao.customerid);
-        
-       // Stage addBasket = (Stage) btnPlaceOrder.getScene().getWindow();
-    
-   
-       //String dataFromBrowseMenu = (String)apOrderDetails.getUserData();
-       
-       BrowseMenuController browseMenu = new BrowseMenuController();
-       System.out.println(browseMenu.orderTotal);
-       lblCost.setText("€ " + browseMenu.orderTotal); 
-        
+
+        BrowseMenuController browseMenu = new BrowseMenuController();
+        System.out.println(browseMenu.orderTotal);
+        lblCost.setText("€ " + browseMenu.orderTotal);
+
     }
 
 }

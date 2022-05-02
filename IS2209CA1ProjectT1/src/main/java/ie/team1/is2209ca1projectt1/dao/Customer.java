@@ -12,6 +12,10 @@ package ie.team1.is2209ca1projectt1.dao;
 public class Customer {
  private String name, addressline1, addressline2, creditcardno, phoneno, allergies, username,password;
    private int id;
+   
+   public Customer() {
+       
+   }
     public Customer(int id, String name, String addressline1, String addressline2, String creditcardno, String phoneno, String allergies, String username, String Password ) {
        this.id = id;
         this.name = name;
