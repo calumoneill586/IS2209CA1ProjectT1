@@ -47,7 +47,7 @@ public class StorePizzaManagemntController implements Initializable {
     Parent root = FXMLLoader.load(getClass().getResource("ManagementMenu.fxml"));
     
     Stage onBack = (Stage) btnBack.getScene().getWindow();
-    onBack.setScene(new Scene(root, 602,299));
+    onBack.setScene(new Scene(root, 607,282));
     }
        
        

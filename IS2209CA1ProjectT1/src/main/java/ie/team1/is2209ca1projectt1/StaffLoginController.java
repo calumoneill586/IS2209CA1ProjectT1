@@ -47,7 +47,7 @@ public class StaffLoginController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("ManagementMenu.fxml"));
     
             Stage login = (Stage) btnStaffLogIn.getScene().getWindow();
-            login.setScene(new Scene(root, 713,400));
+            login.setScene(new Scene(root, 607,282));
     }
             
         }

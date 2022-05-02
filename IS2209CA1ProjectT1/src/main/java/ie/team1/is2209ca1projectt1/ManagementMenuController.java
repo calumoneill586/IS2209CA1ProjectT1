@@ -22,7 +22,7 @@ public class ManagementMenuController implements Initializable {
     Parent root = FXMLLoader.load(getClass().getResource("StoreOrderManagement.fxml"));
     
     Stage manageStoreOrders = (Stage) btnStoreOrders.getScene().getWindow();
-    manageStoreOrders.setScene(new Scene(root, 620,269));
+    manageStoreOrders.setScene(new Scene(root, 603,269));
     }
     
     @FXML 
@@ -35,10 +35,10 @@ public class ManagementMenuController implements Initializable {
     
     @FXML
     public void onManageStores() throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("PizzaManagementWindowmark3.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("PizzaManagementWindowmarkIII.fxml"));
     
     Stage manageStores = (Stage) btnManageStore.getScene().getWindow();
-    manageStores.setScene(new Scene(root, 620,500));
+    manageStores.setScene(new Scene(root, 607,282));
     }
     
     @Override

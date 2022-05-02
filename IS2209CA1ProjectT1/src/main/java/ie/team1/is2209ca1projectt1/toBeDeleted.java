@@ -23,7 +23,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class CustomerMangementController implements Initializable {
+public class toBeDeleted implements Initializable {
 
     @FXML
     private Button btnConfirmEdit;

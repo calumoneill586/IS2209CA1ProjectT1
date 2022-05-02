@@ -154,14 +154,14 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
     Parent root = FXMLLoader.load(getClass().getResource("ManagementMenu.fxml"));
     
     Stage onBack = (Stage) btnPrevious.getScene().getWindow();
-    onBack.setScene(new Scene(root, 602,299));
+    onBack.setScene(new Scene(root, 607,282));
     } 
      @FXML 
    public void onNext() throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("StartPage.fxml"));
     
     Stage onBack = (Stage) btnNext.getScene().getWindow();
-    onBack.setScene(new Scene(root, 602,299));
+    onBack.setScene(new Scene(root, 300,300));
     }
       
       
