@@ -169,7 +169,7 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
     IngredientDao ingredientdao = new IngredientDao();
     ShopDao shopdao = new ShopDao();// = new ShopDao();
     CustomerDao2 customerdao2 = new CustomerDao2();  
-   // StaffDao staffdao = new StaffDao();
+    StaffDao staffdao = new StaffDao();
     
        
        
@@ -200,10 +200,10 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
      colShopID.setCellValueFactory(new PropertyValueFactory<Shop, Integer>("id"));  
      colLocation.setCellValueFactory(new PropertyValueFactory<Shop, String>("location")); 
      
-     //  StaffId.setCellValueFactory(new PropertyValueFactory<Staff, Integer>("id"));  
-      // ShopId.setCellValueFactory(new PropertyValueFactory<Staff, Integer>("ShopId")); 
+       StaffId.setCellValueFactory(new PropertyValueFactory<Staff, Integer>("id"));  
+       ShopId.setCellValueFactory(new PropertyValueFactory<Staff, Integer>("ShopId")); 
       
-     //  StaffRole.setCellValueFactory(new PropertyValueFactory<Staff, String>("StaffRole")); 
+       StaffRole.setCellValueFactory(new PropertyValueFactory<Staff, String>("StaffRole")); 
       
 
        
@@ -272,21 +272,20 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
         }
            
         //User listview 
-      //  ObservableList<Staff> staffs = (ObservableList<Staff>) staffdao.getStaff();
+        ObservableList<Staff> staffs = (ObservableList<Staff>) staffdao.getStaff();
 
-      //  tblPersonnel.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        tblPersonnel.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
-     //   for (Staff staff : staffs) {
-      //      tblPersonnel.getItems().add(staff);
+        for (Staff staff : staffs) {
+            tblPersonnel.getItems().add(staff);
 
 
-     //   }
+        }
         
 
         }
     
-<<<<<<< HEAD
-    }  
+      
    
     
                        
@@ -370,13 +369,12 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
     //tblIngredients.setItems(ingredients);
     
       
-    
-=======
+   
        @FXML  
         void onbtnAddIngredientsClick(ActionEvent event) {
         //tblIngredients.getItems().add(txtIngredients.getText());
         }
->>>>>>> 7c2b0f60e9e398c142088b6fefcc0068cb755068
+
        @FXML
      void onDeleteIngredientClick(ActionEvent event) {
  
@@ -387,57 +385,48 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
      } 
             @FXML
      void onDeleteUserClick(ActionEvent event) {
-<<<<<<< HEAD
+
  //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
     int selectedUser = tblUsers.getSelectionModel().getSelectedIndex();
     tblUsers.getItems().remove(selectedUser); 
-=======
 
-    int selectedIngredient = tblUsers.getSelectionModel().getSelectedIndex();
-    tblUsers.getItems().remove(selectedIngredient); 
->>>>>>> 7c2b0f60e9e398c142088b6fefcc0068cb755068
+
+   
+
     System.out.println("Deletion completed"); 
     
      } 
             @FXML
      void onDeleteOrderClick(ActionEvent event) {
-<<<<<<< HEAD
+
  //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
     int selectedOrder = tblOrders.getSelectionModel().getSelectedIndex();
     tblOrders.getItems().remove(selectedOrder); 
-=======
 
-    int selectedIngredient = tblOrders.getSelectionModel().getSelectedIndex();
-    tblOrders.getItems().remove(selectedIngredient); 
->>>>>>> 7c2b0f60e9e398c142088b6fefcc0068cb755068
+
+ 
+
     System.out.println("Deletion completed"); 
     
      } 
             @FXML
      void onDeleteStaffClick(ActionEvent event) {
-<<<<<<< HEAD
+
  //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
     int selectedStaff = tblPersonnel.getSelectionModel().getSelectedIndex();
     tblPersonnel.getItems().remove(selectedStaff); 
-=======
-
-    int selectedIngredient = tblPersonnel.getSelectionModel().getSelectedIndex();
-    tblPersonnel.getItems().remove(selectedIngredient); 
->>>>>>> 7c2b0f60e9e398c142088b6fefcc0068cb755068
+   
     System.out.println("Deletion completed"); 
     
      } 
             @FXML
      void onDeleteLocationClick(ActionEvent event) {
-<<<<<<< HEAD
  //Initially meant for users...except the FX:ID wouldn't allow users to be displayed so I moved it to ingredients
     int selectedLocation = tblLocations.getSelectionModel().getSelectedIndex();
     tblLocations.getItems().remove(selectedLocation); 
-=======
 
-    int selectedIngredient = tblLocations.getSelectionModel().getSelectedIndex();
-    tblLocations.getItems().remove(selectedIngredient); 
->>>>>>> 7c2b0f60e9e398c142088b6fefcc0068cb755068
+
+    
     System.out.println("Deletion completed"); 
     
      } 
@@ -475,7 +464,3 @@ public class PizzaManagementWindowmarkIIIController implements Initializable {
      
 } 
  
-
-       
-    
-
