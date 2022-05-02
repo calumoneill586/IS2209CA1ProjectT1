@@ -3,6 +3,7 @@ package ie.team1.is2209ca1projectt1;
 
 import ie.team1.is2209ca1projectt1.dao.CustomerDao;
 import ie.team1.is2209ca1projectt1.dao.Customer;
+import ie.team1.is2209ca1projectt1.dao.CustomerDao2;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -21,9 +22,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 
 public class EditCustomersController implements Initializable {
@@ -55,7 +58,16 @@ public class EditCustomersController implements Initializable {
           @FXML
     private TableColumn<Customer, String >cpassword;
           
-    CustomerDao CustomerDao = new CustomerDao();
+          
+    public void changeNameCellEvent(CellEditEvent editedCell){
+        
+        Customer customerSelected = tblCustomers.getSelectionModel().getSelectedItem();
+        customerSelected.setName(editedCell.getNewValue().toString());
+    }      
+          
+          
+          
+    CustomerDao2 customerdao2 = new CustomerDao2();
     
 //TextFields:
     @FXML
@@ -66,6 +78,8 @@ public class EditCustomersController implements Initializable {
        
     private Button btnConfirmEdit;
   
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
       
@@ -87,15 +101,17 @@ public class EditCustomersController implements Initializable {
         
         cpassword.setCellValueFactory(new PropertyValueFactory<>("password")); 
    
-        ObservableList<Customer> customers = CustomerDao.getCustomers();
+        ObservableList<Customer> customers = (ObservableList<Customer>) customerdao2.getCustomers();
+
         tblCustomers.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         
-        for(Customer customer : customers) {
-            
-            System.out.println(customer);
+        tblCustomers.setEditable(true);
+        cname.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        for (Customer customer : customers) {
             tblCustomers.getItems().add(customer);
-   
-        }   
+
+        }  
     } 
         
     @FXML
