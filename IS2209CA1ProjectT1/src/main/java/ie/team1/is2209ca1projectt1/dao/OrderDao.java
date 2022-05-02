@@ -17,7 +17,7 @@ public class OrderDao {
 
     private Connection conn;
     private String connectionString = "jdbc:derby://localhost:1527/pizzadatabase";
-    private static final String insert_query = "INSERT INTO orders (CUSTOMERID, PAYMETHOD, GETMETHOD, REQUEST, TOTAL) VALUES(?,?,?,?,?)";
+    private static final String insert_query = "INSERT INTO orders (CUSTOMERID, PAYMETHOD, GETMETHOD, REQUEST, TOTAL, NOINGREDIENT) VALUES(?,?,?,?,?,?)";
     private static final String select_query = "SELECT Id FROM customer WHERE username = ? and password = ?";
     private Label lblNumber;
 
@@ -53,8 +53,10 @@ public class OrderDao {
                 String paymethod = rs.getString("PAYMETHOD");
                 String getmethod = rs.getString("GETMETHOD");
                 String request = rs.getString("REQUEST");
+                Double total = rs.getDouble("TOTAL");
+                
 
-                Order order = new Order(orderid, customerid, paymethod, getmethod, request);
+                Order order = new Order(orderid, customerid, paymethod, getmethod, request,total);
                 orders.add(order);
 
             }

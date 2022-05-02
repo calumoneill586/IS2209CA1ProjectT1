@@ -24,11 +24,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author Daram
- */
 public class StoreOrderManagementController implements Initializable {
 @FXML
     private Button btnBack, btnDeleteOrder, btnAddOrder;
@@ -92,6 +87,8 @@ public class StoreOrderManagementController implements Initializable {
     int selectedPizza = tblViewManage.getSelectionModel().getSelectedIndex();
     tblViewManage.getItems().remove(selectedPizza);
    
+    
+    
    
     }
      
