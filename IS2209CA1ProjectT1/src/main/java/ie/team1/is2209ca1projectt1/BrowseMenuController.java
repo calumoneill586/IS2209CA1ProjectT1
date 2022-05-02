@@ -72,6 +72,7 @@ public class BrowseMenuController implements Initializable {
     String order = selectedPizza + " x" + value;
     Double price; 
     public static double orderTotal = 0;
+    private Customer customer;
 
    
     @Override
@@ -179,29 +180,32 @@ public class BrowseMenuController implements Initializable {
    
 
     public void onNextClick() throws IOException {
-    
-        
-        
-//Parent root = FXMLLoader.load(getClass().getResource("OrderSummary.fxml"));
-    
-      FXMLLoader loader = new FXMLLoader(
-    getClass().getResource(
-      "OrderSummary.fxml"
-    )
-  );
-    
-    
-    
+    FXMLLoader loader = new FXMLLoader(
+                getClass().getResource(
+                        "OrderSummary.fxml"
+                )
+        );
+
     Stage addBasket = (Stage) btnNext.getScene().getWindow();
 
     addBasket.setScene(new Scene(loader.load(), 551,560));
     
     OrderSummaryController controller = loader.getController();
-  
+    controller.setDataFromParent2(customer);
+    
     ObservableList<OrderItem> basketItems = lstBasket.getItems();
     controller.setDataFromParent(basketItems);
-  
     
+  
+    }
+    
+     public void setDataFromParent(Customer customer) {
+        
+        this.customer = customer;
+        
+        System.out.println("CustomerMenu:");
+        System.out.println(customer);
+                
     }
  }
 

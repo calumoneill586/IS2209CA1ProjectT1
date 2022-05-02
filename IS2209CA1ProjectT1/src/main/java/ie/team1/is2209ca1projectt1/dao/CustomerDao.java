@@ -51,8 +51,43 @@ public class CustomerDao {
         return false;
     }
    
+    public Customer getCustomer(String username, String password) {
+        
+        Customer customer = new Customer();
+        
+        try (Connection connection = DriverManager
+            .getConnection(connectionString, "username", "password");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(select_query)) {
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
+
+            System.out.println(preparedStatement);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                
+                customer.setId(resultSet.getInt("id"));
+                customer.setName(resultSet.getString("name"));
+                customer.setAddressLine1(resultSet.getString("addressline1"));
+                customer.setAddressLine2(resultSet.getString("addressline2"));
+                customer.setCreditCardNo(resultSet.getString("creditcardno"));
+                customer.setPhoneNo(resultSet.getString("phoneno"));
+                customer.setAllergies(resultSet.getString("allergies"));
+                customer.setUsername(username);
+                customer.setPassword(password);
+              
+                
+            }
+          } catch (SQLException e) {
+                printSQLException(e);
+        }
+        return customer;
+    }
    //Insert new customer into database
    public static void insertRecord(String name, String addressline1, String addressline2, String creditcardno, String phoneno, String allergies, String username, String password) throws SQLException {         
+       
+
        try (Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/pizzadatabase", "username", "password");
             PreparedStatement preparedStatement = conn.prepareStatement(insert_query)) {
           
